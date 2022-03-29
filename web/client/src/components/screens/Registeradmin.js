@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./RegisterScreen.css";
 
 
-const RegisterScreen = ({ history }) => {
+const RegisterScreenp = ({ history }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -69,7 +69,7 @@ const RegisterScreen = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "/api/auth/register",
+        "/api/auth/register/p",
         {
           firstname,
           lastname,
@@ -232,4 +232,4 @@ const RegisterScreen = ({ history }) => {
   );
 };
 
-export default RegisterScreen;
+export default RegisterScreenp;

@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 
 
-const ClientSchema = new mongoose.Schema({
+const WorkerSchema = new mongoose.Schema({
   user_id:{
     type:String
   },
@@ -48,6 +48,31 @@ const ClientSchema = new mongoose.Schema({
     
 
   },
+  experience: {
+    type: String,
+    
+
+  },
+  rating: {
+    type: String,
+    
+
+  },
+  category: {
+    type: String,
+    
+
+  },
+  service: {
+    type: String,
+    
+
+  },
+  status: {
+    type: String,
+    
+
+  },
   dateofbirth: {
     type: Date,
   },
@@ -64,7 +89,7 @@ const ClientSchema = new mongoose.Schema({
 
 });
 
-ClientSchema.pre("save", async function (next) {
+WorkerSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
   }
@@ -74,17 +99,17 @@ ClientSchema.pre("save", async function (next) {
   next();
 });
 
-ClientSchema.methods.matchPassword = async function (password) {
+WorkerSchema.methods.matchPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-ClientSchema.methods.getSignedJwtToken = function () {
+WorkerSchema.methods.getSignedJwtToken = function () {
   return jwt.sign({ id: this._id }, '3848dda248be81a9d95ac2234af4892517521e9046c93dffb6dd55fa6d4abfdde8422c', {
     expiresIn: "10min",
   });
 };
 
-ClientSchema.methods.getResetPasswordToken = function () {
+WorkerSchema.methods.getResetPasswordToken = function () {
   const resetToken = crypto.randomBytes(20).toString("hex");
 
   // Hash token (private key) and save to database
@@ -104,4 +129,4 @@ ClientSchema.methods.getResetPasswordToken = function () {
 
 
 
-module.exports = Client = conn.model('client',ClientSchema);
+module.exports = Worker = conn.model('worker',WorkerSchema);

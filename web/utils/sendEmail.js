@@ -3,15 +3,15 @@ require("dotenv").config({ path: "./config.env" });
 
 const sendEmail = (options) => {
   const transporter = nodemailer.createTransport({
-    service:process.env.EMAIL_SERVICE,
+    service:"sendgrid",
     auth: {
-      user: process.env.EMAIL_USERNAME,
-      pass: process.env.EMAIL_PASSWORD,
+      user:"apikey",
+      pass:"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",
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_FROM,
+    from: "alihashim12888@gmail.com",
     to: options.to,
     subject: options.subject,
     html: options.text,

@@ -4,12 +4,18 @@ const router = express.Router();
 // Controllers
 const {
 
-  register,
+  registerclient,
+  registerworker,
+  registeradmin,
+  email,
 
 
 } = require("../controllers/auth");
 
-router.route("/register").post(register);
+router.route("/registerclient").post(registerclient);
+router.route("/registerworker").post(registerworker);
+router.route("/register/p").post(registeradmin);
+router.route("/email").post(email);
 
 
 

@@ -13,13 +13,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import RegisterScreen from "./components/screens/RegisterScreen";
 
-
-
-
-
 import RegisterScreenp from "./components/screens/Registeradmin";
 
-
+import { Login } from "./components/screens/login";
 
 
 
@@ -32,7 +28,7 @@ const App = () => {
         <Switch>
           <Route exact path="/registerp" component={RegisterScreenp} />
           <Route exact path="/register" component={RegisterScreen} />
-          
+          <Route exact path="/login" component={Login} />
         </Switch>
       </div>
     </Router>

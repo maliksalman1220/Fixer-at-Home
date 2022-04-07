@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./styles/login.css";
 
 export const Login = () => {
     const [email, setemail] = useState('');
@@ -36,25 +37,48 @@ export const Login = () => {
       }
 
     return (
-        <div className="container">
-            <form onSubmit={LoginUser}>
-                <h3>Login</h3>
-                <br />
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" value={email} className="form-control" onChange={(e) => setemail(e.target.value)} placeholder="Enter email" />
+      <div className='roww'>
+      <div className='col-md-6 col-10 mx-auto'>
+
+      {/* <div class="container"> */}
+            <form onSubmit={LoginUser} className='form' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
+            <h3 className = "text-center"> Login </h3> 
+               
+               
+                <div className="mb-3">
+                    <label class="form-label" for="formGroupInput">Email address</label>
+                    <input type="email" 
+                    value={email} 
+                    className="form-control" 
+                    onChange={(e) => setemail(e.target.value)} 
+                    placeholder="Enter email" />
                 </div>
-                <br />
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" value={password} className="form-control" onChange={(e) => setpassword(e.target.value)} placeholder="Enter password" />
+              
+                <div className="mb-3">
+                    <label class="form-label" for="formGroupInput">Password</label>
+                    <input 
+                    type="password" 
+                    value={password} 
+                    className="form-control" 
+                    onChange={(e) => setpassword(e.target.value)} 
+                    placeholder="Enter password" />
                 </div>
-                <br />
-                <button type="submit" className="btn btn-primary btn-block">Login</button>
+             
+                {/* <button type="submit" className="btn btn-primary btn-block">Login</button> */}
+        <button type="submit"  class="btn btn-warning ml-2">Login</button>
+                
+                {
+                /* <div class="col-md-12 text-right">
+                <button type="submit" className="btn btn-primary btn-block">
+                Login
+              </button>
+            </div> */}
                 <p className="forgot-password text-right">
-                    Doesn't have an account <a href="./register">Sign up?</a>
+                    Want to create an account? <a href="./registerp">Sign up</a>
                 </p>
             </form>
         </div>
+        </div>
+        // </div>
     );
 }

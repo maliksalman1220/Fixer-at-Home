@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./RegisterScreen.css";
+// import "./RegisterScreen.css";
+import "./styles/RegisterScreen.css";
 
 
 const RegisterScreenp = ({ history }) => {
@@ -97,39 +98,41 @@ const RegisterScreenp = ({ history }) => {
   };
 
   return (
-    <div className="register-screen">
-      <div className= "my-5">
-      <h1 className = "text-center"> Login </h1> 
-    </div>
+  <div className='contact'>
+    <div className='row'>
+      <div className='col-md-6 col-10 mx-auto'>
     
-      <form onSubmit={registerHandler} className="register-screen__form">
-        <h3 className="register-screen__title">Register</h3>
+      <form onSubmit={registerHandler} className='form-group' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
+      <h3 className = "text-center"> Register </h3> 
         {error && <span className="error-message">{error}</span>}
-        <div className="form-group">
-          <label htmlFor="confirmpassword">First Name:</label>
-          <input
+
+        <div className='row g-2'>
+         <div class="col-md">
+         <label class="form-label" for="formGroupInput">First Name</label>
+          <input class="form-control"
             type="text"
             required
             id="firstname"
             
-            placeholder="first name"
+            placeholder="Enter First name"
             value={firstname}
             onChange={(e) => setfirstname(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Last Name</label>
-          <input
+        
+        <div className="col-md">
+          <label class="form-label" for="formGroupInput">Last Name</label>
+          <input class="form-control"
             type="text"
-            
-            
             placeholder="last name"
             value={lastname}
             onChange={(e) => setlastname(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="name">Username:</label>
+        </div>
+
+        <div className="col-md">
+          <label class="form-label">Username:</label>
           <input
             type="text"
             
@@ -138,8 +141,9 @@ const RegisterScreenp = ({ history }) => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
+        
+        <div className="col-md">
+          <label class="form-label">Email:</label>
           <input
             type="email"
             required
@@ -149,8 +153,8 @@ const RegisterScreenp = ({ history }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+        <div className="col-md">
+          <label class="form-label">Password:</label>
           <input
             type="password"
             required
@@ -161,8 +165,8 @@ const RegisterScreenp = ({ history }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Confirm Password:</label>
+        <div className="col-md">
+          <label class="form-label">Confirm Password:</label>
           <input
             type="password"
             required
@@ -173,19 +177,19 @@ const RegisterScreenp = ({ history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">contact number:</label>
+        <div className="col-md">
+          <label class="form-label">Contact number:</label>
           <input
             type="text"
             
             
-            placeholder="enter contact number "
+            placeholder="Enter contact number "
             value={contactnumber}
             onChange={(e) => setcontactnumber(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Date of Birth:</label>
+        <div className="col-md">
+          <label class="form-label">Date of Birth:</label>
           <input
             type="date"
             
@@ -195,39 +199,46 @@ const RegisterScreenp = ({ history }) => {
             onChange={(e) => setdob(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Address</label>
+        <div className="col-md">
+          <label class="form-label">Address</label>
           <input
             type="text"
             
             
-            placeholder="enter address"
+            placeholder="Enter address"
             value={addr}
             onChange={(e) => setaddr(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Address</label>
+        <div className="col-md">
+          <label class="form-label">Address</label>
           <input
             type="integer"
             
             
-            placeholder="enter address"
+            placeholder="Enter address"
             value={number}
             onChange={(e) => setnumber(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Register
-        </button>
-        <button onClick={registerHandlerp}type="submit" className="btn btn-primary">
-          Registerp
-        </button>
-
-        <span className="register-screen__subtext">
+        
+        <div class="col-md-12 text-right">
+        <button type="submit" onClick={registerHandlerp} class="btn btn-warning ml-2">Registerp</button>
+        <button type="button" class="btn btn-primary default">Cancel</button>
+                {/* <button type="submit" class="btn btn-primary">
+                Register
+              </button> */}
+              {/* <button onClick={registerHandlerp} type="submit" class="btn btn-primary">
+                Registerp
+              </button> */}
+            </div>
+      
+        <span className="col-md-12 text-right">
           Already have an account? <Link to="/login">Login</Link>
         </span>
       </form>
+    </div>
+    </div>
     </div>
   );
 };

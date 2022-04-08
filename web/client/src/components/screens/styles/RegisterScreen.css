@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image:url("https://static.vecteezy.com/system/resources/thumbnails/001/841/175/small/light-blue-green-doodle-background-with-flowers-vector.jpg") !important;
+  /* background-image:url("https://static.vecteezy.com/system/resources/thumbnails/001/841/175/small/light-blue-green-doodle-background-with-flowers-vector.jpg") !important; */
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -48,7 +48,7 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .btn-primary{
-  background-color: #4bacb8 !important;
+  background-color: #00bcd4 !important;
   color: white !important;
 
 }

@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Routing
 import PrivateRoute from "./components/routing/PrivateRoute";
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -15,6 +13,7 @@ import RegisterScreenp from "./components/screens/Registeradmin";
 import { Login } from "./components/screens/login";
 import Navbar from './components/screens/navbar';
 import Update_profile from "./components/screens/update_profile";
+import Footer from './components/screens/footer';
 
 
 
@@ -29,6 +28,7 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/update_profile" component={Update_profile} />
         </Switch>
+        {/* <Footer/> */}
       </div>
     </Router>
   );

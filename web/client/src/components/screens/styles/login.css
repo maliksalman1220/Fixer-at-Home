@@ -96,7 +96,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  margin: 1em auto;
  background-position: center;
  padding-bottom: auto;
- border: solid #3dbecf 0.5px;
+ /* border: solid #3dbecf 0.5px; */
  padding: 5%;
  padding-right: 15px;
  padding-left: 15px;
@@ -109,7 +109,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 .btn{
-  background-color: #4bacb8   !important;
+  background-color: #00bcd4   !important;
   margin: 1em auto  !important;
   margin-bottom: 0em  !important;
 }

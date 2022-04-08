@@ -122,19 +122,7 @@ class   Addservices extends Component {
     return (
 
       <div>
-                <Navbar variant="dark" className=" bgqqq ml-0 colorp" expand="md">
-  <Container className="ms-0">
-    <Navbar.Brand className="text-light" href="#home">React-Bootstrap</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto text-light">
-        <Nav.Link  className="text-light" href="/login">Home</Nav.Link>
-        <Nav.Link  className="text-light" href="/QQQ">societies</Nav.Link>
-        <Nav.Link  className="text-light" href="/Listq">list</Nav.Link>
-    </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
+                
 
 
 <div class="cards-list">

@@ -89,19 +89,7 @@ class category extends Component {
     return (
 
       <div>
-                <Navbar variant="dark" className=" bgqqq ml-0  border-4 color" expand="md">
-  <Container className="ms-0">
-    <Navbar.Brand className="text-light" href="#home">React-Bootstrap</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto text-light">
-        <Nav.Link  className="text-light" href="/login">Home</Nav.Link>
-        <Nav.Link  className="text-light" href="/QQQ">societies</Nav.Link>
-        <Nav.Link  className="text-light" href="/Listq">list</Nav.Link>
-    </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
+                
 <h1><em>Categories</em></h1>
 
 <div class="cards-list">

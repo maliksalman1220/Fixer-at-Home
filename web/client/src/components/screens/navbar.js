@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 // import Logo from '../images/m.PNG'
 import {Link} from 'react-router-dom'
 import '../screens/styles/navbar.css'
+import'./App.css'
 // import ReorderIcon from "@material-ui/icons/Reorder";
 function Navbar() {
   // return (
@@ -26,8 +27,8 @@ function Navbar() {
   return (
     
     // <div className="navbar">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-left">
-      <div class="container-fluid ">
+      <nav class="navbar navbar-expand-lg navbar-dark colorp navbar-left">
+      <div class="container-fluid colorp ">
   <a class="navbar-brand " href="#" >Fixer At Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

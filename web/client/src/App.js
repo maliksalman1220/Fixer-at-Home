@@ -21,7 +21,7 @@ import  category from "./components/screens/category";
 
 
 
-import RegisterScreenp from "./components/screens/Registeradmin";
+
 import { Login } from "./components/screens/login";
 import Navbar from './components/screens/navbar';
 import Update_profile from "./components/screens/update_profile";

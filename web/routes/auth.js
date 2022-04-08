@@ -16,6 +16,8 @@ const {
   deletecategory
 
 
+  LoginUser,
+  
 } = require("../controllers/auth");
 
 router.route("/registerclient").post(registerclient);
@@ -31,5 +33,6 @@ router.route("/deletecategory").post(deletecategory);
 
 
 
+router.route("/login").post(LoginUser);
 
 module.exports = router;

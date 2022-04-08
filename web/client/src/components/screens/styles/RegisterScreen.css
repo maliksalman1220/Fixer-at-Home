@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
+* {
+  box-sizing: border-box;
+}
+body {
+  /* background-image:url("https://static.vecteezy.com/system/resources/thumbnails/001/841/175/small/light-blue-green-doodle-background-with-flowers-vector.jpg") !important; */
+  min-height: 100vh;
+  display: flex;
+  font-weight: 400;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,label,span {
+  font-weight: 500;
+  font-family: 'Fira Sans', sans-serif;
+}
+body, html, .App, #root, .auth-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.custom-control-label {
+  font-weight: 400;
+}
+
+.g-2{
+ padding-right: 15px;
+ padding-left: 15px;
+}
+.form-group{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ margin: 1em auto;
+ background-position: center;
+ padding-bottom: auto;
+ /* border: solid #3dbecf 0.5px; */
+ padding: 5%;
+ padding-right: 15px;
+ padding-left: 15px;
+ display: block;
+ margin-top: 0em;
+ box-sizing: border-box;
+ background-color: #ffffff !important;
+}
+
+
+.btn{
+  margin: 1em auto !important;
+  margin-bottom: 0em !important;
+}
+
+.btn-primary{
+  background-color: #00bcd4 !important;
+  color: white !important;
+
+}
+/* .ml-2{
+  background-color: #4bacb8 !important;
+  color: white !important;
+} */
+.col-md-12{
+  position: relative !important;
+  min-height: 1px !important;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+
+}

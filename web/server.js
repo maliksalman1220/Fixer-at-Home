@@ -3,19 +3,18 @@ const express = require("express");
 const app = express();
 const conn = require("./config/db");
 const path = require("path");
+const cors = require("cors");
 
 const errorHandler = require("./middleware/error");
 
 conn;
 
-
-
 app.use(express.json());
-
-
+app.use(cors());
 
 // Connecting Routes
 app.use("/api/auth", require("./routes/auth"));
+
 //app.use("/api/books", require("./routes/books"));
 //app.use("/api/private", require("./routes/private"));
 
@@ -24,19 +23,15 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT;
 
-if(process.env.Node_ENV === "production")
-{
-  app.use(express.static(path.join(__dirname,"/client/build")))
+if (process.env.Node_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")))
 
-  app.get("*",(req,res) =>{
-    res.sendFile(path.join(__dirname,"client","build","index.html"))
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
   })
 }
-
-else
-
-{
-  app.get("/",(req,res) => {
+else {
+  app.get("/", (req, res) => {
     res.send("Api running")
   })
 }

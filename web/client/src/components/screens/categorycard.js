@@ -34,19 +34,6 @@ const BookCard = (props) => {
       <Button  style={{backgroundColor:'#4bacb8'}} className='pl'>Light</Button>{' '}
     </div>
   </div>
-  
-
-
-
-
-  
-
-
-
-  
-
-    
-
     return(
         <div>{send}</div>
     )

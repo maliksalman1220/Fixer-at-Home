@@ -1,0 +1,17 @@
+.slider{
+  font-weight: 400;
+text-align: left;
+line-height: 1.5;
+font-family: "Hind", serif;
+-webkit-font-smoothing: antialiased;
+font-size: 17px;
+color: rgba(0, 0, 0, 0.65);
+box-sizing: border-box;
+display: block;
+background: url("./mainimage.png") no-repeat;
+background-size: cover;
+background-position: 10% 0%;
+padding: 200px 0;
+position: relative;
+
+}

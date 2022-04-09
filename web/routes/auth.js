@@ -13,7 +13,7 @@ const {
   deletep,
   categories,
   detailp,
-  deletecategory
+  deletecategory,
 
 
   LoginUser,

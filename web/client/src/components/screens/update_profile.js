@@ -62,7 +62,7 @@ function Update_profile() {
                         onChange = {handleChange}/></div>
 
                     <div class="col-md-12 text-right">
-                <button type="button" class="btn btn-primary">Cancel</button>
+                <button type="button"  class="btn hello btn-primary">Cancel</button>
                 <button type="button" class="btn btn-warning ml-2">Save</button>
             </div>
                 </div>

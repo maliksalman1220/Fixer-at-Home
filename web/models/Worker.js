@@ -78,7 +78,6 @@ const WorkerSchema = new mongoose.Schema({
   },
   address:{
     type: String,
-    minlength: 100,
     
   },
 

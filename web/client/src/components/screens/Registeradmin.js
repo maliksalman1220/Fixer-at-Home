@@ -13,11 +13,13 @@ const RegisterScreenp = ({ history }) => {
   const [firstname, setfirstname] = useState("");
   const [lastname, setlastname] = useState("");
   const [contactnumber, setcontactnumber] = useState("");
-  const [dob, setdob] = useState("");
-  const [addr, setaddr] = useState("");
+  const [dateofbirth, setdateofbirth] = useState("");
+  const [address, setaddress] = useState("");
   const [error, setError] = useState("");
   const [ppp,setppp]=useState("");
   const [number,setnumber] = useState("");
+  const [experience,setexperience] = useState("");
+  const [category,setcategory] = useState("");
 
   const registerHandlerp = async (e) =>{
     e.preventDefault();
@@ -78,8 +80,9 @@ const RegisterScreenp = ({ history }) => {
           email,
           password,
           contactnumber,
-          dob,
-          addr
+          dateofbirth,
+          address,
+          experience,category
         },
         config
       );
@@ -102,7 +105,7 @@ const RegisterScreenp = ({ history }) => {
     <div className='row'>
       <div className='col-md-6 col-10 mx-auto'>
     
-      <form onSubmit={registerHandler} className='form-group' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
+      <form onSubmit={registerHandler} className='form-group form-group' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
       <h3 className = "text-center"> Register </h3> 
         {error && <span className="error-message">{error}</span>}
 
@@ -148,7 +151,7 @@ const RegisterScreenp = ({ history }) => {
             type="email"
             required
             id="email"
-            placeholder="Email address"
+            placeholder="Email addressess"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -159,7 +162,6 @@ const RegisterScreenp = ({ history }) => {
             type="password"
             required
             id="password"
-            autoComplete="true"
             placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -195,36 +197,57 @@ const RegisterScreenp = ({ history }) => {
             
             
             
-            value={dob}
-            onChange={(e) => setdob(e.target.value)}
+            value={dateofbirth}
+            onChange={(e) => setdateofbirth(e.target.value)}
           />
         </div>
         <div className="col-md">
-          <label class="form-label">Address</label>
+          <label class="form-label">addressess</label>
           <input
             type="text"
             
             
-            placeholder="Enter address"
-            value={addr}
-            onChange={(e) => setaddr(e.target.value)}
+            placeholder="Enter addressess"
+            value={address}
+            onChange={(e) => setaddress(e.target.value)}
           />
         </div>
         <div className="col-md">
-          <label class="form-label">Address</label>
+          <label class="form-label">Experience</label>
+          <input
+            type="text"
+            
+            
+            placeholder="Experience"
+            value={experience}
+            onChange={(e) => setexperience(e.target.value)}
+          />
+        </div>
+        <div className="col-md">
+          <label class="form-label">category</label>
+          <input
+            type="text"
+            
+            placeholder="Enter category"
+            value={category}
+            onChange={(e) => setcategory(e.target.value)}
+          />
+        </div>
+        <div className="col-md">
+          <label class="form-label">verification code</label>
           <input
             type="integer"
             
             
-            placeholder="Enter address"
+            placeholder="Enter verification codep"
             value={number}
             onChange={(e) => setnumber(e.target.value)}
           />
         </div>
         
         <div class="col-md-12 text-right">
-        <button type="submit" onClick={registerHandlerp} class="btn btn-warning ml-2">Registerp</button>
-        <button type="button" class="btn btn-primary default">Cancel</button>
+        <button type="submit" onClick={registerHandler} class="btn btn-warning ml-2">Register</button>
+        <button type="button" onClick={registerHandlerp}class="btn btn-primary default">send verification code</button>
                 {/* <button type="submit" class="btn btn-primary">
                 Register
               </button> */}

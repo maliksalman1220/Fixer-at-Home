@@ -14,6 +14,8 @@ import RegisterScreen from "./components/screens/RegisterScreen";
 import Addservices from "./components/screens/Addservices";
 import Addcategories from "./components/screens/Addcategories";
 
+import viewprofile from "./components/screens/viewprofile";
+
 
 import RegisterScreenp from "./components/screens/Registeradmin";
 import PPPP from "./components/screens/PPP";
@@ -22,6 +24,8 @@ import  category from "./components/screens/category";
 
 
 
+import  workerlist from "./components/screens/workerlist";
+import  addworkerlist from "./components/screens/addworker";
 import { Login } from "./components/screens/login";
 import Navbar from './components/screens/navbar';
 import Update_profile from "./components/screens/update_profile";
@@ -41,6 +45,9 @@ const App = () => {
           <Route exact path="/Addcategories" component={Addcategories} />
           <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/category/:q" component={category} />
+          <Route exact path="/worker/:q" component={workerlist} />
+          <Route exact path="/addworker" component={addworkerlist} />
+          <Route exact path="/viewprofile/:q" component={viewprofile} />
           
           <Route exact path="/login" component={Login} />
           <Route exact path="/update_profile" component={Update_profile} />

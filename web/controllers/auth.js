@@ -4,10 +4,11 @@ const User = require("../models/User");
 const Client = require("../models/Client");
 const Services = require("../models/Services");
 const Categories = require("../models/Categories");
-const worker = require("../models/Worker");
+const Worker = require("../models/Worker");
 const Admin = require("../models/Admin");
 const sendEmail = require("../utils/sendEmail");
 const bcrypt = require("bcryptjs");
+const nodemailer = require('nodemailer');
 
 exports.registerclient = async (req, res, next) => {
   const { firstname, lastname, username, email, password, contactnumber, dateofbirth, address } = req.body;
@@ -33,7 +34,7 @@ exports.registerclient = async (req, res, next) => {
   }
 };
 
-exports.registerworker = async (req, res, next) => {
+exports.registeradmin = async (req, res, next) => {
   const { firstname, lastname, username, email, password, contactnumber, dateofbirth, address, category, servicep, status, experience, rating } = req.body;
 
   try {
@@ -56,11 +57,33 @@ exports.registerworker = async (req, res, next) => {
   }
 };
 
-exports.registeradmin = async (req, res, next) => {
-  const { firstname, lastname, username, email, password, contactnumber, dateofbirth, address } = req.body;
+exports.registerworker = async (req, res, next) => {
+  const { firstname, lastname, username, email, password, contactnumber, dateofbirth, address,experience,category} = req.body;
+  
+console.log(firstname, lastname, username, email, password, contactnumber, dateofbirth, address,experience)
+  if (!firstname|| !lastname|| !username|| !email|| !password|| !contactnumber|| !dateofbirth|| !address|| !experience|| !category) {
+    return next(new ErrorResponse("Please fill in form", 400));
+  }
+  if(experience.split(" ").length>=17)
+  {
+    console.log("p")
+    return next(new ErrorResponse("experince word limit exceed", 401));
+  }
+  if(password.length<=5)
+  {
+    console.log("p")
+    return next(new ErrorResponse("short password", 401));
+  }const emailp=email
+  console.log(emailp)
+workerp=await Worker.findOne({email:emailp})
+  console.log(workerp)
+  if(workerp){return next(new ErrorResponse("email exist", 401))}
+workerp=await Categories.findOne({name:category})
+  
+  if(!workerp){return next(new ErrorResponse("category doesn't exist", 401))}
 
   try {
-    const user = await Admin.create({
+    const user = await Worker.create({
       firstname,
       lastname,
       username,
@@ -69,6 +92,11 @@ exports.registeradmin = async (req, res, next) => {
       contactnumber,
       dateofbirth,
       address,
+      category,
+      experience,
+      
+           
+      
     });
 
     sendToken(user, 200, res)
@@ -109,26 +137,39 @@ exports.email = async (req, res, next) => {
 
   x = contactnumber.substr(0, 5);
 
-  const message = `
-        <h1>You have requested a password reset</h1>
-        
-        <p>${x}</p>
-      `;
+  
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+ // true for 465, false for other ports
+    auth: {
+        user: 'fixerathome@gmail.com', // generated ethereal user
+        pass: 'fixer_at_home'  // generated ethereal password
+    },
 
-  try {
+  });
 
-    await sendEmail({
-      to: email,
-      subject: "Password Reset Request",
-      text: message,
-    })
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: 'fixerathome@gmail.com', // sender address
+      to: email, // list of receivers
+      subject: 'Node Contact Request', // Subject line
+      text: 'email verification code_'+x, // plain text body
+       // html body
+  };
+  console.log("p")
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-  } catch (err) {
-    console.log(err);
-    return next(new ErrorResponse("Email could not be sent", 500));
-  }
+      res.render('contact', {msg:'Email has been sent'});
+  
+  });
 
-  res.status(200).json({ msg: x });
+  res.status(200).json();
 };
 
 exports.services = async (req, res, next) => {
@@ -214,6 +255,90 @@ exports.deletecategory = async(req, res,next) => {
     .then( book => res.json(book))
     .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
 }
+
+
+
+exports.getworkerp = async(req, res,next) => {
+  
+  Worker.find()
+    .then( book => res.json(book))
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
+exports.getworker = async(req, res,next) => {
+  categoryppp=req.params.q
+  console.log(categoryppp)
+  Worker.find({category:categoryppp,status:"accepted"})
+    .then( book => res.json(book))
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
+exports.getworkerdetail = async(req, res,next) => {
+  categoryp=req.params.q
+  console.log(categoryp)
+  Worker.find({_id:categoryp})
+    .then( book => res.json(book))
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
+exports.addworkerppp = async(req, res,next) => {
+  categoryp=req.params.q
+  console.log(categoryp)
+  let p= await Worker.findByIdAndUpdate(categoryp,{status:"accepted"})
+  console.log(p)
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+ // true for 465, false for other ports
+    auth: {
+        user: 'fixerathome@gmail.com', // generated ethereal user
+        pass: 'fixer_at_home'  // generated ethereal password
+    },
+
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: 'fixerathome@gmail.com', // sender address
+      to: p.email, // list of receivers
+      subject: 'Account approved', // Subject line
+      text: 'dear '+p.firstname+' '+'your account got approved' , // plain text body
+       // html body
+  };
+  console.log("p")
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+      res.render('contact', {msg:'Email has been sent'});
+  
+  })
+ }
+
+  
+  exports.services = async (req, res, next) => {
+    const {name,pic } = req.body;
+  
+  
+  
+      
+      
+    
+        
+        try {
+          const user = await Services.create({
+            name,
+            pic
+            
+            
+          });
+  
+      sendToken(user, 200, res)
+      return (res.json({ 'msg': x }));
+    } catch (err) {
+      next(err);
+    }
+  }
 
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();

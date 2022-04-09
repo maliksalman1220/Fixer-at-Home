@@ -1,17 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
 .slider{
-  font-weight: 400;
-text-align: left;
-line-height: 1.5;
-font-family: "Hind", serif;
--webkit-font-smoothing: antialiased;
-font-size: 17px;
-color: rgba(0, 0, 0, 0.65);
-box-sizing: border-box;
-display: block;
-background: url("./mainimage.png") no-repeat;
+background: url("http://hirecentury.ca/blog/wp-content/uploads/2017/08/44132482_m-703x467.jpg") no-repeat;
 background-size: cover;
-background-position: 10% 0%;
+height: auto;
+width: 100%;
 padding: 200px 0;
-position: relative;
+}
+
+.htext{
+font-family:  Poppins,sans-serif !important; 
+}
+
+.htextu{
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.h-font{
+font-size: 30px;
+font-weight: 500;
 
 }
+.my_container{
+  text-align: left;
+  font-family: Poppins,sans-serif !important; 
+  line-height: 1.5em;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+  position: relative;
+  padding-top: 20px;
+  display: block;
+}
+
+.h_btns{
+  width: 25% !important;
+  margin-right: 16px !important;
+  border: 0.5px solid black !important;
+}
+
+.h_btnsl{
+  width: 25% !important;
+  margin-right: 16px !important;
+  border: none;
+  /* margin-left: 0.5px !important; */
+}
+
+.btn-cont{
+  font-size: 0 !important;
+  display: flex !important;
+
+}
+

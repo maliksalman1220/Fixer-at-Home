@@ -7,7 +7,7 @@ header {
 }
 
 .navbar{
-  background-color: #4bacb8 !important;
+  background-color: #004c8c !important;
 }
 
 .nav-link:hover {
@@ -16,6 +16,8 @@ header {
 }
 
 .navbar-brand {
+  font-family: Poppins,sans-serif; 
+
 }
 
 .nav-item {

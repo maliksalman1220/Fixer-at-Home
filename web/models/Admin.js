@@ -53,9 +53,20 @@ const AdminSchema = new mongoose.Schema({
   },
   address:{
     type: String,
-    minlength: 100,
+    
     
   },
+  experience:{
+    type: String,
+    
+    
+  },
+  category:{
+    type: String,
+    
+    
+  },
+  
 
   resetPasswordToken: String,
   resetPasswordExpire: Date,

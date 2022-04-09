@@ -105,7 +105,7 @@ const RegisterScreen = ({ history }) => {
       <form onSubmit={registerHandler} className="register-screen__form">
         <h3 className="register-screen__title">Register</h3>
         {error && <span className="error-message">{error}</span>}
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="confirmpassword">First Name:</label>
           <input
             type="text"
@@ -117,7 +117,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setfirstname(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="confirmpassword">Last Name</label>
           <input
             type="text"
@@ -128,7 +128,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setlastname(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="name">Username:</label>
           <input
             type="text"
@@ -138,7 +138,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -149,7 +149,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -161,7 +161,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="confirmpassword">Confirm Password:</label>
           <input
             type="password"
@@ -173,7 +173,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="confirmpassword">contact number:</label>
           <input
             type="text"
@@ -184,7 +184,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setcontactnumber(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="confirmpassword">Date of Birth:</label>
           <input
             type="date"
@@ -195,7 +195,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setdob(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="confirmpassword">Address</label>
           <input
             type="text"
@@ -206,7 +206,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setaddr(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-groupl">
           <label htmlFor="confirmpassword">Address</label>
           <input
             type="integer"

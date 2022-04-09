@@ -21,7 +21,7 @@
     "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.9",
-    "nodemailer": "^6.4.17",
+    "nodemailer": "^6.7.3",
     "popper.js": "^1.16.1",
     "react-bootstrap": "^2.0.0-beta.6"
   },

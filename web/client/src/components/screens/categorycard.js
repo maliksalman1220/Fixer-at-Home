@@ -31,7 +31,7 @@ const BookCard = (props) => {
     <div class="card_imageppp colorplplpl"> </div>
     <div class="card_title title-white">
       <p>{book.name}</p>
-      <Button  style={{backgroundColor:'#4bacb8'}} className='pl'>Light</Button>{' '}
+      <Button  style={{backgroundColor:'#4bacb8'}} href={`/worker/${book.name}`} className='pl'>Light</Button>{' '}
     </div>
   </div>
     return(

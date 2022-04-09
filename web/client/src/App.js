@@ -30,7 +30,8 @@ import { Login } from "./components/screens/login";
 import Navbar from './components/screens/navbar';
 import Update_profile from "./components/screens/update_profile";
 import Footer from './components/screens/footer';
-
+import WorkerCard from "./components/screens/worker_card";
+import Homepage from "./components/screens/homepage";
 
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
       <div className="app">
         <Navbar/>
         <Switch>
+        <Route exact path="/home" component={Homepage} />
           <Route exact path="/registerp" component={RegisterScreenp} />
           <Route exact path="/register" component={RegisterScreen} />
           <Route exact path="/Addservices" component={Addservices} />
@@ -49,6 +51,7 @@ const App = () => {
           <Route exact path="/addworker" component={addworkerlist} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
           
+          <Route exact path="/worker_card" component={WorkerCard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/update_profile" component={Update_profile} />
         </Switch>

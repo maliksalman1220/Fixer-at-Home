@@ -1,115 +1,118 @@
 .worker_card {
-    width: 400px;
-    border: none;
-    border-radius: 10px;
-    background-color: #fff
-  }
-  
-  .workercard_container{
-    width: 400px;
-    border: none;
-    border-radius: 10px;
-    background-color: #fff
-  }
-  .stats {
-    background: #f2f5f8 !important;
-    color: #000 !important
-  }
-  
-  .articles {
-    font-size: 10px;
-    color: #a1aab9
-  }
-  
-  .number1 {
-    font-weight: 500
-  }
-  
-  .followers {
-    font-size: 10px;
-    color: #a1aab9
-  }
-  
-  .number2 {
-    font-weight: 500
-  }
-  
-  .rating {
-    font-size: 10px;
-    color: #a1aab9
-  }
-  
-  .number3 {
-    font-weight: 500
-  }
-  
-  .card__sender__rating__star {
-    opacity: 0.3;
-  }
-  .card__sender__rating-1 .card__sender__rating__star:nth-child(1) {
-    opacity: 1;
-  }
-  .card__sender__rating-2 .card__sender__rating__star:nth-child(1) {
-    opacity: 1;
-  }
-  .card__sender__rating-2 .card__sender__rating__star:nth-child(2) {
-    opacity: 1;
-  }
-  .card__sender__rating-3 .card__sender__rating__star:nth-child(1) {
-    opacity: 1;
-  }
-  .card__sender__rating-3 .card__sender__rating__star:nth-child(2) {
-    opacity: 1;
-  }
-  .card__sender__rating-3 .card__sender__rating__star:nth-child(3) {
-    opacity: 1;
-  }
-  .card__sender__rating-4 .card__sender__rating__star:nth-child(1) {
-    opacity: 1;
-  }
-  .card__sender__rating-4 .card__sender__rating__star:nth-child(2) {
-    opacity: 1;
-  }
-  .card__sender__rating-4 .card__sender__rating__star:nth-child(3) {
-    opacity: 1;
-  }
-  .card__sender__rating-4 .card__sender__rating__star:nth-child(4) {
-    opacity: 1;
-  }
-  .card__sender__rating-5 .card__sender__rating__star:nth-child(1) {
-    opacity: 1;
-  }
-  .card__sender__rating-5 .card__sender__rating__star:nth-child(2) {
-    opacity: 1;
-  }
-  .card__sender__rating-5 .card__sender__rating__star:nth-child(3) {
-    opacity: 1;
-  }
-  .card__sender__rating-5 .card__sender__rating__star:nth-child(4) {
-    opacity: 1;
-  }
-  .card__sender__rating-5 .card__sender__rating__star:nth-child(5) {
-    opacity: 1;
-  }
-  
-  .card__sender__rating__star {
-    color: rgba(255, 217, 0, 0.993);
-  }
-  
-  .workercard_button{
-    margin-right: 2px  !important;
-    border: 0.05px solid #4bacb8  !important;
-    color: white  !important;
-  }
-  
-  .workercard_button:hover{
-    /* background-color: #ecfafd; */
-    transition: background-color 0.5s ease;
-  }
-  
-  .workercard_button2{
-    margin-left: 2px  !important;
-    border: 0.05px solid black !important;
-    background-color: #ffffff ;
-  }
-  
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff
+}
+
+.workercard_container{
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff
+}
+.stats {
+  background: #f2f5f8 !important;
+  color: #000 !important
+}
+
+.articles {
+  font-size: 10px;
+  color: #a1aab9
+}
+
+.number1 {
+  font-weight: 500
+}
+
+.followers {
+  font-size: 10px;
+  color: #a1aab9
+}
+
+.number2 {
+  font-weight: 500
+}
+
+.rating {
+  font-size: 10px;
+  color: #a1aab9
+}
+
+.number3 {
+  font-weight: 500
+}
+
+.card__sender__rating__star {
+  opacity: 0.3;
+}
+.card__sender__rating-1 .card__sender__rating__star:nth-child(1) {
+  opacity: 1;
+}
+.card__sender__rating-2 .card__sender__rating__star:nth-child(1) {
+  opacity: 1;
+}
+.card__sender__rating-2 .card__sender__rating__star:nth-child(2) {
+  opacity: 1;
+}
+.card__sender__rating-3 .card__sender__rating__star:nth-child(1) {
+  opacity: 1;
+}
+.card__sender__rating-3 .card__sender__rating__star:nth-child(2) {
+  opacity: 1;
+}
+.card__sender__rating-3 .card__sender__rating__star:nth-child(3) {
+  opacity: 1;
+}
+.card__sender__rating-4 .card__sender__rating__star:nth-child(1) {
+  opacity: 1;
+}
+.card__sender__rating-4 .card__sender__rating__star:nth-child(2) {
+  opacity: 1;
+}
+.card__sender__rating-4 .card__sender__rating__star:nth-child(3) {
+  opacity: 1;
+}
+.card__sender__rating-4 .card__sender__rating__star:nth-child(4) {
+  opacity: 1;
+}
+.card__sender__rating-5 .card__sender__rating__star:nth-child(1) {
+  opacity: 1;
+}
+.card__sender__rating-5 .card__sender__rating__star:nth-child(2) {
+  opacity: 1;
+}
+.card__sender__rating-5 .card__sender__rating__star:nth-child(3) {
+  opacity: 1;
+}
+.card__sender__rating-5 .card__sender__rating__star:nth-child(4) {
+  opacity: 1;
+}
+.card__sender__rating-5 .card__sender__rating__star:nth-child(5) {
+  opacity: 1;
+}
+
+.card__sender__rating__star {
+  color: rgba(255, 217, 0, 0.993);
+}
+
+.workercard_button{
+  margin-right: 2px  !important;
+  border: 0.05px solid #4bacb8  !important;
+  color: white  !important;
+}
+
+.workercard_button:hover{
+  /* background-color: #ecfafd; */
+  transition: background-color 0.5s ease;
+}
+
+.workercard_button2{
+  margin-left: 2px  !important;
+  border: 0.05px solid black !important;
+  background-color: #ffffff ;
+}
+
+
+
+

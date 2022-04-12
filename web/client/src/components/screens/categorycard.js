@@ -4,7 +4,8 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col,ListGroup  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Component } from 'react';
-import "./App.css"
+import "./catagorycard.css"
+import { Card } from 'react-bootstrap';
 const onClick=(id)=>{
   console.log(id);
   axios
@@ -25,14 +26,17 @@ const BookCard = (props) => {
     const  book  = props.book;
     let send=
 
+//     <Card onClick={onClick} style={{ cursor: "pointer" }}>
+//   <p>This is a clickable card.</p>
+// </Card>
+  <div class="card ccard" onClick={`/worker/${book.name}`}>
+    {/* <div class="card_imageppp colorplplpl divv"> </div> */}
+    {/* <div class="card-body cbody"> */}
+    <h5 class=" text-center ccard-title">{book.name}</h5>
+    {/* <a  href={`/worker/${book.name}`} class="btn cbtn btn-warning">Select</a> */}
+    {/* </div> */}
 
-  
-  <div class="card 1">
-    <div class="card_imageppp colorplplpl"> </div>
-    <div class="card_title title-white">
-      <p>{book.name}</p>
-      <Button  style={{backgroundColor:'#4bacb8'}} href={`/worker/${book.name}`} className='pl'>Light</Button>{' '}
-    </div>
+    
   </div>
     return(
         <div>{send}</div>

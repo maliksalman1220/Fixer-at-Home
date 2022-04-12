@@ -6,7 +6,6 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
-import "./styles/addService.css"
 
 
 class   Addservices extends Component {

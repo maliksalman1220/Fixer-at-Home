@@ -4,7 +4,7 @@ import List from './addworkercard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "./addworker.css"
 
 
 class addworkerlist extends Component {

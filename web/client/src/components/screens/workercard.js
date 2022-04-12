@@ -33,7 +33,7 @@ const BookCard = (props) => {
                 <div class="image"> <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" class="rounded" width="155"/> </div>
                 <div class="ml-3 w-100">
                     <h4 class="mb-0 mt-0">{book.firstname}</h4>
-                    <p class="mb-0 card__sender__rating card__sender__rating-4">
+                    <p class="mb-0 card__sender__rating card__sender__rating-3">
                         <span class="card__sender__rating__star">&#9733;</span>
                         <span class="card__sender__rating__star">&#9733;</span>
                         <span class="card__sender__rating__star">&#9733;</span>

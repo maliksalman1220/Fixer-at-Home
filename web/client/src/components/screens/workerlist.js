@@ -4,7 +4,7 @@ import List from './workercard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "./catagorycard.css"
 
 
 class workerlist extends Component {
@@ -91,7 +91,7 @@ class workerlist extends Component {
                 
 <h1><em>Categories</em></h1>
 
-<div class="cards-list">
+<div class="cards-list cards-listt">
 
     {bookList}
 

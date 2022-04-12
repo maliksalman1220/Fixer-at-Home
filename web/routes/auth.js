@@ -18,6 +18,9 @@ const {
   addworkerppp,
   getworkerdetail,
   getworkerp,
+  order,getorder,getworkerorder,
+  orderstatus,
+  orderstatuscompleted,
 
 
   LoginUser,
@@ -36,7 +39,13 @@ router.route("/getcategories/:q").get(detailp);
 router.route("/getworker/:q").get(getworker);
 router.route("/getworkerp").get(getworkerp);
 router.route("/getworkerdetail/:q").get(getworkerdetail);
+router.route("/order/:q").post(order);
+router.route("/getorder/:q").post(getorder);
 
+
+router.route("/getworkerorder/:q").post(getworkerorder);
+router.route("/orderstatus/:q").post(orderstatus);
+router.route("/orderstatuscompleted/:q").post(orderstatuscompleted);
 
 
 

@@ -44,7 +44,7 @@ const BookCard = (props) => {
                         <div class="d-flex flex-column"> <span class="articles">Price Range: </span> <span class="number1">Rs 145-200</span> </div>
                     </div>
                     <div class="button mt-0 d-flex flex-row align-items-center"> 
-                    <button class="btn  workercard_button btn-sm btn-outline-primary mr-3 w-100">Request</button> 
+                    <Button class="btn  workercard_button btn-sm btn-outline-primary mr-3 w-100" href={`/placeorder/${book._id}`}>Request</Button> 
                     <button class="btn workercard_button2 btn-sm btn-primary  ml-3 w-100">View Profile</button> </div>
                 </div>
             </div>

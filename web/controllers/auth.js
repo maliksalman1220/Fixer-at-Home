@@ -5,6 +5,7 @@ const Client = require("../models/Client");
 const Services = require("../models/Services");
 const Categories = require("../models/Categories");
 const Worker = require("../models/Worker");
+const Order = require("../models/Order");
 const Admin = require("../models/Admin");
 const sendEmail = require("../utils/sendEmail");
 const bcrypt = require("bcryptjs");
@@ -108,27 +109,39 @@ workerp=await Categories.findOne({name:category})
 
 exports.LoginUser = async (req, res, next) => {
 
-  const user = await Client.findOne({
+  user = await Client.findOne({
     email: req.body.email,
   });
 
   if (!user) 
-  { 
+  {user = await Worker.findOne({
+    email: req.body.email})
+    console.log(user)
+    if(!user)
+    {
+      user = await Admin.findOne({
+        email: req.body.email})
+    
+    if (!user){
     console.log('user not found'); 
-    return res.json({ status: 'error', error: 'User not found' }); 
+    return res.json({ status: 'error', error: 'User not found' });}
   }
+}
 
   const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
 
-  if (!isPasswordValid) 
-  {
-    console.log('password not valid');
-    return res.json({ status: 'error', error: 'Password not valid' });
-  }
-  else 
-  {
-    return res.json({ status: 'ok'});
-  }
+  
+
+    if (!isPasswordValid) {
+      return next(new ErrorResponse("Invalid credentials", 401));
+    }
+
+    return res.json({ status: 'success', error: user.id }); 
+
+
+  
+   
+  
 };
 
 
@@ -339,7 +352,80 @@ exports.addworkerppp = async(req, res,next) => {
       next(err);
     }
   }
+  exports.order = async (req, res, next) => {
+  
+ 
+  const {client,time,information } = req.body;
+  worker=req.params.q
+  console.log(worker)
+  let pq=await Worker.findOne({_id:worker})
+  let workername=pq.firstname
+  let price=1000
+  const status="pending"
+  
 
+
+
+
+    
+  
+       
+    
+      const user = await Order.create({
+        client,
+        worker,
+        time,
+        price,
+        status,
+        workername,
+        information
+
+        
+        
+      });
+
+    sendToken(user, 200, res)
+    return (res.json());
+  
+}
+exports.getorder = async(req, res,next) => {
+  categoryppp=req.params.q
+  console.log(categoryppp)
+  Order.find({client:categoryppp})
+    .then( book => res.json(book))
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
+exports.getworkerorder = async(req, res,next) => {
+  categoryppp=req.params.q
+  console.log(categoryppp)
+  Order.find({worker:categoryppp})
+    .then( book => res.json(book))
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
+exports.getorderdetail = async(req, res,next) => {
+  categoryppp=req.params.q
+  console.log(categoryppp)
+  x=await Order.find({workerp:categoryppp})
+  Client.find({_id:x})
+    .then( book => res.json(book))
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
+exports.orderstatus = async(req, res,next) => {
+  categoryppp=req.params.q
+  console.log(categoryppp)
+  Order.findByIdAndUpdate(categoryppp,{status:"accepted"})
+  
+    
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
+exports.orderstatuscompleted = async(req, res,next) => {
+  categoryppp=req.params.q
+  console.log(categoryppp)
+  Order.findByIdAndUpdate(categoryppp,{status:"completed"})
+  
+    
+    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }))
+}
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();
   res.status(statusCode).json({ sucess: true, token });

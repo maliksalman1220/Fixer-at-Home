@@ -6,80 +6,35 @@ const jwt = require("jsonwebtoken");
 
 
 
-const WorkerSchema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema({
   user_id:{
     type:String
   },
-  firstname: {
+  client: {
     type: String,
     required: [true, "Please provide firstname"]
     
   },
-  lastname: {
+   worker: {
     type: String,
     required: [true, "Please provide lstname"]
    
   },
-  username: {
+  time: {
     type: String,
     
-    required: [true, "Please provide username"],
-  },
-
-  email: {
-    type: String,
-    required: [true, "Please provide email address"],
-    //unique: true,
-    match: [
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      "Please provide a valid email",
-    ],
-  },
-  password: {
-    type: String,
-    required: [true, "Please add a password"],
-    minlength: 6,
-    
-  },
-
-
-  contactnumber: {
-    type: String,
-    
-
-  },
-  experience: {
-    type: String,
-    
-
-  },
-  rating: {
-    type: String,
-    
-
-  },
-  category: {
-    type: String,
-    
-
-  },
-  service: {
-    type: String,
-    
-
-  },
   
-  price:{type:String},
-  status: {
+  },price:{type:String},status:{type:String},
+  workername:{
+    type:String
+  },
+
+  
+
+
+  information:{
     type: String,
     
-
-  },
-  dateofbirth: {
-    type: Date,
-  },
-  address:{
-    type: String,
     
   },
 
@@ -90,7 +45,7 @@ const WorkerSchema = new mongoose.Schema({
 
 });
 
-WorkerSchema.pre("save", async function (next) {
+OrderSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
   }
@@ -100,17 +55,17 @@ WorkerSchema.pre("save", async function (next) {
   next();
 });
 
-WorkerSchema.methods.matchPassword = async function (password) {
+OrderSchema.methods.matchPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-WorkerSchema.methods.getSignedJwtToken = function () {
+OrderSchema.methods.getSignedJwtToken = function () {
   return jwt.sign({ id: this._id }, '3848dda248be81a9d95ac2234af4892517521e9046c93dffb6dd55fa6d4abfdde8422c', {
     expiresIn: "10min",
   });
 };
 
-WorkerSchema.methods.getResetPasswordToken = function () {
+OrderSchema.methods.getResetPasswordToken = function () {
   const resetToken = crypto.randomBytes(20).toString("hex");
 
   // Hash token (private key) and save to database
@@ -130,4 +85,4 @@ WorkerSchema.methods.getResetPasswordToken = function () {
 
 
 
-module.exports = Worker = conn.model('worker',WorkerSchema);
+module.exports = Order = conn.model('Order',OrderSchema);

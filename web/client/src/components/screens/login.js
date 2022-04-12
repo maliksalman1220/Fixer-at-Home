@@ -21,9 +21,14 @@ export const Login = () => {
         })
         const data = await response.json();
         
-        if (data.status === 'ok')
+        if (data.status === "success")
         {
-          alert("Login Successful");
+          alert("Login Successful")
+          localStorage.setItem("authToken", data.token);
+
+      
+      localStorage.setItem('user', JSON.stringify(data.error));
+      
         //   window.location.href = "/main";
         } 
         else if (data.error === 'User not found')

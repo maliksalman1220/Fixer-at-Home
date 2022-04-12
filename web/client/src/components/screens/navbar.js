@@ -37,7 +37,7 @@ function Navbar() {
     
     <ul class="d-flex align-items-end navbar-nav ml-lg-auto">  
       <li class="nav-item active">
-        <a class="nav-link " href="/home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/about">About Us</a>
@@ -68,7 +68,9 @@ function Navbar() {
 
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item dropdown" href="#"></a>
-          <a class="dropdown-item" href="#">Order History</a>
+          <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
+>Order History</a><a class="dropdown-item" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}
+>Order History</a>
           <a class="dropdown-item" href="/update_profile">Profile</a>
           <a class="dropdown-item" href="/registerp">Register Customer</a>
           <a class="dropdown-item" href="/registerp">Register Worker</a>

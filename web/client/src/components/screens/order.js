@@ -1,14 +1,14 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import List from './categorycard';
+import List from './ordercard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "./ordercard.css"
 
 
-class category extends Component {
+class order extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,17 +23,10 @@ class category extends Component {
 
     
 
-    let userDetails = JSON.parse(localStorage.getItem('user'));
-
-    console.log(userDetails)
-
-  
-
-    
-
+   
     axios
       
-      .get('/api/auth/getcategories/'+this.props.match.params.q)
+      .post('/api/auth/getorder/'+this.props.match.params.q)
       .then(res => {
           
         this.setState({
@@ -48,6 +41,7 @@ class category extends Component {
         
         
       })
+      .catch(err=>{console.log(err)})
       
   };
 
@@ -91,11 +85,18 @@ class category extends Component {
 
       <div>
                 
-<h1><em>Categories</em></h1>
+
+
 
 <div class="cards-list">
-
+<ul class="responsive-table" style={{width:870}}>
+    <li class="table-header">
+      <div class="col col-1">worker name</div>
+      <div class="col col-2">amount</div>
+      <div class="col col-3">status</div>
+      </li>
     {bookList}
+    </ul>
 
     </div>
     
@@ -105,4 +106,4 @@ class category extends Component {
 </div>
   )}}
     
-export default category;
+export default order;

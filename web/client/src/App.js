@@ -26,8 +26,7 @@ import viewprofile from "./components/screens/viewprofile";
 import RegisterScreenp from "./components/screens/Registeradmin";
 import PPPP from "./components/screens/PPP";
 import  category from "./components/screens/category";
-
-
+// import Sidebar from './components/screens/sidebar';
 
 
 import  workerlist from "./components/screens/workerlist";
@@ -38,13 +37,17 @@ import Update_profile from "./components/screens/update_profile";
 import Footer from './components/screens/footer';
 import WorkerCard from "./components/screens/worker_card";
 import Homepage from "./components/screens/homepage";
-
+// import sidebarTEMP from "./components/screens/sidebarTEMP";
 
 const App = () => {
   return (
     <Router>
       <div className="app">
+      
         <Navbar/>
+    <div className="container align-left">
+    </div>
+
         <Switch>
         <Route exact path="/home" component={Homepage} />
           <Route exact path="/registerp" component={RegisterScreenp} />
@@ -56,6 +59,7 @@ const App = () => {
           <Route exact path="/worker/:q" component={workerlist} />
           <Route exact path="/addworker" component={addworkerlist} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
+          {/* <Route exact path="/sidebarTEMP" component={sidebarTEMP} /> */}
           
           <Route exact path="/worker_card" component={WorkerCard} />
           <Route exact path="/login" component={Login} />

@@ -6,6 +6,8 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./addcatagory.css"
+// import Sidebar from './sidebar';
+// import "./sidebar"
 
 
 class   Addcategories extends Component {
@@ -104,9 +106,6 @@ class   Addcategories extends Component {
     return (
 
       <div>
-               
-
-
 
 <div class="cards-list cards-listt divv">
 
@@ -127,8 +126,6 @@ class   Addcategories extends Component {
           <input
             type="text"
             
-
-
             name="name"
             placeholder="name"
             value={this.state.name}

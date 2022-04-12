@@ -246,7 +246,7 @@
   } 
 
   .ccard:hover{
-    border-bottom: 5px solid #004c8c;
+    border-left: 30px solid #004c8c;
     /* border-top: 5px solid #004c8c; */
     transition: 0.3s;
   }

@@ -26,16 +26,6 @@ const BookCard = (props) => {
     const  book  = props.book;
     let send=
 
-
-  
-  // <div class="card lcardd 1 ">
-  //   <div class="card_image listimg color divv"> <img src= {book.pic} contrast/> </div>
-  //   <div class="card_title lcard_title  title-white divv">
-  //     <p>{book.name}</p>
-  //     <Button  className='pl lpl lcolor'><Link to={`/category/${book.name}`}>q</Link></Button>{' '}
-  //   </div>
-  // </div>
-  
 <div class="card lcard">
   <img src={book.pic} class="card-img-top" alt="..."/>
   <div class="card-body">

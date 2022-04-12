@@ -1,0 +1,31 @@
+.add{
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* margin: 1em auto; */
+    /* background-position: center; */
+    /* padding-bottom: auto; */
+    border: solid black 0.5px;
+    padding: 2%;
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    /* display: block; */
+    margin-top : 0.5% !important;
+    margin-bottom : 70px !important;
+    /* box-sizing: border-box; */
+    background-color: #ffffff !important;
+   }
+  
+   .del{
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* margin: 1em auto; */
+    /* background-position: center; */
+    /* padding-bottom: auto; */
+    border: solid black 0.5px;
+    padding: 2%;
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    /* display: block; */
+    margin-bottom: 0em ; 
+    /* box-sizing: border-box; */
+    background-color: #ffffff !important;
+   }
+  

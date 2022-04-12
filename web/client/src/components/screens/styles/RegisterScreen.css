@@ -26,7 +26,7 @@ body, html, .App, #root, .auth-wrapper {
  padding-right: 15px;
  padding-left: 15px;
 }
-.form-group{
+.reggrp{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  margin: 1em auto;
  background-position: center;
@@ -42,12 +42,12 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 
-.btn{
+.rr-btn .rbtn{
   margin: 1em auto !important;
   margin-bottom: 0em !important;
 }
 
-.btn-primary{
+.rbtn{
   background-color: #00bcd4 !important;
   color: white !important;
 
@@ -56,7 +56,7 @@ body, html, .App, #root, .auth-wrapper {
   background-color: #4bacb8 !important;
   color: white !important;
 } */
-.col-md-12{
+.r-coll{
   position: relative !important;
   min-height: 1px !important;
   padding-right: 15px !important;

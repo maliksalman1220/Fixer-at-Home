@@ -5,7 +5,7 @@ import List from './categorycard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "./addcatagory.css"
 
 
 class   Addcategories extends Component {
@@ -108,21 +108,21 @@ class   Addcategories extends Component {
 
 
 
-<div class="cards-list">
+<div class="cards-list cards-listt divv">
 
    
 
-    <div className="register-screen">
-      <div className= "my-5">
+    <div className="register-screen divv">
+      <div className= "my-5 divv">
       
     </div>
     
       <form onSubmit={this.onSubmit} className="register-screen__form" style={{width:359,marginTop:89}}>
-        <h3 className="register-screen__title">Add Category</h3>
+        <h3 className="register-screen__title h33">Add Category</h3>
         
        
          
-        <div className="form-group" >
+        <div className="form-group divv" >
         
           <input
             type="text"
@@ -138,7 +138,7 @@ class   Addcategories extends Component {
         </div>
         
         
-        <div className="form-group">
+        <div className="form-group divv">
           
           <input
             type="text"
@@ -154,9 +154,9 @@ class   Addcategories extends Component {
           Add
         </button>
         <div style={{marginTop:89}}></div>
-        <h3 className="register-screen__title">Delete Category </h3>
+        <h3 className="register-screen__title h33">Delete Category </h3>
         
-        <div className="form-group">
+        <div className="form-group divv">
           
           <input
             type="text"

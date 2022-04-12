@@ -105,7 +105,7 @@ const RegisterScreenp = ({ history }) => {
     <div className='row'>
       <div className='col-md-6 col-10 mx-auto'>
     
-      <form onSubmit={registerHandler} className='form-group form-group' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
+      <form onSubmit={registerHandler} className='form-group reggrp' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
       <h3 className = "text-center"> Register </h3> 
         {error && <span className="error-message">{error}</span>}
 
@@ -245,9 +245,9 @@ const RegisterScreenp = ({ history }) => {
           />
         </div>
         
-        <div class="col-md-12 text-right">
-        <button type="submit" onClick={registerHandler} class="btn btn-warning ml-2">Register</button>
-        <button type="button" onClick={registerHandlerp}class="btn btn-primary default">send verification code</button>
+        <div class="col-md-12  r-coll text-right">
+        <button type="submit" onClick={registerHandler} class="btn rr-btn btn-warning ml-2">Register</button>
+        <button type="button" onClick={registerHandlerp}class="btn rbtn btn-primary default">send verification code</button>
                 {/* <button type="submit" class="btn btn-primary">
                 Register
               </button> */}

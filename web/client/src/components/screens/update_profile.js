@@ -15,7 +15,7 @@ function Update_profile() {
 
   return (
       <div>
-    <div class="container mt-5 mb-5">
+    <div class="container ucontain mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center "><img class="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&usqp=CAU"/><span>Username</span> <span class="text-black-50">abc@emailaddress.com</span></div>
@@ -61,9 +61,9 @@ function Update_profile() {
                         value = {formValues.password}
                         onChange = {handleChange}/></div>
 
-                    <div class="col-md-12 text-right">
+                    <div class="col-md-12 udiv text-right">
                 <button type="button"  class="btn hello btn-primary">Cancel</button>
-                <button type="button" class="btn btn-warning ml-2">Save</button>
+                <button type="button" class="btn bello btn-warning ml-2">Save</button>
             </div>
                 </div>
             </div>

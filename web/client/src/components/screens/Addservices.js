@@ -125,27 +125,16 @@ class   Addservices extends Component {
                 
 
 
-<div class="cards-list">
-
-   
-
-    <div className="register-screen">
-      <div className= "my-5">
-      
-    </div>
-    
-      <form onSubmit={this.onSubmit} className="register-screen__form" style={{width:359,marginTop:89}}>
+    <div class="container mt-5 mb-5 addgrp">
+    <div class="row">
+  
+      <form onSubmit={this.onSubmit} className='form-group addgrpp' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
+        <div className=' add'>
         <h3 className="register-screen__title">Add Service</h3>
-        
-       
-         
-        <div className="form-group" >
-        
+
+        <div className="form-group addgrpp" >
           <input
             type="text"
-            
-
-
             name="name"
             placeholder="name"
             value={this.state.name}
@@ -155,7 +144,7 @@ class   Addservices extends Component {
         </div>
         
         
-        <div className="form-group">
+        <div className="form-group addgrpp">
           
           <input
             type="text"
@@ -167,13 +156,16 @@ class   Addservices extends Component {
             
           />
         </div>
-        <button type={this.onSubmit} className="btn btn-success">
+
+        <button type={this.onSubmit} class="btn rr-btn btn-warning ml-2">
           Add
         </button>
+        </div>
         <div style={{marginTop:89}}></div>
+        <div className='container del'>
         <h3 className="register-screen__title">Delete Service </h3>
         
-        <div className="form-group">
+        <div className="form-group addgrpp">
           
           <input
             type="text"
@@ -184,12 +176,11 @@ class   Addservices extends Component {
             onChange={this.onChange}
             
           />
-        </div>
-       
-        <button onClick={this.onclick} className="btn btn-danger">
+        </div>       
+        <button onClick={this.onclick} class="btn rbtn btn-primary default">
           Delete
         </button>
-
+          </div>
         <span className="register-screen__subtext">
           
         </span>
@@ -203,6 +194,6 @@ class   Addservices extends Component {
 </div>
 </div>
 </div>
-  )}}
+)}}
     
 export default Addservices

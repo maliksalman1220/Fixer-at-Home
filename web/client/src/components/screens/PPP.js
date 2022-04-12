@@ -82,22 +82,22 @@ class PPPP extends Component {
       bookList = books.map((book, k) =>
         <List book={book} key={k} />
       );}
-    
-    
-      
-    return (
+return (
 
-      <div>
+  <div>
                 
-<h1><em>Services</em></h1>
-
-<div class="cards-list">
+   <div className='services'> 
+   <div class="aligncenter">
+           <p><img width="27" height="27" src="https://jtkh01kfq943190ei48njh7k-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/title-img.png" /></p>
+           <h2 className='lfontu'>Popular Services</h2>
+           <h3 className='lfont'>What we Can Do</h3>
+          </div></div>
+   
+    <div class="cards-list lcards-list">
 
     {bookList}
 
     </div>
-    
-
 
 
 </div>

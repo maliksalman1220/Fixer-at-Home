@@ -5,6 +5,7 @@ import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col,ListGroup  
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Component } from 'react';
 import "./App.css"
+
 const onClick=(id)=>{
   console.log(id);
   axios
@@ -27,25 +28,22 @@ const BookCard = (props) => {
 
 
   
-  <div class="card 1">
-    <div class="card_image color"> <img src= {book.pic} contrast/> </div>
-    <div class="card_title title-white">
-      <p>{book.name}</p>
-      <Button  className='pl color'><Link to={`/category/${book.name}`}>q</Link></Button>{' '}
-    </div>
+  // <div class="card lcardd 1 ">
+  //   <div class="card_image listimg color divv"> <img src= {book.pic} contrast/> </div>
+  //   <div class="card_title lcard_title  title-white divv">
+  //     <p>{book.name}</p>
+  //     <Button  className='pl lpl lcolor'><Link to={`/category/${book.name}`}>q</Link></Button>{' '}
+  //   </div>
+  // </div>
+  
+<div class="card lcard">
+  <img src={book.pic} class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title lcard-title">{book.name}</h5>
+    <a href={`/category/${book.name}`} class="btn lbtn btn-warning">Select</a>
+
   </div>
-  
-
-
-
-
-  
-
-
-
-  
-
-    
+</div>
 
     return(
         <div>{send}</div>

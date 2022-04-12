@@ -108,3 +108,16 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 
+.l_btn{
+  background-color: #00bcd4   !important;
+  margin: 1em auto  !important;
+  margin-bottom: 0em  !important;
+}
+
+.l_btn{
+  background-color: #4bacb8   !important;
+  color: white  !important;
+  border: none   !important;
+
+}
+

@@ -8,6 +8,12 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 // Screens
 
+import EmployeeDashboard from "./components/screens/employeeDashboard/EmployeeDashboard";
+import ForgetPassword from "./components/screens/forgetPassword/ForgetPassword";
+import ResetPassword from "./components/screens/resetPassword/ResetPassword";
+
+
+
 import RegisterScreen from "./components/screens/RegisterScreen";
 
 
@@ -62,6 +68,9 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/update_profile" component={Update_profile} />
           <Route exact path="/placeorder/:q" component={placeorder} />
+          <Route exact path="/employeeDashboard" component = {EmployeeDashboard} />
+          <Route exact path="/resetPassword" component = {ResetPassword} />
+          <Route exact path="/forgetPassword" component = {ForgetPassword} />
         </Switch>
         {/* <Footer/> */}
       </div>

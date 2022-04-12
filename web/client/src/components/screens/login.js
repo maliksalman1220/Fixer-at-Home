@@ -70,7 +70,7 @@ export const Login = () => {
                 </div>
              
                 {/* <button type="submit" className="btn btn-primary btn-block">Login</button> */}
-        <button type="submit"  class="btn btn-warning ml-2">Login</button>
+        <button type="submit"  class="btn l_btn btn-warning ml-2">Login</button>
                 
                 {
                 /* <div class="col-md-12 text-right">

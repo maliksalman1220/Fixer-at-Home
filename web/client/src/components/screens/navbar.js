@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 // import Logo from '../images/m.PNG'
 import {Link} from 'react-router-dom'
 import '../screens/styles/navbar.css'
-import'./App.css'
+import'./Listp.css'
 // import ReorderIcon from "@material-ui/icons/Reorder";
 function Navbar() {
   // return (

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col,ListGroup  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Component } from 'react';
-import "./App.css"
+import "./Listp.css"
 
 const onClick=(id)=>{
   console.log(id);

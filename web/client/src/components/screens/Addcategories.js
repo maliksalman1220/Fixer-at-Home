@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./addcatagory.css"
-// import Sidebar from './sidebar';
+import Sidebar from './sidebar';
 // import "./sidebar"
 
 
@@ -105,23 +105,13 @@ class   Addcategories extends Component {
       
     return (
 
-      <div>
+      <div className='roww'>
+      <div className='col-md-6 col-10 mx-auto'>
 
-<div class="cards-list cards-listt divv">
-
-   
-
-    <div className="register-screen divv">
-      <div className= "my-5 divv">
-      
-    </div>
-    
-      <form onSubmit={this.onSubmit} className="register-screen__form" style={{width:359,marginTop:89}}>
-        <h3 className="register-screen__title h33">Add Category</h3>
-        
+      <form onSubmit={this.onSubmit} className="llogform" style={{width:"100%"}}>
+        <h3 className="register-screen__title">Add Category</h3>
        
-         
-        <div className="form-group divv" >
+        <div className="form-group" >
         
           <input
             type="text"
@@ -135,7 +125,7 @@ class   Addcategories extends Component {
         </div>
         
         
-        <div className="form-group divv">
+        <div className="form-group">
           
           <input
             type="text"
@@ -147,13 +137,13 @@ class   Addcategories extends Component {
             
           />
         </div>
-        <button type={this.onSubmit} className="btn btn-success">
+        <button type={this.onSubmit} className="btn add_btn btn-warning ml-0">
           Add
         </button>
         <div style={{marginTop:89}}></div>
-        <h3 className="register-screen__title h33">Delete Category </h3>
+        <h3 className="register-screen__title">Delete Category </h3>
         
-        <div className="form-group divv">
+        <div className="form-group">
           
           <input
             type="text"
@@ -166,21 +156,11 @@ class   Addcategories extends Component {
           />
         </div>
        
-        <button onClick={this.onclick} className="btn btn-danger">
+        <button onClick={this.onclick} className="btn add_btn btn-warning ml-0">
           Delete
         </button>
 
-        <span className="register-screen__subtext">
-          
-        </span>
-   
-
-
-    
-
-
 </form>
-</div>
 </div>
 </div>
   )}}

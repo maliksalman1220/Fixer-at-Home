@@ -1,6 +1,5 @@
 import {useState, useEffect, React} from 'react';
-import ForgetCSS from "./ForgetPassword.module.css"
-//Right now, all error messages are displayed after submitting
+import "./forgetPassword.css"
 
 function ForgetPassword  ({submitForm}){
     function validateInfo(values) { 
@@ -57,36 +56,47 @@ function ForgetPassword  ({submitForm}){
  
     console.log(values)
     return (     
-            <form className = {ForgetCSS.form} onSubmit={handleSubmit}> 
-               <h1 className= {ForgetCSS.h1} >
-                    Forget Password</h1>
-                    
-                <div className = {ForgetCSS.form_input}>                                  
-                    <label htmlFor='email' className= {ForgetCSS.form_label} >
+        
+        <div class = "container Pcontain mt-5 mb-5 pt-3 pb-4"> 
+            <form  
+            class = "d-flex flex-column align-items-center pb-1"
+            onSubmit={handleSubmit}
+            
+            > 
+               <h1
+               class = "text-center"
+               >
+                Forget Password</h1>             
+                    <label 
+                    class = "text-center "
+                    >
                     Please enter your email, so we can send a link to reset your password.
                     </label>
                 
                     <input 
-                        id = 'email'
-                        type = "email"
                         name = "email"
+                        class = "text-center"
                         placeholder= 'Enter your email'
-                        className= {ForgetCSS.form_label}
                         value = {values.email}
                         onChange = {handleChange}
                         style={{width: "30%"}}
 
                     />
 
-                    {errors.email && <p className= {ForgetCSS.error_msg} >{errors.email}</p>} 
+                    {errors.email && <p class ="text-danger text-center">{errors.email}</p>} 
+                <div 
+                class = "d-flex flex-column align-items-center pt-2">
+                    <button 
+                        class="btn btn-warning ml-2"
+                        style={{width: "300px"}}
+                        type='submit'>
+                        Send My Password
+                    </button>
                 </div>
-                <button 
-                    className= {ForgetCSS.btn}
-                    style={{width: "300px"}}
-                    type='submit'>
-                    Send My Password
-                </button>
             </form>
+
+            
+        </div>
   )
 }
 

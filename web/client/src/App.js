@@ -17,8 +17,8 @@ import ResetPassword from "./components/screens/resetPassword/ResetPassword";
 import RegisterScreen from "./components/screens/RegisterScreen";
 
 
-import Addservices from "./components/screens/Addservices";
-import Addcategories from "./components/screens/Addcategories";
+import Addservices from "./components/screens/addservicesLayout";
+import AddcatagoriesLayout from "./components/screens/addcatagoriesLayout";
 
 import viewprofile from "./components/screens/viewprofile";
 
@@ -32,7 +32,6 @@ import  workerorderdetail from "./components/screens/workerorderdetail";
 import  order from "./components/screens/order";
 
 import placeorder from "./components/screens/placeorder";
-
 
 
 import  workerlist from "./components/screens/workerlist";
@@ -59,7 +58,7 @@ const App = () => {
           <Route exact path="/registerp" component={RegisterScreenp} />
           <Route exact path="/register" component={RegisterScreen} />
           <Route exact path="/Addservices" component={Addservices} />
-          <Route exact path="/Addcategories" component={Addcategories} />
+          <Route exact path="/Addcategories" component={AddcatagoriesLayout} />
           <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/category/:q" component={category} />
           <Route exact path="/worker/:q" component={workerlist} />
@@ -72,6 +71,7 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/update_profile" component={Update_profile} />
           <Route exact path="/placeorder/:q" component={placeorder} />
+          
           <Route exact path="/employeeDashboard" component = {EmployeeDashboard} />
           <Route exact path="/resetPassword" component = {ResetPassword} />
           <Route exact path="/forgetPassword" component = {ForgetPassword} />

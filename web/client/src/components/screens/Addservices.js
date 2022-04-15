@@ -6,8 +6,8 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
-
-
+import Sidebar from './sidebar';
+import "./addservices.css"
 class   Addservices extends Component {
   constructor() {
     super();
@@ -120,19 +120,14 @@ class   Addservices extends Component {
     
       
     return (
+      <div className='roww'>
+      <div className='col-md-6 col-10 mx-auto'>
 
-      <div>
-                
-
-
-    <div class="container mt-5 mb-5 addgrp">
-    <div class="row">
-  
-      <form onSubmit={this.onSubmit} className='form-group addgrpp' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
-        <div className=' add'>
+      <form onSubmit={this.onSubmit} className='llogform' style={{width:"100%"}}>
+        <div className='addserv'>
         <h3 className="register-screen__title">Add Service</h3>
 
-        <div className="form-group addgrpp" >
+        <div className="form-group" >
           <input
             type="text"
             name="name"
@@ -155,14 +150,15 @@ class   Addservices extends Component {
             onChange={this.onChange}
             
           />
-        </div>
-
-        <button type={this.onSubmit} class="btn rr-btn btn-warning ml-2">
+  
+  <button type={this.onSubmit} class="btn add_btn btn-warning ml-0">
           Add
         </button>
         </div>
-        <div style={{marginTop:89}}></div>
-        <div className='container del'>
+
+        </div>
+        <div style={{marginTop:"10%"}}></div>
+        <div className='addserv'>
         <h3 className="register-screen__title">Delete Service </h3>
         
         <div className="form-group addgrpp">
@@ -176,22 +172,16 @@ class   Addservices extends Component {
             onChange={this.onChange}
             
           />
-        </div>       
-        <button onClick={this.onclick} class="btn rbtn btn-primary default">
+          
+        <button onClick={this.onclick} class="btn add_btn btn-warning ml-0">
           Delete
         </button>
+        </div>  
+             
           </div>
-        <span className="register-screen__subtext">
-          
-        </span>
-   
-
-
-    
-
 
 </form>
-</div>
+
 </div>
 </div>
 )}}

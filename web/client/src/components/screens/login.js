@@ -47,7 +47,7 @@ export const Login = () => {
       <div className='col-md-6 col-10 mx-auto'>
 
       {/* <div class="container"> */}
-            <form onSubmit={LoginUser} className='form' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
+            <form onSubmit={LoginUser} className='logform' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
             <h3 className = "text-center"> Login </h3> 
                
                

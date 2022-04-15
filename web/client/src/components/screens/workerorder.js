@@ -85,27 +85,18 @@ class order extends Component {
     return (
 
       <div>
-                
-
-
-
-<div class="cards-list">
-<ul class="responsive-table" style={{width:870}}>
-    <li class="table-header">
+<ul class="responsive-table wlist" style={{width:870}}>
+    <li class="wtable-header ok">
       <div class="col col-1">worker name</div>
       <div class="col col-2">amount</div>
       <div class="col col-3">status</div>
-      <div class="col col-3">order detail</div>
+      <div class="col col-4">order detail</div>
       </li>
     {bookList}
     </ul>
 
     </div>
     
-
-
-
-</div>
   )}}
     
 export default order;

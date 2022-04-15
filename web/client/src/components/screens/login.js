@@ -24,12 +24,10 @@ export const Login = () => {
         if (data.status === "success")
         {
           alert("Login Successful")
-          localStorage.setItem("authToken", data.token);
-
-      
-      localStorage.setItem('user', JSON.stringify(data.error));
-      
-        //   window.location.href = "/main";
+          localStorage.setItem("authToken", data.token);      
+          localStorage.setItem('user', JSON.stringify(data.error));
+          localStorage.setItem('user_type', data.type);
+        
         } 
         else if (data.error === 'User not found')
         {
@@ -37,7 +35,7 @@ export const Login = () => {
         }
         else if (data.error === 'Password not valid')
         {
-            alert("Incorrect Password");
+          alert("Incorrect Password");
         }
       }
 

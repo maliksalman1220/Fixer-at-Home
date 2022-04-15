@@ -21,8 +21,10 @@ const {
   order,getorder,getworkerorder,
   orderstatus,
   orderstatuscompleted,
-
-
+  Userprofile,
+  Workerprofile,
+  Updateprofile,
+  Workerprofileupdate,
   LoginUser,
   
 } = require("../controllers/auth");
@@ -46,8 +48,10 @@ router.route("/getorder/:q").post(getorder);
 router.route("/getworkerorder/:q").post(getworkerorder);
 router.route("/orderstatus/:q").post(orderstatus);
 router.route("/orderstatuscompleted/:q").post(orderstatuscompleted);
-
-
+router.route("/profile/:q").get(Userprofile);
+router.route("/workerprofile/:q").get(Workerprofile);
+router.route("/updateprofile/:q").post(Updateprofile);
+router.route("/workerprofileupdate/:q").post(Workerprofileupdate);
 
 
 

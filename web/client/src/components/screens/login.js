@@ -24,20 +24,10 @@ export const Login = () => {
         if (data.status === "success")
         {
           alert("Login Successful")
-<<<<<<< HEAD
           localStorage.setItem("authToken", data.token);      
           localStorage.setItem('user', JSON.stringify(data.error));
           localStorage.setItem('user_type', data.type);
         
-=======
-          console.log(data.token)
-          localStorage.setItem("authToken", data.token);
-
-      
-      localStorage.setItem('user', JSON.stringify(data.error));
-      
-        //   window.location.href = "/main";
->>>>>>> 8598dc74f8d830c8de5378249a1a8fa5598f6b1a
         } 
         else if (data.error === 'User not found')
         {

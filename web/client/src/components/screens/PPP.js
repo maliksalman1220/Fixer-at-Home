@@ -17,20 +17,8 @@ class PPPP extends Component {
   }
 
 
-
-
    componentDidMount(){
-
-    
-
-
-    
-
-  
-
-    
-
-    axios
+     axios
       .get('/api/auth/getservices')
       .then(res => {
           
@@ -51,17 +39,14 @@ class PPPP extends Component {
 
   qqqq = e => {
     e.preventDefault();
-
-    
+  
 
     axios
       .put('/api/auth/qqqq/')
       .then(res => {
 
 
-        
-
-        
+      
         
         
       })

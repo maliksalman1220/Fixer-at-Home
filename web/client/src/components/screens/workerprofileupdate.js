@@ -3,20 +3,18 @@ import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import '../screens/styles/update_profile.css'
 
-function Update_profile(props) {
+function Workerprofileupdate(props) {
     // error handling still to be done
-    const initialValues = { firstname: "", lastname: "", email: "", confirm_password: "", phonenumber: "", password: "", address: "", dob: "", country: "" };
+    const initialValues = { firstname: "", lastname: "", email: "", phonenumber: "", address: "", dob: "", country: "", experience: "", rating: "", category: "" };
     const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
     var new_date = "";
     const history = useHistory();
-
+    const user_type = localStorage.getItem('user_type');
     const user_id = localStorage.getItem('user');
     
     async function getUser() {
 
-        const response = await fetch('http://localhost:5000/api/auth/profile/'+user_id, {
+        const response = await fetch('http://localhost:5000/api/auth/workerprofile/'+user_id, {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -28,7 +26,6 @@ function Update_profile(props) {
 
             if (data.user.dateofbirth != null) {
                 new_date = format(parseISO(data.user.dateofbirth), 'yyyy-MM-dd');
-                console.log(new_date);
             }
 
             setFormValues({
@@ -39,7 +36,10 @@ function Update_profile(props) {
                 phonenumber: data.user.contactnumber,
                 address: data.user.address,
                 dob: new_date,
-                country: data.user.country
+                country: data.user.country,
+                experience: data.user.experience,
+                rating: data.user.rating,
+                category: data.user.category
             }); 
         }
         else {
@@ -54,7 +54,7 @@ function Update_profile(props) {
 
 
     function handleClick() {
-        history.push("/userprofile");
+        history.push("/workerprofile");
     }
 
     useEffect(() => {
@@ -62,18 +62,16 @@ function Update_profile(props) {
     }, [])
 
 
-    async function updateProfile(e) {
+    async function workerupdateProfile(e) {
         console.log(props.username);
         e.preventDefault();
-        console.log(formValues);
 
-        const response = await fetch('http://localhost:5000/api/auth/updateprofile/'+user_id, {
+        const response = await fetch('http://localhost:5000/api/auth/workerprofileupdate/'+user_id, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username: formValues.username,
                 firstname: formValues.firstname,
                 lastname: formValues.lastname,
                 email: formValues.email,
@@ -81,6 +79,9 @@ function Update_profile(props) {
                 address: formValues.address,
                 dob: formValues.dob,
                 country: formValues.country,
+                experience: formValues.experience,
+                rating: formValues.rating,
+                category: formValues.category,
             }),
         })
         const data = await response.json();
@@ -99,7 +100,7 @@ function Update_profile(props) {
             <div class="container ucontain mt-5 mb-5">
                 <div class="row">
                     <div class="col-md-3 border-right">
-                        <div class="d-flex flex-column align-items-center "><img class="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&usqp=CAU" /><span>{props.username}</span> <span class="text-black-50">{formValues.email}</span></div>
+                        <div class="d-flex flex-column align-items-center "><img class="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&usqp=CAU" /><span>{formValues.username}</span> <span class="text-black-50">{formValues.email}</span></div>
                     </div>
                     <div class="col-md-7">
                         <div class="p-3 py-5">
@@ -109,38 +110,53 @@ function Update_profile(props) {
                             <div class="row mt-2">
                                 <div class="col-md-6"><label class="labels"> First Name</label><input type="text" class="form-control" placeholder=" Enter First Name"
                                     name="firstname"
-                                    value={formValues.firstname}
+                                    value={formValues.firstname || ''}
                                     onChange={handleChange} /></div>
                                 <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control"
                                     name="lastname"
-                                    value={formValues.lastname}
+                                    value={formValues.lastname  || ''}
                                     onChange={handleChange} placeholder=" Enter Last Name" /></div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" placeholder=" Enter phone number"
                                     name="phonenumber"
-                                    value={formValues.phonenumber}
+                                    value={formValues.phonenumber  || ''}
                                     onChange={handleChange} /></div>
                                 <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder=" Enter address"
                                     name="address"
-                                    value={formValues.address}
+                                    value={formValues.address  || ''}
                                     onChange={handleChange} /></div>
                                 <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder=" Enter email id"
                                     name="email"
-                                    value={formValues.email}
+                                    value={formValues.email  || ''}
                                     readOnly /></div>
                                 <div class="col-md-12"><label class="labels">Date of Birth</label><input type="date" class="form-control" placeholder="Date of Birth"
                                     name="dob"
-                                    value={formValues.dob}
+                                    value={formValues.dob  || ''}
                                     onChange={handleChange} /></div>
                                 <div class="col-md-12"><label class="labels">Country</label><input type="text" class="form-control" placeholder="Country"
                                     name="country"
-                                    value={formValues.country}
+                                    value={formValues.country  || ''}
                                     onChange={handleChange} /></div>
+                                <div className="col-md-12"><label className="labels">Rating</label><input type="text" className="form-control" placeholder="rating"
+                                    name="rating"
+                                    value={formValues.rating  || ''}
+                                    onChange={handleChange}
+                                /></div>
+                                <div className="col-md-12"><label className="labels">Category</label><input type="text" className="form-control" placeholder="category"
+                                    name="category"
+                                    value={formValues.category  || ''}
+                                    onChange={handleChange}
+                                /></div>
+                                <div className="col-md-12"><label className="labels">Experience</label><input type="text" className="form-control" placeholder="experience"
+                                    name="experience"
+                                    value={formValues.experience  || ''}
+                                    onChange={handleChange}
+                                /></div>
 
                                 <div class="col-md-12 udiv text-right">
                                     <button type="button" class="btn hello btn-primary" onClick={handleClick}>Cancel</button>
-                                    <button type="button" class="btn bello btn-warning ml-2" onClick={updateProfile}>Save</button>
+                                    <button type="button" class="btn bello btn-warning ml-2" onClick={workerupdateProfile}>Save</button>
                                 </div>
                             </div>
                         </div>
@@ -151,4 +167,4 @@ function Update_profile(props) {
     )
 }
 
-export default Update_profile
+export default Workerprofileupdate;

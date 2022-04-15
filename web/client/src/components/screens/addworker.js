@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./addworker.css"
 
 
-class addworkerlist extends Component {
+class Addworkerlist extends Component {
   constructor() {
     super();
     this.state = {
@@ -86,21 +86,14 @@ console.log(this.state.x)
     
       
     return (
-
       <div>
-                
-<h1><em>Categories</em></h1>
+    {/* <h2> Approve Worker Requests </h2> */}
 
-<div class="cards-list">
-
+  <div class="cards-list">
     {bookList}
 
     </div>
-    
-
-
-
-</div>
+    </div>
   )}}
     
-export default addworkerlist;
+export default Addworkerlist;

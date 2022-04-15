@@ -11,7 +11,8 @@ class Addworkerlist extends Component {
   constructor() {
     super();
     this.state = {
-      x:[]
+      x:[],
+      error:"",
     };
   }
 
@@ -23,7 +24,34 @@ class Addworkerlist extends Component {
     
 
 
+  
+
     
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+try{
+  
+       axios.get("/api/private/Admin", config)
+       .catch(err=>{console.log(err)})
+      .then(res=>{if(res.data.error!=""){console.log(res.data.error);this.setState({error:res.data.error})}})
+}
+      
+    catch (error) {
+      console.log(error,"p")
+      
+      
+  
+
+    
+
+  
+      
+  };
+
 
   
 
@@ -85,7 +113,9 @@ console.log(this.state.x)
     
     
       
-    return (
+      return this.state.error ? (
+        <span className="error-message">{this.state.error}</span>
+      ) : (
       <div>
     {/* <h2> Approve Worker Requests </h2> */}
 

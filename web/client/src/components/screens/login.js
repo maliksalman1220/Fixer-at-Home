@@ -1,8 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import "./styles/login.css";
+import { useHistory } from "react-router-dom";
 
-export const Login = () => {
+export const Login = ({history}) => {
+  
+
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
 
@@ -27,6 +30,8 @@ export const Login = () => {
           localStorage.setItem("authToken", data.token);      
           localStorage.setItem('user', JSON.stringify(data.error));
           localStorage.setItem('user_type', data.type);
+          
+          if(data.accountp=="admin"){console.log("p");history.push("/Addcategories")}
         
         } 
         else if (data.error === 'User not found')

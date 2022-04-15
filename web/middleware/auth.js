@@ -55,7 +55,7 @@ exports.protectadmin = async (req, res, next) => {
   console.log(req.headers.authorization)
 
   if (!token) {
-    return next(new ErrorResponse("Not authorized to access this routep", 401));
+    res.status(200).json({ error: 'please login' })
   }
 
   
@@ -64,7 +64,7 @@ exports.protectadmin = async (req, res, next) => {
     const user = await Admin.findById(decoded.id);
 
     if (!user) {
-      res.status(200).json({ error: 'on;ly admin' })
+      res.status(200).json({ error: 'only admin' })
     }
 
     req.user = user;

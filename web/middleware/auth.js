@@ -2,7 +2,76 @@ const jwt = require("jsonwebtoken");
 const ErrorResponse = require("../utils/errorResponse");
 const  Client = require("../models/Client");
 
-exports.protect = async (req, res, next) => {
+const  Admin = require("../models/Admin");
+const  Worker = require("../models/Worker");
+
+exports.protectworker = async (req, res, next) => {
+  let token;
+
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    token = req.headers.authorization.split(" ")[1];
+  }
+
+
+
+
+  console.log(req.headers.authorization)
+
+  if (!token) {
+    return   res.status(404).json({ error: 'please login' })
+  }
+
+  
+    const decoded = jwt.verify(token,'3848dda248be81a9d95ac2234af4892517521e9046c93dffb6dd55fa6d4abfdde8422c');
+
+    const user = await Worker.findById(decoded.id);
+
+    if (!user) {
+      res.status(404).json({ error: 'only admin' })
+    }
+
+    req.user = userp;
+    
+    
+    
+};
+
+exports.protectadmin = async (req, res, next) => {
+  let token;
+
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    token = req.headers.authorization.split(" ")[1];
+  }
+
+
+
+
+  console.log(req.headers.authorization)
+
+  if (!token) {
+    return next(new ErrorResponse("Not authorized to access this routep", 401));
+  }
+
+  
+    const decoded = jwt.verify(token,'3848dda248be81a9d95ac2234af4892517521e9046c93dffb6dd55fa6d4abfdde8422c');
+
+    const user = await Admin.findById(decoded.id);
+
+    if (!user) {
+      res.status(200).json({ error: 'on;ly admin' })
+    }
+
+    req.user = user;
+
+    
+};
+exports.protectclientp = async (req, res, next) => {
   let token;
 
   if (

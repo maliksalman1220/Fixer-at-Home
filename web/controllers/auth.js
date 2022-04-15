@@ -142,11 +142,10 @@ exports.LoginUser = async (req, res, next) => {
     if (!isPasswordValid) {
       return next(new ErrorResponse("Invalid credentials", 401));
     }
-const x= await user.getSignedJwtToken();
-    return res.json({ status: 'success', error: user.id,token:x,accountp:type}); 
 
 
-  return res.json({ status: 'success', error: user.id, type: type });
+    const x= await user.getSignedJwtToken();
+    return res.json({ status: 'success', error: user.id,token:x, type: type}); 
 };
 
 

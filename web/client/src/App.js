@@ -35,7 +35,9 @@ import placeorder from "./components/screens/placeorder";
 
 
 import  workerlist from "./components/screens/workerlist";
-import  addworkerlist from "./components/screens/addworker";
+
+
+import  Addworkerlist from "./components/screens/addworker";
 import { Login } from "./components/screens/login";
 import Navbar from './components/screens/navbar';
 import Update_profile from "./components/screens/update_profile";
@@ -43,6 +45,7 @@ import Footer from './components/screens/footer';
 import WorkerCard from "./components/screens/worker_card";
 import Homepage from "./components/screens/homepage";
 // import sidebarTEMP from "./components/screens/sidebarTEMP";
+import addworkerLayout_admin from "./components/screens/addworkerLayout_admin"
 
 const App = () => {
   return (
@@ -54,15 +57,21 @@ const App = () => {
     </div>
 
         <Switch>
-        <Route exact path="/home" component={Homepage} />
+          
+          <Route exact path="/home" component={Homepage} />
           <Route exact path="/registerp" component={RegisterScreenp} />
           <Route exact path="/register" component={RegisterScreen} />
+
+        {/* admin pages */}
           <Route exact path="/Addservices" component={Addservices} />
           <Route exact path="/Addcategories" component={AddcatagoriesLayout} />
           <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/category/:q" component={category} />
           <Route exact path="/worker/:q" component={workerlist} />
-          <Route exact path="/addworker" component={addworkerlist} />
+          <Route exact path="/addworker" component={addworkerLayout_admin} />
+          {/* <Route exact path="/addworker" component={Addworkerlist} /> */}
+
+          {/* customer and worker - in progress */}
           <Route exact path="/workerorder/:q" component={workerorder} />
           <Route exact path="/workerorderdetail/:q" component={workerorderdetail} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
@@ -71,7 +80,6 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/update_profile" component={Update_profile} />
           <Route exact path="/placeorder/:q" component={placeorder} />
-          
           <Route exact path="/employeeDashboard" component = {EmployeeDashboard} />
           <Route exact path="/resetPassword" component = {ResetPassword} />
           <Route exact path="/forgetPassword" component = {ForgetPassword} />

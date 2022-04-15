@@ -22,7 +22,22 @@ class order extends Component {
    componentDidMount(){
 
     
-
+   
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        };
+  
+      
+           axios.get("/api/private", config)
+          
+        .catch =(error) => {
+          console.log(error.response)
+          
+          
+        }
    
     axios
       

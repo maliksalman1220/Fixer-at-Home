@@ -24,6 +24,7 @@ export const Login = () => {
         if (data.status === "success")
         {
           alert("Login Successful")
+          console.log(data.token)
           localStorage.setItem("authToken", data.token);
 
       

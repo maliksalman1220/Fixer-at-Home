@@ -100,7 +100,7 @@ workerp=await Categories.findOne({name:category})
       
     });
 
-    sendToken(user, 200, res)
+    sendToken(Client, 200, res)
     return (res.json({ 'msg': x }));
   } catch (err) {
     next(err);
@@ -111,6 +111,7 @@ exports.LoginUser = async (req, res, next) => {
 
   user = await Client.findOne({
     email: req.body.email,
+    if(user){sendToken(Client, 200, res)}
   });
 
   if (!user) 
@@ -135,8 +136,8 @@ exports.LoginUser = async (req, res, next) => {
     if (!isPasswordValid) {
       return next(new ErrorResponse("Invalid credentials", 401));
     }
-
-    return res.json({ status: 'success', error: user.id }); 
+const x= await user.getSignedJwtToken();
+    return res.json({ status: 'success', error: user.id,token:x}); 
 
 
   

@@ -16,7 +16,7 @@ app.use(cors());
 app.use("/api/auth", require("./routes/auth"));
 
 //app.use("/api/books", require("./routes/books"));
-//app.use("/api/private", require("./routes/private"));
+app.use("/api/private", require("./routes/private"));
 
 // Error Handler Middleware
 app.use(errorHandler);

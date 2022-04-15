@@ -1,5 +1,5 @@
 import {useState, useEffect, React} from 'react';
-import ResetCSS from "./ResetPassword.module.css"
+import "./resetPassword.css";
 //Right now, all error messages are displayed after submitting
 
 function ResetPassword ({submitForm}) {
@@ -75,54 +75,52 @@ function ResetPassword ({submitForm}) {
     console.log(values)
     return (
 
-        <div>
-            <form className = {ResetCSS.form} onSubmit={handleSubmit}> 
-              <h1 className= {ResetCSS.h1} >
-                  Reset Password</h1>
-             
-                <div className = {ResetCSS.form_input}>
-                    <label htmlFor='password' className= {ResetCSS.form_label}>
+        <div class = "container Rcontain mt-5 mb-5 pt-3 pb-4">
+            <form 
+            class = "d-flex flex-column align-items-center pb-1"
+            onSubmit={handleSubmit}
+            > 
+                  <h1>
+                    Reset Password</h1>
+                    <label htmlFor='password' >
                     Password
                     </label>
 
                     <input 
-                        id = 'password'
-                        type = "password"
                         name = "password"
+                        class = "text-center"
                         placeholder= 'Enter your password'
-                        className = {ResetCSS.form_label}
-
                         value = {values.password}
                         onChange = {handleChange}
                     />
 
-                    {errors.password && <p className= {ResetCSS.error_msg}>{errors.password}</p>} 
+                    {errors.password && <p class ="text-danger text-center">{errors.password}</p>} 
 
                 
-                    <label htmlFor='confirmPassword' className= {ResetCSS.form_label}>
+                    <label>
                     Confirm Password
                     </label>
 
                     <input 
-                        id = 'confirmPassword'
-                        type = "password"
                         name = "confirmPassword"
-                        className = {ResetCSS.form_label}
+                        class = "text-center"
                         placeholder= 'Re-enter your password'
                         value = {values.confirmPassword}
                         onChange = {handleChange}
                     />
-                    {errors.confirmPassword && <p className= {ResetCSS.error_msg}>{errors.confirmPassword}</p>} 
-
-                       
-                </div>
-                <button 
-                    className= {ResetCSS.btn}
-                    style={{width: "300px"}}
-                    type='submit'>
-                    Confirm Password
-                </button>
-            </form>
+                    {errors.confirmPassword && <p class ="text-danger text-center" >{errors.confirmPassword}</p>} 
+                    <div
+                    class = "d-flex flex-column align-items-center pt-2">
+                        <button 
+                            type='submit'
+                            class="btn btn-warning ml-2"
+                            style={{width: "300px"}}
+                            >
+                            Confirm Password
+                        </button>
+                    </div>
+            </form>        
+           
         </div>
   )
 }

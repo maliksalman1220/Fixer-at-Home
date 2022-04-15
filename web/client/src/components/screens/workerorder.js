@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./ordercard.css"
+import { auto } from '@popperjs/core';
 
 
 class order extends Component {
@@ -83,29 +84,35 @@ class order extends Component {
     
       
     return (
+      
+  <div>
+  <ul class="mx-auto tablebody" style={{width: "60%", marginTop: "10%"}}>
+      <li class="table-headerR ">
+        <div >Worker Name</div>
+        <div >Amount</div>
+        <div >Status</div>
+        <div >Order Detail</div>
+        </li>
+          {bookList}
+      </ul>
+  </div>
 
-      <div>
-                
-
-
-
-<div class="cards-list">
-<ul class="responsive-table" style={{width:870}}>
-    <li class="table-header">
-      <div class="col col-1">worker name</div>
-      <div class="col col-2">amount</div>
-      <div class="col col-3">status</div>
-      <div class="col col-3">order detail</div>
-      </li>
+      /* <table class="table mx-auto" style={{width: "60%", marginTop: "10%"}}>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th  scope="col">Worker Name</th>
+      <th  scope="col">Amount</th>
+      <th  scope="col">Status</th>
+      <th  scope="col" >Order Detail</th>
+    </tr>
+  </thead>
+  <tbody>
     {bookList}
-    </ul>
-
-    </div>
-    
+  </tbody>
+</table> */
 
 
-
-</div>
   )}}
     
 export default order;

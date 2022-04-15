@@ -24,10 +24,20 @@ export const Login = () => {
         if (data.status === "success")
         {
           alert("Login Successful")
+<<<<<<< HEAD
           localStorage.setItem("authToken", data.token);      
           localStorage.setItem('user', JSON.stringify(data.error));
           localStorage.setItem('user_type', data.type);
         
+=======
+          console.log(data.token)
+          localStorage.setItem("authToken", data.token);
+
+      
+      localStorage.setItem('user', JSON.stringify(data.error));
+      
+        //   window.location.href = "/main";
+>>>>>>> 8598dc74f8d830c8de5378249a1a8fa5598f6b1a
         } 
         else if (data.error === 'User not found')
         {
@@ -44,7 +54,7 @@ export const Login = () => {
       <div className='col-md-6 col-10 mx-auto'>
 
       {/* <div class="container"> */}
-            <form onSubmit={LoginUser} className='form' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
+            <form onSubmit={LoginUser} className='logform' style={{width:"80%", marginLeft:"10%", marginTop:"10%"}}>
             <h3 className = "text-center"> Login </h3> 
                
                

@@ -1,15 +1,23 @@
-.worker_card {
-  width: 400px;
-  border: none;
-  border-radius: 10px;
-  background-color: #fff
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
 
 .workercard_container{
   width: 400px;
   border: none;
   border-radius: 10px;
-  background-color: #fff
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+  border:  1px solid #d9d9da;
+ font-family:  Poppins,sans-serif !important; 
+ padding: 0.5%;
+  
+}
+
+.wimage{
+  margin: auto;
+}
+.ctext{
+ font-family:  Poppins,sans-serif !important; 
+ font-weight: bold;
 }
 .stats {
   background: #f2f5f8 !important;
@@ -98,19 +106,23 @@
 
 .workercard_button{
   margin-right: 2px  !important;
-  border: 0.05px solid #4bacb8  !important;
-  color: white  !important;
+  border: none;
+  background-color: rgb(255, 208, 0);
+  color: black  !important;
+  margin-top: 0.5%;
 }
 
 .workercard_button:hover{
-  /* background-color: #ecfafd; */
+  background-color: rgb(255, 223, 79);
   transition: background-color 0.5s ease;
 }
 
 .workercard_button2{
   margin-left: 2px  !important;
-  border: 0.05px solid black !important;
-  background-color: #ffffff ;
+  border: none;
+  /* border: 0.05px solid black !important; */
+  background-color: #004c8c ;
+  margin: 5%;
 }
 
 

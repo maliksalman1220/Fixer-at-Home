@@ -99,7 +99,7 @@ exports.registerworker = async (req, res, next) => {
 
     });
 
-    sendToken(user, 200, res)
+    sendToken(Client, 200, res)
     return (res.json({ 'msg': x }));
   } catch (err) {
     next(err);
@@ -111,6 +111,7 @@ exports.LoginUser = async (req, res, next) => {
   var type = "";
   user = await Client.findOne({
     email: req.body.email,
+    if(user){sendToken(Client, 200, res)}
   });
 
   if (user) {
@@ -138,9 +139,20 @@ exports.LoginUser = async (req, res, next) => {
 
   const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
 
+<<<<<<< HEAD
   if (!isPasswordValid) {
     return next(new ErrorResponse("Password not valid", 401));
   }
+=======
+  
+
+    if (!isPasswordValid) {
+      return next(new ErrorResponse("Invalid credentials", 401));
+    }
+const x= await user.getSignedJwtToken();
+    return res.json({ status: 'success', error: user.id,token:x}); 
+
+>>>>>>> 8598dc74f8d830c8de5378249a1a8fa5598f6b1a
 
   return res.json({ status: 'success', error: user.id, type: type });
 };

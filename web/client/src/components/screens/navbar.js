@@ -52,17 +52,19 @@ function Navbar() {
       <li class="nav-item">
         <a class="nav-link" href="/about">About Us</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item">
+        <a class="nav-link" href="/pppp">Services</a>
+      </li>
+      {/* <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="/services" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Services
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">AC</a>
           <a class="dropdown-item" href="#">Carpenter</a>
-          {/* <div class="dropdown-divider"></div> */}
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
-      </li>
+      </li> */}
       <li class="nav-item">
         <a class="nav-link" href="/my_orders">My Orders</a>
       </li>

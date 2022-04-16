@@ -42,7 +42,7 @@ const BookCard = (props) => {
                 </div>
                 <div class="button mt-0 d-flex flex-row align-items-center"> 
                <a href={`/placeorder/${book._id}`} style={{backgroundColor:"rgb(255, 208, 0)"}} class="btn workercard_button2 btn-sm btn-primary  ml-3">Request</a>
-               <a href={""} class="btn workercard_button2 btn-sm btn-primary  ml-3">View Profile</a>
+               <a href={`/workerprofile/${book._id}`} class="btn workercard_button2 btn-sm btn-primary  ml-3">View Profile</a>
             </div>
         </div>
 </div>

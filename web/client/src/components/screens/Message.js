@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import { render } from 'react-dom';
 import '../screens/styles/message.css';
 import { useParams } from 'react-router-dom';

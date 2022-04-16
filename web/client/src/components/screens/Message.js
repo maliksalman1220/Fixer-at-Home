@@ -1,7 +1,6 @@
 import React, {createContext} from 'react'
 import { useState } from "react";
 import { useEffect } from "react";
-import { render } from 'react-dom';
 import '../screens/styles/message.css';
 import { useParams } from 'react-router-dom';
 import Chat from './messagecard';
@@ -14,8 +13,8 @@ export const Message = () => {
     const [Messages, setMessages] = useState("");
     const receiver_id = params.q;
     const sender_id = localStorage.getItem('user');
-    const type = localStorage.getItem("user_type");
     id = params.q;
+    const sender_username = localStorage.getItem('username');
     
     async function getUser() {
 
@@ -51,6 +50,8 @@ export const Message = () => {
             body: JSON.stringify({
                 sender_id: sender_id,
                 receiver_id: receiver_id,
+                sender_username: sender_username,
+                receiver_username: values.username,
                 message: Message
             })
         });

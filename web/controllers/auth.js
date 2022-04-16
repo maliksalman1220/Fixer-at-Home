@@ -146,7 +146,7 @@ exports.LoginUser = async (req, res, next) => {
 
 
     const x= await user.getSignedJwtToken();
-    return res.json({ status: 'success', error: user.id,token:x, type: type}); 
+    return res.json({ status: 'success', error: user.id,token:x, type: type, username: user.username}); 
 };
 
 
@@ -547,6 +547,8 @@ exports.Message = async (req, res) => {
     await Message.insertMany({
       'sender': sender_id,
       'receiver': receiver_id,
+      'sender_name': req.body.sender_username,
+      'receiver_name': req.body.receiver_username,
       'content': req.body.message,
       'timestamp': new Date(),
     });

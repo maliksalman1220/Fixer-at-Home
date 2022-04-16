@@ -6,13 +6,16 @@ import '../screens/styles/navbar.css'
 
 function Navbar() {
   const user_type = localStorage.getItem('user_type');
+  const user_id = localStorage.getItem('user');
+
   var link = "";
   if (user_type === 'worker') {
-    link = "/workerprofile";
+    link = "/workerprofile/"+user_id;
   }
   else if (user_type === 'client') {
-    link = "/userprofile";
+    link = "/userprofile/"+user_id;
   }
+
   console.log(user_type);
 
   // return (

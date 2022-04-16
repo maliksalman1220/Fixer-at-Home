@@ -47,6 +47,7 @@ import Homepage from "./components/screens/homepage";
 import { Userprofile } from "./components/screens/userprofile";
 import { Workerprofile } from "./components/screens/workerprofile";
 import Workerprofileupdate from "./components/screens/workerprofileupdate";
+import { Message } from "./components/screens/Message";
 
 // import sidebarTEMP from "./components/screens/sidebarTEMP";
 import addworkerLayout_admin from "./components/screens/addworkerLayout_admin"
@@ -79,17 +80,18 @@ const App = () => {
           <Route exact path="/workerorder/:q" component={workerorder} />
           <Route exact path="/workerorderdetail/:q" component={workerorderdetail} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
-          <Route exact path="/userprofile" component={() => <Userprofile username={'salmanmalik'} />} />
-          <Route exact path="/workerprofile" component={() => <Workerprofile username={'salmanmalik'} />} />
+          <Route exact path="/userprofile/:q" component={() => <Userprofile/>} />
+          <Route exact path="/workerprofile/:q" component={() => <Workerprofile/>} />
           <Route exact path="/order/:q" component={order} />
           <Route exact path="/worker_card" component={WorkerCard} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/updateprofile" component={() => <Update_profile username={'salmanmalik'} />} />
-          <Route exact path="/workerupdateprofile" component={() => <Workerprofileupdate username={'salmanmalik'} />} />
+          <Route exact path="/updateprofile/:q" component={() => <Update_profile />} />
+          <Route exact path="/workerupdateprofile/:q" component={() => <Workerprofileupdate />} />
           <Route exact path="/placeorder/:q" component={placeorder} />
           <Route exact path="/employeeDashboard" component = {EmployeeDashboard} />
           <Route exact path="/resetPassword" component = {ResetPassword} />
           <Route exact path="/forgetPassword" component = {ForgetPassword} />
+          <Route exact path="/message/:q" component = {Message} />
         </Switch>
         {/* <Footer/> */}
       </div>

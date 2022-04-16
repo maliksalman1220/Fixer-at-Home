@@ -10,6 +10,7 @@ const Admin = require("../models/Admin");
 const sendEmail = require("../utils/sendEmail");
 const bcrypt = require("bcryptjs");
 const nodemailer = require('nodemailer');
+const Message = require("../models/message.model.js");
 const { ObjectId } = require('mongodb');
 
 exports.registerclient = async (req, res, next) => {
@@ -111,7 +112,7 @@ exports.LoginUser = async (req, res, next) => {
   var type = "";
   user = await Client.findOne({
     email: req.body.email,
-    if(user){sendToken(Client, 200, res)}
+    if(user) { sendToken(Client, 200, res) }
   });
 
   if (user) {
@@ -139,12 +140,12 @@ exports.LoginUser = async (req, res, next) => {
 
   const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
 
-    if (!isPasswordValid) {
-      return next(new ErrorResponse("Invalid credentials", 401));
-    }
+  if (!isPasswordValid) {
+    return next(new ErrorResponse("Invalid credentials", 401));
+  }
 
-    const x= await user.getSignedJwtToken();
-    return res.json({ status: 'success', error: user.id,token:x, type: type}); 
+  const x = await user.getSignedJwtToken();
+  return res.json({ status: 'success', error: user.id, token: x, type: type });
 };
 
 
@@ -438,16 +439,33 @@ exports.Userprofile = async (req, res) => {
 
   const id = JSON.parse(req.params.q);
   const _id = ObjectId(id);
- 
+
   try {
+
     const user = await Client.findOne({
       _id: _id
     });
+    if (user) {
+      res.json({ status: 'ok', user: user });
+    } else {
+      const user = await Worker.findOne({
+        _id: _id
+      });
+      if (user) {
+        res.json({ status: 'ok', user: user });
+      } else {
+        const user = await Admin.findOne({
+          _id: _id
+        });
+        if (user) {
+          res.json({ status: 'ok', user: user });
+        } else {
+          res.json({ status: 'error', msg: "user not found" });
+        }
+      }
+    }
 
-    console.log(user)
-    return res.json({ status: 'ok', user: user });
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
     res.json({ status: 'error', error: 'invalid token' })
   }
@@ -455,12 +473,12 @@ exports.Userprofile = async (req, res) => {
 
 
 exports.Updateprofile = async (req, res) => {
-  
+
   const id = JSON.parse(req.params.q);
   const _id = ObjectId(id);
 
   try {
-    
+
     await Client.updateOne(
       { _id: _id },
       {
@@ -484,31 +502,12 @@ exports.Updateprofile = async (req, res) => {
   }
 }
 
-exports.Workerprofile = async (req, res) => {
-  const id = JSON.parse(req.params.q);
-  const _id = ObjectId(id);
-
-  try {
-    console.log(req.params.q)
-    const user = await Worker.findOne({
-       _id: _id
-    });
-
-  
-    return res.json({ status: 'ok', user: user });
-  }
-  catch (error) {
-    console.log(error);
-    res.json({ status: 'error', error: 'invalid token' })
-  }
-}
-
 exports.Workerprofileupdate = async (req, res) => {
   const id = JSON.parse(req.params.q);
   const _id = ObjectId(id);
 
   try {
-    
+
     await Worker.updateOne(
       { _id: _id },
       {
@@ -533,5 +532,51 @@ exports.Workerprofileupdate = async (req, res) => {
   catch (error) {
     console.log(error);
     res.json({ status: 'error', error: 'invalid token' })
+  }
+}
+
+exports.Message = async (req, res) => {
+
+  const s = JSON.parse(req.body.sender_id);
+  const r = JSON.parse(req.body.receiver_id);
+  const sender_id = ObjectId(s);
+  const receiver_id = ObjectId(r);
+
+  try {
+    await Message.insertMany({
+      'sender': sender_id,
+      'receiver': receiver_id,
+      'content': req.body.message,
+      'timestamp': new Date(),
+    });
+
+    return res.json({ status: 'ok' });
+  }
+  catch (error) {
+    console.log(error);
+    res.json({ status: 'error', error: 'invalid token' });
+  }
+}
+
+exports.Getmessage = async (req, res) => {
+  const s = JSON.parse(req.params.q);
+  const r = JSON.parse(req.params.r);
+  const sender_id = ObjectId(s);
+  const receiver_id = ObjectId(r);
+
+  try {
+    const messages = await Message.find({
+      $or : [
+        { $and: [{ sender: sender_id }, { receiver: receiver_id }] },
+        { $and: [{ sender: receiver_id }, { receiver: sender_id }] },
+      ]
+    });
+
+    console.log(messages);
+    return res.json({ status: 'ok', messages: messages });
+  }
+  catch (error) {
+    console.log(error);
+    res.json({ status: 'error', error: 'invalid token' });
   }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import '../screens/styles/update_profile.css'
+import { useParams } from 'react-router-dom';
 
 function Update_profile(props) {
     // error handling still to be done
@@ -13,10 +14,11 @@ function Update_profile(props) {
     const history = useHistory();
 
     const user_id = localStorage.getItem('user');
+    const params = useParams();
     
     async function getUser() {
 
-        const response = await fetch('http://localhost:5000/api/auth/profile/'+user_id, {
+        const response = await fetch('http://localhost:5000/api/auth/profile/'+params.q, {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -54,11 +56,18 @@ function Update_profile(props) {
 
 
     function handleClick() {
-        history.push("/userprofile");
+        history.push("/userprofile/"+user_id);
     }
 
     useEffect(() => {
-        getUser();
+        const user_id = localStorage.getItem('user');
+        if (user_id !== params.q) {
+            history.push("/");
+        }
+        else
+        {
+            getUser();
+        }
     }, [])
 
 
@@ -67,7 +76,7 @@ function Update_profile(props) {
         e.preventDefault();
         console.log(formValues);
 
-        const response = await fetch('http://localhost:5000/api/auth/updateprofile/'+user_id, {
+        const response = await fetch('http://localhost:5000/api/auth/updateprofile/'+params.q, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

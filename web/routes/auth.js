@@ -27,7 +27,9 @@ const {
   Updateprofile,
   Workerprofileupdate,
   LoginUser,
-  
+  Message,
+  Getmessage,
+
 } = require("../controllers/auth");
 
 router.route("/registerclient").post(registerclient);
@@ -50,11 +52,10 @@ router.route("/getworkerorder/:q").post(getworkerorder);
 router.route("/orderstatus/:q").post(orderstatus);
 router.route("/orderstatuscompleted/:q").post(orderstatuscompleted);
 router.route("/profile/:q").get(Userprofile);
-router.route("/workerprofile/:q").get(Workerprofile);
 router.route("/updateprofile/:q").post(Updateprofile);
 router.route("/workerprofileupdate/:q").post(Workerprofileupdate);
-
-
+router.route("/message").post(Message);
+router.route("/getmessage/:q/:r").get(Getmessage);
 
 router.route("/addworker/:q").get(addworkerppp);
 router.route("/deletecategory").post(deletecategory);

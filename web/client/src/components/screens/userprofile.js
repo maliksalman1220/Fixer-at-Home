@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react'
 import '../screens/styles/update_profile.css';
 import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-export const Userprofile = (props) => {
+
+export const Userprofile = () => {
     const [values, setValues] = useState({username:"",firstname:"",lastname:"",email:"",phonenumber:"",address:"",country:"",dob:""});
     var new_date = "";
-    var history = useHistory();
-
-    const user_type = localStorage.getItem('user_type');
-    const user_id = localStorage.getItem('user');
+    const history = useHistory();
+    const params = useParams();
 
     async function ViewProfile() {
 
-        const req = await fetch('http://localhost:5000/api/auth/profile/'+user_id, {
+        const req = await fetch('http://localhost:5000/api/auth/profile/'+params.q, {
             headers: {
                 'Content-Type': 'application/json',
             },
         });
-
+       
         const data = await req.json();  
 
         if (data.user.dateofbirth != null) {
@@ -26,17 +26,23 @@ export const Userprofile = (props) => {
         }
 
         if (data.status === 'ok') {
-            
-            setValues({
-                username: data.user.username,
-                firstname: data.user.firstname,
-                lastname: data.user.lastname,
-                email: data.user.email,
-                phonenumber: data.user.contactnumber,
-                address: data.user.address,
-                dob: new_date,
-                country: data.user.country
-            }); 
+            if (data.user)
+            {
+                setValues({
+                    username: data.user.username,
+                    firstname: data.user.firstname,
+                    lastname: data.user.lastname,
+                    email: data.user.email,
+                    phonenumber: data.user.contactnumber,
+                    address: data.user.address,
+                    dob: new_date,
+                    country: data.user.country
+                });
+            }
+            else
+            {
+                alert("User not found");
+            }
         }
         else {
             alert(data.error);
@@ -44,11 +50,15 @@ export const Userprofile = (props) => {
     }
 
     useEffect(() => {
-        ViewProfile();
+        ViewProfile();  
     }, [])
 
+    function sendMessage() {
+        history.push('/message/'+params.q);
+    }
+
     function handleClick() {
-        history.push("/updateprofile");
+        history.push("/updateprofile/"+params.q);
     }
 
     return (
@@ -57,6 +67,8 @@ export const Userprofile = (props) => {
                 <div className="row">
                     <div className="col-md-3 border-right">
                         <div className="d-flex flex-column align-items-center "><img className="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&usqp=CAU" /><span>{values.username}</span> <span className="text-black-50">{values.email}</span></div>
+                        <div className="d-flex flex-column align-items-center "><button type="button" class="btn bello btn-warning ml-2" onClick={sendMessage}>Send Message</button></div>
+
                     </div>
                     <div className="col-md-7">
                         <div className="p-3 py-5">

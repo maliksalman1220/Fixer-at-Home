@@ -581,3 +581,101 @@ exports.Getmessage = async (req, res) => {
     res.json({ status: 'error', error: 'invalid token' });
   }
 }
+
+exports.forgotPassword = async (req, res, next) => {
+  // Send Email to email provided but first check if user exists
+  const { email } = req.body;
+
+  
+     user = await Client.findOne({ email });
+
+    if (!user) {
+      user = await Worker.findOne({ email });}
+    
+    const resetToken = user.getResetPasswordToken();
+
+    await user.save();
+
+    // Create reset url to email to provided email
+    const resetUrl = `http://localhost:3000/resetPassword/${resetToken}`;
+
+    // HTML Message
+    const message = `
+      <h1>You have requested a password reset</h1>
+      <p>Please make a put request to the following link:</p>
+      <a href=${resetUrl} clicktracking=off>${resetUrl}</a>
+    `;
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      // true for 465, false for other ports
+      auth: {
+        user: 'fixerathome@gmail.com', // generated ethereal user
+        pass: 'fixer_at_home'  // generated ethereal password
+      },
+  
+    });
+  
+    // setup email data with unicode symbols
+    let mailOptions = {
+      from: 'fixerathome@gmail.com', // sender address
+      to: email, // list of receivers
+      subject: 'Account approved', // Subject line
+      text: message // plain text body
+      // html body
+    };
+    console.log("p")
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  
+      res.render('contact', { msg: 'Email has been sent' });
+  
+    })
+    // Reset Token Gen and add to database hashed (private) version of token
+    
+
+
+      
+
+      await user.save();
+
+      return next(new ErrorResponse("Email could not be sent", 500));
+    
+  
+};
+exports.resetPassword = async (req, res, next) => {
+  // Compare token in URL params to hashed token
+  const resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(req.params.q)
+    .digest("hex");
+    console.log(req.params.q)
+
+  
+    user = await Client.findOne({
+      resetPasswordToken,
+      
+    });
+
+    if (!user) {
+      user = await Worker.findOne({
+        resetPasswordToken,
+      
+    })}
+
+    user.password = req.body.password;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save();
+
+    res.status(201).json({
+      success: true,
+      data: "Password Updated Success",
+      token: user.getSignedJwtToken(),
+    });
+  }

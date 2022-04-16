@@ -48,7 +48,7 @@ import { Userprofile } from "./components/screens/userprofile";
 import { Workerprofile } from "./components/screens/workerprofile";
 import Workerprofileupdate from "./components/screens/workerprofileupdate";
 import { Message } from "./components/screens/Message";
-
+import { Workerprofileview } from "./components/screens/workerprofileview";
 // import sidebarTEMP from "./components/screens/sidebarTEMP";
 import addworkerLayout_admin from "./components/screens/addworkerLayout_admin"
 
@@ -84,6 +84,7 @@ const App = () => {
           <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
           <Route exact path="/userprofile/:q" component={() => <Userprofile/>} />
+          <Route exact path="/workerprofileview/:q" component={() => <Workerprofileview/>} />
           <Route exact path="/workerprofile/:q" component={() => <Workerprofile/>} />
           <Route exact path="/order/:q" component={order} />
           <Route exact path="/worker_card" component={WorkerCard} />

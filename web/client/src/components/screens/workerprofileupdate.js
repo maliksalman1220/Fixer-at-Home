@@ -159,10 +159,9 @@ function Workerprofileupdate(props) {
                                     value={formValues.experience  || ''}
                                     onChange={handleChange}
                                 /></div>
-
-                                <div class="col-md-12 udiv text-right">
-                                    <button type="button" class="btn hello btn-primary" onClick={handleClick}>Cancel</button>
-                                    <button type="button" class="btn bello btn-warning ml-2" onClick={workerupdateProfile}>Save</button>
+                                <div class="button mt-0 d-flex flex-row align-items-center">
+                                    <button style={{padding:"1.5%"}} type="button" class="btn workercard_button2 btn-sm btn-primary  ml-3" onClick={handleClick}>Cancel</button>
+                                    <button style={{padding:"1.5%"}} type="button" class="btn workercard_button btn-sm btn-primary  ml-3" onClick={workerupdateProfile}>Save</button>
                                 </div>
                             </div>
                         </div>

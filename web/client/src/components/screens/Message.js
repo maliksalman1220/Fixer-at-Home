@@ -60,6 +60,7 @@ export const Message = () => {
             if (res.status === 200) {
                 alert("Message sent successfully");
                 GetMessages();
+                window.location.reload(false);
             }
             else {
                 alert("Message not sent");

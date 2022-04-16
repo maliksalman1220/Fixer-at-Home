@@ -437,7 +437,7 @@ const sendToken = (user, statusCode, res) => {
 };
 
 exports.Userprofile = async (req, res) => {
-
+  console.log('here');
   const id = JSON.parse(req.params.q);
   const _id = ObjectId(id);
 

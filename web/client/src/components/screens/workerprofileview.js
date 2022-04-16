@@ -4,7 +4,7 @@ import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-export const Workerprofile = (props) => {
+export const Workerprofileview = (props) => {
     const [username, setusername] = useState("");
     const [firstname, setfirstname] = useState("");
     const [lastname, setlastname] = useState("");
@@ -76,12 +76,12 @@ export const Workerprofile = (props) => {
                 <div className="row">
                     <div className="col-md-3 border-right">
                         <div className="d-flex flex-column align-items-center "><img className="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&usqp=CAU" /><span>{username}</span> <span className="text-black-50">{email}</span></div>
-                        {/* <div className="d-flex flex-column align-items-center "><button type="button" class="btn bello btn-warning ml-2" onClick={sendMessage}>Send Message</button></div> */}
+                        <div className="d-flex flex-column align-items-center "><button type="button" class="btn bello btn-warning ml-2" onClick={sendMessage}>Send Message</button></div>
                     </div>
                     <div className="col-md-7">
                         <div className="p-3 py-5">
                             <div className="d-flex mb-3">
-                                <h4 className="text-right">Profile Settings</h4>
+                                <h4 className="text-right">Profile</h4>
                             </div>
                             <div className="row mt-2">
                                 <div className="col-md-6"><label className="labels"> First Name</label><input type="text" className="form-control" placeholder="First Name"
@@ -137,9 +137,9 @@ export const Workerprofile = (props) => {
                                     readOnly
                                 /></div>
 
-                                <div class="col-md-12 udiv text-right">
-                                    <button type="button" class="btn bello btn-warning mt-3 ml-2" onClick={handleClick}>Edit Profile</button>
-                                </div>
+                                {/* <div class="col-md-12 udiv text-right">
+                                    <button type="button" class="btn bello btn-warning ml-2" onClick={handleClick}>Edit Profile</button>
+                                </div> */}
                             </div>
                         </div>
                     </div>

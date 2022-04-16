@@ -31,7 +31,11 @@ export const Login = ({history}) => {
           localStorage.setItem('user', JSON.stringify(data.error));
           localStorage.setItem('user_type', data.type);
           
-          if(data.accountp=="admin"){console.log("p");history.push("/Addcategories")}
+          if(data.type=="admin"){console.log("p");history.push("/Addcategories")}else if (data.type=="worker"){
+            console.log("p");history.push("/update_profile")
+          }else if ( data.type=="client"){
+            console.log("p");history.push("/pppp")
+          }
         
         } 
         else if (data.error === 'User not found')

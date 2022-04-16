@@ -572,8 +572,6 @@ exports.Getmessage = async (req, res) => {
         { $and: [{ sender: receiver_id }, { receiver: sender_id }] },
       ]
     });
-
-    console.log(messages);
     return res.json({ status: 'ok', messages: messages });
   }
   catch (error) {

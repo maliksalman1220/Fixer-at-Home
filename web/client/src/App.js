@@ -29,7 +29,7 @@ import  category from "./components/screens/category";
 import  workerorder from "./components/screens/workerorder";
 import  workerorderdetail from "./components/screens/workerorderdetail";
 
-import  Order from "./components/screens/order";
+import  order from "./components/screens/order";
 
 import placeorder from "./components/screens/placeorder";
 
@@ -77,7 +77,7 @@ const App = () => {
 
           {/*worker - access from navbar*/}
           <Route exact path="/workerorder/:q" component={workerorder} />
-          <Route exact path="/order/:q" component={Order} />
+          <Route exact path="/order/:q" component={order} />
           <Route exact path="/workerorderdetail/:q" component={workerorderdetail} />
   
         {/* customer - in progress */}

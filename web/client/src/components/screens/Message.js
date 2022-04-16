@@ -78,11 +78,14 @@ export const Message = () => {
             if (res.status === 200) {
                 res.json().then(data => {
                     setMessages(data.messages);
+                    console.log(data.messages);
                 });
+                
             }
             else {
                 alert("Message not retetived");
             }
+            
         });
     }
 

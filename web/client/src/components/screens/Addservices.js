@@ -15,8 +15,7 @@ class   Addservices extends Component {
       x:[],
       name:"",
       pic:"",
-      service:""
-
+      service:"",error:"",
     };
   }
 
@@ -74,6 +73,33 @@ class   Addservices extends Component {
     
 
 
+
+    
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+try{
+  
+       axios.get("/api/private/Admin", config)
+       .catch(err=>{console.log(err)})
+      .then(res=>{if(res.data.error!=""){console.log(res.data.error);this.setState({error:res.data.error})}})
+}
+      
+    catch (error) {
+      console.log(error,"p")
+      
+      
+  
+
+    
+
+  
+      
+  };
+
     
 
   
@@ -119,7 +145,9 @@ class   Addservices extends Component {
     
     
       
-    return (
+    return this.state.error ? (
+      <span className="error-message">{this.state.error}</span>
+    ) : (
       <div className='roww'>
       <div className='col-md-6 col-10 mx-auto'>
 

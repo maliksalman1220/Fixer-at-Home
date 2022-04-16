@@ -4,7 +4,6 @@ import List from './categorycard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
 import '../screens/styles/update_profile.css'
 class placeorder extends Component {
   constructor() {

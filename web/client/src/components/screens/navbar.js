@@ -79,12 +79,12 @@ function Navbar() {
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item dropdown" href="#"></a>
 
-          <a class="dropdown-item" href="#">Order History</a>
           <a class="dropdown-item" href={link}>Profile</a>
           <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
           >Order History</a>
           <a class="dropdown-item" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}
-          >Order History</a>
+          >Order History Worker</a>
+          <a class="dropdown-item" href="/update_profile">Profile</a>
           <a class="dropdown-item" href="/registerp">Register Customer</a>
           <a class="dropdown-item" href="/registerp">Register Worker</a>
           <a class="dropdown-item" href="/login">Log Out</a>

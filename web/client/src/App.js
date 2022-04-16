@@ -29,7 +29,7 @@ import  category from "./components/screens/category";
 import  workerorder from "./components/screens/workerorder";
 import  workerorderdetail from "./components/screens/workerorderdetail";
 
-import  order from "./components/screens/order";
+import  Order from "./components/screens/order";
 
 import placeorder from "./components/screens/placeorder";
 
@@ -66,7 +66,7 @@ const App = () => {
           <Route exact path="/registerp" component={RegisterScreenp} />
           <Route exact path="/register" component={RegisterScreen} />
 
-        {/* admin pages */}
+        {/* admin pages - access from addservices*/}
           <Route exact path="/Addservices" component={Addservices} />
           <Route exact path="/Addcategories" component={AddcatagoriesLayout} />
           <Route exact path="/category/:q" component={category} />
@@ -74,14 +74,16 @@ const App = () => {
           <Route exact path="/addworker" component={addworkerLayout_admin} />
           {/* <Route exact path="/addworker" component={Addworkerlist} /> */}
 
-          {/* customer and worker - in progress */}
-          <Route exact path="/pppp" component={PPPP} />
+          {/*worker - access from navbar*/}
           <Route exact path="/workerorder/:q" component={workerorder} />
+          <Route exact path="/order/:q" component={Order} />
           <Route exact path="/workerorderdetail/:q" component={workerorderdetail} />
+  
+        {/* customer - in progress */}
+          <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
           <Route exact path="/userprofile" component={() => <Userprofile username={'salmanmalik'} />} />
           <Route exact path="/workerprofile" component={() => <Workerprofile username={'salmanmalik'} />} />
-          <Route exact path="/order/:q" component={order} />
           <Route exact path="/worker_card" component={WorkerCard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/updateprofile" component={() => <Update_profile username={'salmanmalik'} />} />

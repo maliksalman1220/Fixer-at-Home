@@ -56,15 +56,6 @@ const workerordercard = (props) => {
       
     </li>}
 
-
-
-
-
-
-
-
-
-
 else{
 send=
 <li class="table-row listt">

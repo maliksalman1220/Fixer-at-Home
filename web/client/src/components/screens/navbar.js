@@ -68,8 +68,9 @@ function Navbar() {
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li> */}
+      {/* customers */}
       <li class="nav-item">
-        <a class="nav-link" href="/my_orders">My Orders</a>
+        <a class="nav-link" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}> My Orders</a>
       </li>
 
      <ul class="navbar-nav ml-auto">
@@ -83,15 +84,16 @@ function Navbar() {
 
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item dropdown" href="#"></a>
-
-          <a class="dropdown-item" href={link}>Profile</a>
-          <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
-          >Order History Customer</a>
-          <a class="dropdown-item" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}
-          >Order History Worker</a>
-          <a class="dropdown-item" href="/update_profile">Profile</a>
-          <a class="dropdown-item" href="/registerp">Register Customer</a>
-          <a class="dropdown-item" href="/registerp">Register Worker</a>
+        {/* workerprofileview */}
+          <a class="dropdown-item" href={"/workerprofileview/"+user_id}>View Profile</a>
+          <a class="dropdown-item" href={link}>Update Profile</a>
+          {/* <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
+          >Order History Customer</a> */}
+          {/* <a class="dropdown-item" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}
+          >Order History Worker</a> */}
+          {/* <a class="dropdown-item" href="/update_profile">Profile</a> */}
+          {/* <a class="dropdown-item" href="/registerp">Register Customer</a> */}
+          {/* <a class="dropdown-item" href="/registerp">Register Worker</a> */}
           <a class="dropdown-item" href="/login">Log Out</a>
         </div>
       </li>

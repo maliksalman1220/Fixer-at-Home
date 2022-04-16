@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./addcatagory.css"
 import Sidebar from './sidebar';
 // import "./sidebar"
-
+import { useHistory } from 'react-router-dom';
 
 class   Addcategories extends Component {
   constructor() {
@@ -22,9 +22,14 @@ class   Addcategories extends Component {
     };
   }
 
+// addcat() {
+//   const history = useHistory();
+//   history.push('/pppp')
 
+// }
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.valueAsNumber || e.target.value });
+    
   };
     onSubmit = e => {
     e.preventDefault();
@@ -36,15 +41,21 @@ class   Addcategories extends Component {
       
       };
       console.log(data)
+     
 
 
 
       
     axios
-      .post('/api/auth/categories', data)
+      
+    .post('/api/auth/categories', data)
+
       .then(res => {
         
-      
+      if(res.status == 200){
+        alert("successfully a Xdded")
+        // history.push('/pppp')
+      }
       
         })
         .catch(err => {

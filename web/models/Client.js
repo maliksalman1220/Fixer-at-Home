@@ -7,22 +7,22 @@ const jwt = require("jsonwebtoken");
 
 
 const ClientSchema = new mongoose.Schema({
-  user_id:{
-    type:String
+  user_id: {
+    type: String
   },
   firstname: {
     type: String,
     required: [true, "Please provide firstname"]
-    
+
   },
   lastname: {
     type: String,
     required: [true, "Please provide lstname"]
-   
+
   },
   username: {
     type: String,
-    
+
     required: [true, "Please provide username"],
   },
 
@@ -45,16 +45,20 @@ const ClientSchema = new mongoose.Schema({
 
   contactnumber: {
     type: String,
-    
+
 
   },
   dateofbirth: {
     type: Date,
   },
-  address:{
+  address: {
     type: String,
     minlength: 100,
-    
+
+  },
+
+  country: {
+    type: String,
   },
 
   resetPasswordToken: String,
@@ -104,4 +108,4 @@ ClientSchema.methods.getResetPasswordToken = function () {
 
 
 
-module.exports = Client = conn.model('client',ClientSchema);
+module.exports = Client = conn.model('client', ClientSchema);

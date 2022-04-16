@@ -17,7 +17,7 @@ class   Addcategories extends Component {
       x:[],
       name:"",
       service:"",
-      category:""
+      category:"",error:""
 
     };
   }
@@ -75,13 +75,30 @@ class   Addcategories extends Component {
    componentDidMount(){
 
     
-
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    };
+try{
+  
+       axios.get("/api/private/Admin", config)
+       .catch(err=>{console.log(err)})
+      .then(res=>{if(res.data.error!=""){console.log(res.data.error);this.setState({error:res.data.error})}})
+}
+      
+    catch (error) {
+      console.log(error,"p")
+      
+      
+  
 
     
 
   
       
-  };
+  };}
 
   
       
@@ -103,7 +120,9 @@ class   Addcategories extends Component {
     
     
       
-    return (
+    return this.state.error ? (
+    <span className="error-message">{this.state.error}</span>
+  ) : (
 
       <div className='roww'>
       <div className='col-md-6 col-10 mx-auto'>

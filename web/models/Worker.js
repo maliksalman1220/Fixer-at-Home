@@ -82,6 +82,9 @@ const WorkerSchema = new mongoose.Schema({
     type: String,
     
   },
+  country: {
+    type: String,
+  },
 
   resetPasswordToken: String,
   resetPasswordExpire: Date,

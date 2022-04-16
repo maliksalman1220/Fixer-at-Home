@@ -3,7 +3,18 @@ import React, { useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import '../screens/styles/navbar.css'
 // import ReorderIcon from "@material-ui/icons/Reorder";
+
 function Navbar() {
+  const user_type = localStorage.getItem('user_type');
+  var link = "";
+  if (user_type === 'worker') {
+    link = "/workerprofile";
+  }
+  else if (user_type === 'client') {
+    link = "/userprofile";
+  }
+  console.log(user_type);
+
   // return (
   //   <div className='navbar'> 
   //       {/* <div className='leftside'>
@@ -67,14 +78,15 @@ function Navbar() {
 
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item dropdown" href="#"></a>
-          {/* <a class="dropdown-item" href="#">Order History</a> */}
+
+          <a class="dropdown-item" href="#">Order History</a>
+          <a class="dropdown-item" href={link}>Profile</a>
           <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
->Order History</a><a class="dropdown-item" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}
->Order History</a>
-          <a class="dropdown-item" href="/update_profile">Profile</a>
+          >Order History</a>
+          <a class="dropdown-item" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}
+          >Order History</a>
           <a class="dropdown-item" href="/registerp">Register Customer</a>
           <a class="dropdown-item" href="/registerp">Register Worker</a>
-          <a class="dropdown-item" href="/update_profile">Profile</a> 
           <a class="dropdown-item" href="/login">Log Out</a>
         </div>
       </li>

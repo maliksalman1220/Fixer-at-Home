@@ -1,7 +1,7 @@
 import React from 'react'
 import "./styles/sidebar.css"
 import { sidebardata } from './sidebardata'
-import {BsArrowLeftSquare} from "react-icons/bs";
+//import {BsArrowLeftSquare} from "react-icons/bs";
 function Sidebar() {
   return (
     <div className='side'>

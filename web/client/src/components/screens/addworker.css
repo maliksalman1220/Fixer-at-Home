@@ -1,9 +1,31 @@
-.cards-list {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');  
+
+
+.mcards-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   grid-gap: 1em;
   padding-top: 0%;
+  
+
+}
+
+.wregister-screen__title{
+  font-weight: bold;
+  font-family:  Poppins,sans-serif !important;
+  margin-bottom: 0px;
+  text-align: center;
+  padding-top: 1%;
+}
+
+
+@media all and (max-width: 500px) {
+  .mcards-list {
+    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 0%;
+  }
 }
 
 

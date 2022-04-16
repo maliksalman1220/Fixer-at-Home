@@ -65,13 +65,13 @@ const App = () => {
         {/* admin pages */}
           <Route exact path="/Addservices" component={Addservices} />
           <Route exact path="/Addcategories" component={AddcatagoriesLayout} />
-          <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/category/:q" component={category} />
           <Route exact path="/worker/:q" component={workerlist} />
           <Route exact path="/addworker" component={addworkerLayout_admin} />
           {/* <Route exact path="/addworker" component={Addworkerlist} /> */}
 
           {/* customer and worker - in progress */}
+          <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/workerorder/:q" component={workerorder} />
           <Route exact path="/workerorderdetail/:q" component={workerorderdetail} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />

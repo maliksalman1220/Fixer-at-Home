@@ -85,33 +85,28 @@ class order extends Component {
       
     return (
       
-  <div>
-  <ul class="mx-auto tablebody" style={{width: "60%", marginTop: "10%"}}>
-      <li class="table-headerR ">
-        <div >Worker Name</div>
-        <div >Amount</div>
-        <div >Status</div>
-        <div >Order Detail</div>
-        </li>
+      <div>
+
+
+
+
+      <div class="cards-list">
+      <ul class="responsive-table mx-auto" style={{width:'70%', marginTop: "10%"}}>
+          <li class="table-header hlist">
+            <div class="col col-1 tcol-1">worker name</div>
+            <div class="col col-2 tcol-2">amount</div>
+            <div class="col col-3 tcol-3">status</div>
+            <div class="col col-3 tcol-3">order detail</div>
+            </li>
           {bookList}
-      </ul>
-  </div>
-
-      /* <table class="table mx-auto" style={{width: "60%", marginTop: "10%"}}>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th  scope="col">Worker Name</th>
-      <th  scope="col">Amount</th>
-      <th  scope="col">Status</th>
-      <th  scope="col" >Order Detail</th>
-    </tr>
-  </thead>
-  <tbody>
-    {bookList}
-  </tbody>
-</table> */
-
+          </ul>
+      
+          </div>
+      
+      
+      
+      
+      </div>
 
   )}}
     

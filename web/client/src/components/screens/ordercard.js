@@ -29,22 +29,21 @@ const BookCard = (props) => {
     {send=
 
   
-  
- 
-
    
-    <li class="table-row">
-      <div class="col col-1" data-label="Job Id">{book.workername}</div>
-      <div class="col col-2" data-label="Customer Name">{book.price}</div>
-      <div class="col col-3 colrp " data-label="Amount"> {book.status}</div>
+    <li class="table-row listt">
+      <div class="col col-1 tcol-1" data-label="Job Id">{book.workername}</div>
+      <div class="col col-2 tcol-2" data-label="Customer Name">{book.price}</div>
+      <div class="col col-3 tcol-3 colrp" data-label="Amount"> {book.status}</div>
       
-    </li>}
+    </li>
+    
+  }
     else {send=
 
-    <li class="table-row">
-      <div class="col col-1" data-label="Job Id">{book.workername}</div>
-      <div class="col col-2" data-label="Customer Name">{book.price}</div>
-      <div class="col col-3 "style={{color:111111}} data-label="Amount">{book.status}</div>
+    <li class="table-row listt">
+      <div class="col col-1 tcol-1" data-label="Job Id">{book.workername}</div>
+      <div class="col col-2 tcol-2" data-label="Customer Name">{book.price}</div>
+      <div class="col col-3 tcol-3 colrp"style={{color:111111}} data-label="Amount">{book.status}</div>
       
     </li>}
    

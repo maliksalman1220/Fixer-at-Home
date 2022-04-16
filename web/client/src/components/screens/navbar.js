@@ -81,7 +81,7 @@ function Navbar() {
 
           <a class="dropdown-item" href={link}>Profile</a>
           <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
-          >Order History</a>
+          >Order History Customer</a>
           <a class="dropdown-item" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}
           >Order History Worker</a>
           <a class="dropdown-item" href="/update_profile">Profile</a>

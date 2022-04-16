@@ -26,17 +26,9 @@ const BookCard = (props) => {
     const  book  = props.book;
     let send=
 
-//     <Card onClick={onClick} style={{ cursor: "pointer" }}>
-//   <p>This is a clickable card.</p>
-// </Card>
-  <div class="card ccard" onClick={`/worker/${book.name}`}>
-    {/* <div class="card_imageppp colorplplpl divv"> </div> */}
-    {/* <div class="card-body cbody"> */}
+  <div class="card ccard">
     <h5 class=" text-center ccard-title">{book.name}</h5>
-    {/* <a  href={`/worker/${book.name}`} class="btn cbtn btn-warning">Select</a> */}
-    {/* </div> */}
-
-    
+    <a  href={`/worker/${book.name}`} class="btn cbtn btn-warning">Select</a>
   </div>
     return(
         <div>{send}</div>

@@ -5,6 +5,8 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./catagorycard.css"
+import {BiCurrentLocation} from "react-icons/bi";
+import {GoLocation} from "react-icons/go";
 
 
 class workerlist extends Component {
@@ -88,14 +90,36 @@ class workerlist extends Component {
     return (
 
       <div>
-                
-<h1><em>Categories</em></h1>
+    <div class="container ">
+      <div class="row">
+        <div class="col-sm locatindiv mr-0">
+        <h3 className="register-screen__title mt-4 mb-5 ml-5" style={{fontWeight:"bold"}}>Book a Worker</h3>
 
-<div class="cards-list cards-listt">
+        <div class="mb-3 ">
+        <BiCurrentLocation size="30" style={{marginRight:"3%", color: "#004c8c"}}/>
+      <label class="form-label labell">Worker location</label>
+      
+        <input type="text" class="form-control locationss ml-5" placeholder="Defence Phase 4"/>
+        </div>
+        <div class="mb-3">
+        <GoLocation size="30" style={{marginRight:"3%", color: "#004c8c"}}/>
+      <label  class="form-label labell">Customer Location</label>
+        <input type="text" class="form-control locationss ml-5"  placeholder="LUMS"/>
+      </div>
+        </div>
+        
+        <div class="col-sm ">
+    
+          <div class="cards-list cards-listt">
 
-    {bookList}
+              {bookList}
 
+          </div>
+    
+        </div>
+      </div>
     </div>
+ 
     
 
 

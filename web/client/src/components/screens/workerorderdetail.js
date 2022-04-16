@@ -4,8 +4,10 @@ import List from './categorycard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
-import '../screens/styles/update_profile.css'
+// import '../screens/styles/update_profile.css'
+import {WorkerViewsCustomer} from './workerViewsCustomer';
+import "./workerorderdetail.css"
+
 class placeorder extends Component {
   constructor() {
     super();
@@ -63,13 +65,16 @@ ppp = e => {
 
   return (
       <div>
-          <button onClick={this.qqqq} className="btn btn-success">
-          Add
-        </button>
-        
-          <button onClick={this.ppp} className="btn btn-success">
-          Add
-        </button>
+        <WorkerViewsCustomer/>
+
+        <div class="d-flex col-md-11 justify-content-end p-0 mt-0">
+            <button onClick={this.qqqq} className="btn mb-4  btn-contt btn-warning">
+               Add
+           </button>
+           <button onClick={this.ppp} className="btn mb-4 ml-3 ab mr-5 btn-contt btn-primary default">
+               Add
+          </button>
+        </div>
 
 </div>
   )

@@ -4,8 +4,9 @@ import List from './categorycard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
 import '../screens/styles/update_profile.css'
+import {WorkerViewsCustomer} from './workerViewsCustomer';
+
 class viewprofile extends Component {
   constructor() {
     super();
@@ -56,13 +57,7 @@ console.log(this.state.x,"ppppppppppp")
     axios
       .get('/api/auth/addworker/'+this.props.match.params.q)
       .then(res => {
-
-
-        
-
-        
-        
-        
+     
       })
       .catch(err => {
         this.setState({error:err.response.data.error});
@@ -73,9 +68,16 @@ console.log(this.state.x,"ppppppppppp")
 
   return (
       <div>
-          <button onClick={this.qqqq} className="btn btn-success">
-          Add
-        </button>
+        <WorkerViewsCustomer/>
+
+        
+        <div class="d-flex col-md-11 justify-content-end p-0 mt-0">
+        <button onClick={this.qqqq} className="btn mb-4  btn-contt btn-warning">
+          Approve 
+        </button>  
+        </div>
+
+          
 
 </div>
   )

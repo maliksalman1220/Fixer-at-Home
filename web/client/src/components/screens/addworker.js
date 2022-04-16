@@ -117,9 +117,11 @@ console.log(this.state.x)
         <span className="error-message">{this.state.error}</span>
       ) : (
       <div>
+    <h3 className="wregister-screen__title">Approve Workers</h3>
+
     {/* <h2> Approve Worker Requests </h2> */}
 
-  <div class="cards-list">
+    <div class="mcards-list">
     {bookList}
 
     </div>

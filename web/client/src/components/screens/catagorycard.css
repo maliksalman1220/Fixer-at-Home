@@ -44,15 +44,15 @@
   
   .ccard {
     margin: 10px 10px;
-    width: 300px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
     cursor: pointer;
     border: 1px solid #eee;
     box-shadow: 0 2px 2px rgb(190, 190, 190);
   } 
 
   .ccard:hover{
-    border-left: 30px solid #004c8c;
+    border-left: 5px solid #004c8c;
     transition: 0.3s;
   }
 
@@ -68,7 +68,17 @@
     text-align: center;
     margin: auto;
   }
+
+  .labell{
+      color: #004c8c;
+  }
    
+.locatindiv{
+  background-color: aliceblue;
+}
+  .locationss{
+    width: 70%;
+  }
   .lfont{
     font-family:  Poppins,sans-serif !important;
     font-size:medium
@@ -80,15 +90,16 @@
   }
 
   .cbody{
-    /* margin: 5%; */
-    /* margin-bottom: 0%; */
     margin-top: 20%;
   }
+
   .cbtn{
     color: black;
     font-size: small;
     font-family: Poppins,sans-serif;
+    width: 50%;
     margin:auto;    
+
   }
   
   .ccard-title{

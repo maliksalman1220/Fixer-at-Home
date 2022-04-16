@@ -29,7 +29,7 @@ import  category from "./components/screens/category";
 import  workerorder from "./components/screens/workerorder";
 import  workerorderdetail from "./components/screens/workerorderdetail";
 
-import  order from "./components/screens/order";
+import  Order from "./components/screens/order";
 
 import placeorder from "./components/screens/placeorder";
 
@@ -67,18 +67,21 @@ const App = () => {
           <Route exact path="/registerp" component={RegisterScreenp} />
           <Route exact path="/register" component={RegisterScreen} />
 
-        {/* admin pages */}
+        {/* admin pages - access from addservices*/}
           <Route exact path="/Addservices" component={Addservices} />
           <Route exact path="/Addcategories" component={AddcatagoriesLayout} />
-          <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/category/:q" component={category} />
           <Route exact path="/worker/:q" component={workerlist} />
           <Route exact path="/addworker" component={addworkerLayout_admin} />
           {/* <Route exact path="/addworker" component={Addworkerlist} /> */}
 
-          {/* customer and worker - in progress */}
+          {/*worker - access from navbar*/}
           <Route exact path="/workerorder/:q" component={workerorder} />
+          <Route exact path="/order/:q" component={Order} />
           <Route exact path="/workerorderdetail/:q" component={workerorderdetail} />
+  
+        {/* customer - in progress */}
+          <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
           <Route exact path="/userprofile/:q" component={() => <Userprofile/>} />
           <Route exact path="/workerprofile/:q" component={() => <Workerprofile/>} />

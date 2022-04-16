@@ -7,10 +7,10 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./ordercard.css"
-import { auto } from '@popperjs/core';
+import SidebarWorker from './sidebarworker';
 
 
-class order extends Component {
+class Order extends Component {
   constructor() {
     super();
     this.state = {
@@ -85,34 +85,32 @@ class order extends Component {
       
     return (
       
-  <div>
-  <ul class="mx-auto tablebody" style={{width: "60%", marginTop: "10%"}}>
-      <li class="table-headerR ">
-        <div >Worker Name</div>
-        <div >Amount</div>
-        <div >Status</div>
-        <div >Order Detail</div>
-        </li>
+      // <div>
+<div className='rowC' >
+     <SidebarWorker/>
+    <div className='mx-auto' style={{width: "100%", marginTop: "1%"}}> 
+    <h3 className="register-screen__title mt-3 d-flex justify-content-center" style={{fontWeight:'bold'}}>Order History</h3>
+    <div class="cards-list">
+      <ul class="responsive-table mx-auto" style={{width:'70%', marginTop: "5%"}}>
+          <li class="table-header hlist">
+            <div class="col col-1 tcol-1">Worker name</div>
+            <div class="col col-2 tcol-2">Amount</div>
+            <div class="col col-3 tcol-3">Status</div>
+            <div class="col col-3 tcol-3">Order Details</div>
+            </li>
           {bookList}
-      </ul>
-  </div>
+          </ul>
+      
+          </div>
+     </div>
+ </div>
 
-      /* <table class="table mx-auto" style={{width: "60%", marginTop: "10%"}}>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th  scope="col">Worker Name</th>
-      <th  scope="col">Amount</th>
-      <th  scope="col">Status</th>
-      <th  scope="col" >Order Detail</th>
-    </tr>
-  </thead>
-  <tbody>
-    {bookList}
-  </tbody>
-</table> */
-
+      
+      
+      
+      
+      // </div>
 
   )}}
     
-export default order;
+export default Order;

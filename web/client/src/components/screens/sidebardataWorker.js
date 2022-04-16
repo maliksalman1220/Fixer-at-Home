@@ -4,21 +4,12 @@ import {AiFillDelete} from "react-icons/ai";
 import {IoPersonAdd} from  "react-icons/io5";
 import {AiOutlineAppstoreAdd} from "react-icons/ai";
 import {CgExtensionRemove} from "react-icons/cg";
-export const sidebardata = [
+export const sidebardataworker = [
 {
-    title: "Add/Delete Services",
+    title: "Order Status",
     icon: <IoAddCircleSharp/>,
-    link: `/Addservices`
-}, 
-{
-    title: "Approve Worker",
-    icon: <IoPersonAdd/>,
-    link: `/addworker`} ,
-{
-    title: "Add/Delete Category",
-    icon: <AiOutlineAppstoreAdd/>,
-    link: `/Addcategories`
-} 
+    link: `/workerorder/${JSON.parse(localStorage.getItem('user'))}`
+}
 ]
 
 

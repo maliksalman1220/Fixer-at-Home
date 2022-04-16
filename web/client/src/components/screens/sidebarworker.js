@@ -1,13 +1,13 @@
 import React from 'react'
 import "./styles/sidebar.css"
-import { sidebardata } from './sidebardata'
+import { sidebardataworker } from './sidebardataWorker'
 //import {BsArrowLeftSquare} from "react-icons/bs";
-function Sidebar() {
+function SidebarWorker() {
   return (
     <div className='side'>
       <div className='sidebar'>
         <ul className='SidebarList'>
-        {sidebardata.map((value,key) =>{
+        {sidebardataworker.map((value,key) =>{
             return(
                 <li  
                  key = {key} 
@@ -27,4 +27,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default SidebarWorker

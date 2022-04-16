@@ -7,7 +7,7 @@ function addworkerLayout_admin() {
   return (
     <div className='rowC' >
     <Sidebar/>
-    <div className='mx-auto' style={{width: "70%"}}>
+    <div className='mx-auto' style={{width: "100%"}}>
     <Addworkerlist/>
     </div>
 </div>

@@ -33,11 +33,11 @@ const workerordercard = (props) => {
  
 
    
-    <li class="table-row">
-      <div class="col col-1" data-label="Job Id">{book.workername}</div>
-      <div class="col col-2" data-label="Customer Name">{book.price}</div>
-      <div class="col col-3 coloryellowp " data-label="Amount">{book.status}</div>
-      <div class="col col-4 " data-label="Amount"><a href={`/workerorderdetail/${book._id}`}>detailp</a></div>
+    <li class="table-row listt">
+      <div class="col col-1 tcol-1" data-label="Job Id">{book.workername}</div>
+      <div class="col col-2 tcol-2" data-label="Customer Name">{book.price}</div>
+      <div class="col col-3 tcol-3 coloryellowp " data-label="Amount">{book.status}</div>
+     <a class=" btn h_btnso btn-warning col col-4 tcol-4" data-label="Amount" href={`/workerorderdetail/${book._id}`}>Details</a>
     </li>}
     else if(book.status=="accepted") {send=
 
@@ -46,30 +46,21 @@ const workerordercard = (props) => {
  
 
    
-    <li class="table-row">
-      <div class="col col-1" data-label="Job Id">{book.workername}</div>
-      <div class="col col-2" data-label="Customer Name">{book.price}</div>
-      <div class="col col-3 colorbluep"data-label="Amount">{book.status}</div>
-      <div class="col col-4" data-label="Amount"><a href={`/workerorderdetail/${book._id}`}>detailp</a></div>
+    <li class="table-row listt">
+      <div class="col col-1 tcol-1" data-label="Job Id">{book.workername}</div>
+      <div class="col col-2 tcol-2" data-label="Customer Name">{book.price}</div>
+      <div class="col col-3 tcol-3 colorbluep"data-label="Amount">{book.status}</div>
+      <a class=" btn h_btnso btn-warning col col-4 tcol-4" data-label="Amount" href={`/workerorderdetail/${book._id}`}>Details</a>
       
     </li>}
 
-
-
-
-
-
-
-
-
-
 else{
 send=
-<li class="table-row">
-<div class="col col-1" data-label="Job Id">{book.workername}</div>
-<div class="col col-2" data-label="Customer Name">{book.price}</div>
-<div class="col col-3 colorgreenp"data-label="Amount">{book.status}</div>
-<div class="col col-4" data-label="Amount"><a href={`/workerorderdetail/${book._id}`}>detailp</a></div>
+<li class="table-row listt">
+<div class="col col-1 tcol-1" data-label="Job Id">{book.workername}</div>
+<div class="col col-2 tcol-2" data-label="Customer Name">{book.price}</div>
+<div class="col col-3 tcol-3 colorgreenp"data-label="Amount">{book.status}</div>
+<a class=" btn h_btnso btn-warning col col-4 tcol-4" data-label="Amount" href={`/workerorderdetail/${book._id}`}>Details</a>
 
 </li>}
    

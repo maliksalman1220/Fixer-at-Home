@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
-/* 
-.side{
-    width: auto;
-    height: 100vh;
-    margin-right: 5%;
-    padding: 0;
-} */
 
+.side{
+    /* width: auto; */
+    /* height: 100vh; */
+    /* margin-right: 5%; */
+    /* padding: 0; */
+    
+}
+
+.rowC  {
+    height: 100vh;
+}
 .sidebar{
-    height: 100% ;
+    height: 100vh;
     width: 250px;
     background-color: #004c8c;
     align-items: stretch;
@@ -70,12 +74,14 @@
 @media (max-width: 998px) {
     .sidebar{
         width: auto;
+        height: 100%;
     }
     .SidebarList
     {
         font-size:smaller;        
         transition: 0.3s;
         margin-bottom: auto;
+        height: 100%;        
     }
 
 }

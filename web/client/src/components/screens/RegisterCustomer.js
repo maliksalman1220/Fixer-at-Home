@@ -6,7 +6,7 @@ import "./styles/RegisterScreen.css";
 import NavbarLogin from "./navbarLogin";
 
 
-const RegisterScreenp = ({ history }) => {
+const RegisterCustomer = ({ history }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -109,7 +109,7 @@ const RegisterScreenp = ({ history }) => {
       <div className='col-md-6 col-10 mx-auto'>
     
       <form onSubmit={registerHandler} className='form-group reggrp' style={{width:"90%", marginLeft:"10%", marginTop:"10%"}}>
-      <h3 className = "text-center"> Register as a Worker</h3> 
+      <h3 className = "text-center"> Register</h3> 
         {error && <span className="error-message">{error}</span>}
 
         <div className='row g-2'>
@@ -215,27 +215,7 @@ const RegisterScreenp = ({ history }) => {
             onChange={(e) => setaddress(e.target.value)}
           />
         </div>
-        <div className="col-md">
-          <label class="form-label">Experience</label>
-          <input
-            type="text"
-            
-            
-            placeholder="Experience"
-            value={experience}
-            onChange={(e) => setexperience(e.target.value)}
-          />
-        </div>
-        <div className="col-md">
-          <label class="form-label">Category</label>
-          <input
-            type="text"
-            
-            placeholder="Enter category"
-            value={category}
-            onChange={(e) => setcategory(e.target.value)}
-          />
-        </div>
+        
         <div className="col-md">
           <label class="form-label">Verification code</label>
           <input
@@ -264,4 +244,4 @@ const RegisterScreenp = ({ history }) => {
   );
 };
 
-export default RegisterScreenp;
+export default RegisterCustomer;

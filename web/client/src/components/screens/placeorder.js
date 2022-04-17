@@ -4,8 +4,8 @@ import List from './categorycard';
 import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import '../screens/styles/update_profile.css'
-import './placeorder.css'
+// import "./App.css"
+import '../screens/styles/update_profile.css'
 import NavbarCustomer from './navbarCustomer';
 class placeorder extends Component {
   constructor() {
@@ -23,7 +23,7 @@ class placeorder extends Component {
 
 
   qqqq = e => {
-    
+
 
     const data={
         time:"3",
@@ -33,20 +33,28 @@ class placeorder extends Component {
 
     axios
       .post('/api/auth/order/'+this.props.match.params.q,data)
-      .then(res => {     
-        
+      .then(res => {
+
+
+
+
+
+
+
       })
       .catch(err => {
         this.setState({error:err.response.data.error});
       })
     }
     render(){    
+
+
   return (
+
     <div>
-     <NavbarCustomer/>
+      <NavbarCustomer/>
     <div className='contain col-md-6 col-10 mx-auto' style={{ }}>
       <form 
-      // onSubmit={registerHandler}
        className='form-group'
       style={{width:"70%", marginLeft:"15%", marginTop:"6%"}}>
       <h3 className = "text-center" style={{fontFamily: "Poppins,sans-serif", fontWeight:"bold", marginBottom:"6%"}}> Select Time and Date </h3> 
@@ -57,9 +65,6 @@ class placeorder extends Component {
             required
             id="firstname"
             placeholder="Enter First name"
-            // value={firstname}
-            // onChange={(e) => setfirstname(e.target.value)
-            // }
           />
         </div>
 
@@ -70,9 +75,6 @@ class placeorder extends Component {
             required
             id="firstname"
             placeholder="Enter First name"
-            // value={firstname}
-            // onChange={(e) => setfirstname(e.target.value)
-            // }
           />
         </div>
 
@@ -81,25 +83,23 @@ class placeorder extends Component {
         <textarea class="form-control"
         rows="3"
         placeholder="  Write your message here"
-        //  value={username}
-        //  onChange={(e) => setUsername(e.target.value)}
+
         ></textarea>
         </div>
 
-        <div class="mb-3 text-right">
+        {/* <div class="mb-3 text-right">
         <button onClick={this.qqqq} className="btn add_btn btn-warning ml-0">
            Confirm Booking
         </button>
-          </div>
+          </div> */}
 
             </form>
-{/*   
-//       <div>
-//           <button onClick={this.qqqq} className="btn btn-success">
-//           Add
-//         </button>
+      <div>
+          <button onClick={this.qqqq} className="btn btn-success">
+          Add
+        </button>
 
-// </div> */}
+</div>
 </div>
 </div>
   )

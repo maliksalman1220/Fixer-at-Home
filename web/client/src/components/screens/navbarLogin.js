@@ -42,13 +42,25 @@ function NavbarLogin() {
       <li class="nav-item">
         <a class="nav-link" href="/about">About Us</a>
       </li>
-      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/services" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sign Up
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/registercust">As a Customer?</a>
+          <a class="dropdown-item" href="/registerp">As a Worker?</a>
+        </div>
+      </li>
+     
+      {/* /registercust */}
       <li class = "nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
-      <li class = "nav-item">
-        <a class="nav-link" href="/registerp">Sign Up</a>
-      </li>
+      {/* <li class = "nav-item">
+        <a class="nav-link" href="/registercust">Sign Up</a>
+      </li> */}
+
+     
   </ul>
   </div>
   </div>

@@ -59,6 +59,7 @@ import Aboutus from "./components/screens/aboutus";
 import AboutusW from "./components/screens/aboutusW";
 import AboutusA from "./components/screens/aboutusA";
 import AboutusC from "./components/screens/aboutusC.js";
+import RegisterCustomer from "./components/screens/RegisterCustomer";
 const App = () => {
   return (
     <Router>
@@ -110,7 +111,9 @@ const App = () => {
           <Route exact path="/aboutW" component={AboutusW} />
           <Route exact path="/aboutA" component={AboutusA} />
           <Route exact path="/aboutC" component={AboutusC}/>
+          <Route exact path="/registercust" component={RegisterCustomer} />
 
+          {/* RegisterCustomer */}
           {/* <Route exact path="/aboutC" component={AboutusC} />
           <Route exact path="/aboutW" component={AboutusW} />
           <Route exact path="/aboutA" component={AboutusA} /> */}

@@ -28,7 +28,7 @@ class Order extends Component {
    
     axios
       
-      .post('/api/auth/getworkerorder/'+this.props.match.params.q)
+      .post('http://localhost:5000/api/auth/getworkerorder/'+this.props.match.params.q)
       .then(res => {
           
         this.setState({

@@ -3,11 +3,14 @@ import '../screens/styles/update_profile.css';
 import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import Navbar  from './navbar';
+import { useParams } from 'react-router-dom';
 
 export const WorkerViewsCustomer = (props) => {
     const [values, setValues] = useState({username:"",firstname:"",lastname:"",email:"",phonenumber:"",address:"",country:"",dob:""});
     var new_date = "";
     var history = useHistory();
+    const params = useParams();
+
 
     const user_type = localStorage.getItem('user_type');
     const user_id = localStorage.getItem('user');
@@ -44,6 +47,10 @@ export const WorkerViewsCustomer = (props) => {
         }
     }
 
+    function sendMessage() {
+        history.push('/message/'+params.q);
+    }
+
     useEffect(() => {
         ViewProfile();
     }, [])
@@ -59,6 +66,8 @@ export const WorkerViewsCustomer = (props) => {
                 <div className="row">
                     <div className="col-md-3 border-right">
                         <div className="d-flex flex-column align-items-center "><img className="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&usqp=CAU" /><span>{values.username}</span> <span className="text-black-50">{values.email}</span></div>
+                        <div className="d-flex flex-column align-items-center "><button type="button" class="btn bello btn-warning ml-2" onClick={sendMessage}>Send Message</button></div>
+                    
                     </div>
                     <div className="col-md-7">
                         <div className="p-3 py-5">

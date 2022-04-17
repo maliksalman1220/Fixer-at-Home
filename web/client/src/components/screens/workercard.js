@@ -50,7 +50,7 @@ const BookCard = (props) => {
                 <h4 class="mb-0 mt-0 ctext" style={{fontSize:"20px"}}>{book.firstname}</h4>
                   {Stars}
                 <div class="p-2 mt-auto mb-auto bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="articles">Price Range: </span> <span class="number1">Rs {book.price?Number(book.price)-50:0}-{book.price?Number(book.price)+50:0}</span> </div>
+                    <div class="d-flex flex-column"> <span class="articles">Price Range: </span> <span class="number1">Rs {book.price?Number(book.price)-50:0}-{book.price?Number(book.price)+50:0} </span> </div>
                 </div>
                 <div class="button mt-0 d-flex flex-row align-items-center"> 
                <a href={`/placeorder/${book._id}`} style={{backgroundColor:"rgb(255, 208, 0)"}} class="btn workercard_button2 btn-sm btn-primary  ml-3">Request</a>

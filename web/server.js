@@ -21,7 +21,7 @@ app.use("/api/private", require("./routes/private"));
 // Error Handler Middleware
 app.use(errorHandler);
 
-const PORT = process.env.PORT;
+const PORT = 5000;
 
 if (process.env.Node_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")))

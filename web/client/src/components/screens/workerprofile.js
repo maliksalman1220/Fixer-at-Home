@@ -30,30 +30,25 @@ export const Workerprofile = (props) => {
 
     async function ViewProfile() {
        
-        const config = {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          },
-        };
-        try{
+    //     const config = {
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+    //       },
+    //     };
+    //     try{
   
-            axios.get("/api/private/Admin", config)
-            .catch(err=>{console.log(err)})
-           .then(res=>{if(res.data.error!=""){console.log(res.data.error);seterror(res.data.error)}})
-     }
+    //         axios.get("/api/private/Admin", config)
+    //         .catch(err=>{console.log(err)})
+    //        .then(res=>{if(res.data.error!=""){console.log(res.data.error);seterror(res.data.error)}})
+    //  }
            
-         catch (error) {
-           console.log(error,"p")
-           
-           
-       
-     
-         
-     
+    //      catch (error) {
+    //        console.log(error,"p")
+
        
            
-       }
+    //    }
       
   
      

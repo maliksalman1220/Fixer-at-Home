@@ -110,6 +110,8 @@ class order extends Component {
              <div class="col col-1 tcol-1">Worker name</div>
              <div class="col col-2 tcol-2">Amount</div>
              <div class="col col-3 tcol-3">Status</div>
+             <div class="col col-3 tcol-3">Rating</div>
+
              {/* <div class="col col-3 tcol-3">Order Details</div> */}
              </li>
            {bookList}

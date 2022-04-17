@@ -84,7 +84,7 @@ ClientSchema.methods.matchPassword = async function (password) {
 
 ClientSchema.methods.getSignedJwtToken = function () {
   return jwt.sign({ id: this._id }, '3848dda248be81a9d95ac2234af4892517521e9046c93dffb6dd55fa6d4abfdde8422c', {
-    expiresIn: "10min",
+    
   });
 };
 

@@ -365,6 +365,8 @@ exports.order = async (req, res, next) => {
   console.log(worker)
   let pq = await Worker.findOne({ _id: worker })
   let workername = pq.firstname
+  let detail = await Client.findOne({ _id: client })
+  let clientname = detail.firstname
   let price = 1000
   const status = "pending"
 
@@ -383,6 +385,7 @@ exports.order = async (req, res, next) => {
     price,
     status,
     workername,
+    clientname,
     information
 
 

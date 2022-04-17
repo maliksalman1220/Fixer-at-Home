@@ -17,7 +17,7 @@ export const WorkerViewsCustomer = (props) => {
 
     async function ViewProfile() {
 
-        const req = await fetch('http://localhost:5000/api/auth/profile/'+user_id, {
+        const req = await fetch('http://localhost:5000/api/auth/profile/'+JSON.stringify(params.q), {
             headers: {
                 'Content-Type': 'application/json',
             },

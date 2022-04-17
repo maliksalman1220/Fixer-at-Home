@@ -55,6 +55,7 @@ import {UserprofileView} from "./components/screens/userprofileview";
 import NavbarCustomer from "./components/screens/navbarCustomer";
 import workerlandingpage from "./components/screens/workerlandingpage";
 import {Customerviewsworker} from "./components/screens/customerviewsworker";
+import {WorkerViewsCustomer}from "./components/screens/workerViewsCustomer";
 import Aboutus from "./components/screens/aboutus";
 import AboutusW from "./components/screens/aboutusW";
 import AboutusA from "./components/screens/aboutusA";
@@ -87,6 +88,7 @@ const App = () => {
           <Route exact path="/workerorder/:q" component={workerorder} />
           <Route exact path="/order/:q" component={order} />
           <Route exact path="/workerorderdetail/:q" component={workerorderdetail} />
+          <Route exact path="/workerviewscustomer/:q" component = {WorkerViewsCustomer} />
   
         {/* customer - in progress */}
           <Route exact path="/pppp" component={PPPP} />

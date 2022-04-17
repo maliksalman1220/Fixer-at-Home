@@ -88,7 +88,6 @@ function Workerprofileupdate(props) {
                 dob: formValues.dob,
                 country: formValues.country,
                 experience: formValues.experience,
-                rating: formValues.rating,
                 category: formValues.category,
                 price: formValues.price,
             }),
@@ -148,11 +147,6 @@ function Workerprofileupdate(props) {
                                     name="country"
                                     value={formValues.country  || ''}
                                     onChange={handleChange} /></div>
-                                <div className="col-md-12"><label className="labels">Rating</label><input type="text" className="form-control" placeholder="rating"
-                                    name="rating"
-                                    value={formValues.rating  || ''}
-                                    onChange={handleChange}
-                                /></div>
                                 <div className="col-md-12"><label className="labels">Category</label><input type="text" className="form-control" placeholder="category"
                                     name="category"
                                     value={formValues.category  || ''}

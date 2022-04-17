@@ -115,7 +115,7 @@ const App = () => {
           <Route exact path="/aboutA" component={AboutusA} />
           <Route exact path="/aboutC" component={AboutusC}/>
           <Route exact path="/registercust" component={RegisterCustomer} />
-          <Route exact path="/rating" component={Rating} />
+          <Route exact path="/rating/:q" component={Rating} />
 
           {/* RegisterCustomer */}
           {/* <Route exact path="/aboutC" component={AboutusC} />

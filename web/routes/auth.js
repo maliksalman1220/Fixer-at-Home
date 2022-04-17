@@ -31,12 +31,15 @@ const {
   LoginUser,
   Message,
   Getmessage,
-
+  Rating,
+  registercustomer,
+  
 } = require("../controllers/auth");
 
 router.route("/registerclient").post(registerclient);
 router.route("/registerworker").post(registeradmin);
 router.route("/register/p").post(registerworker);
+router.route("/register/customer").post(registercustomer);
 router.route("/email").post(email);
 router.route("/services").post(services);
 router.route("/getservices").get(detail);
@@ -63,6 +66,7 @@ router.route("/getmessage/:q/:r").get(Getmessage);
 
 router.route("/addworker/:q").get(addworkerppp);
 router.route("/deletecategory").post(deletecategory);
+router.route("/rating").post(Rating);
 
 
 

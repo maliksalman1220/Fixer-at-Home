@@ -16,6 +16,8 @@ const {
   detailp,
   deletecategory,
   getworker,
+  forgotPassword,
+  resetPassword,
   addworkerppp,
   getworkerdetail,
   getworkerp,
@@ -46,6 +48,8 @@ router.route("/getworkerp").get(getworkerp);
 router.route("/getworkerdetail/:q").get(getworkerdetail);
 router.route("/order/:q").post(order);
 router.route("/getorder/:q").post(getorder);
+router.route("/forgotpassword").post(forgotPassword),
+router.route("/resetpassword/:q").put(resetPassword),
 
 
 router.route("/getworkerorder/:q").post(getworkerorder);

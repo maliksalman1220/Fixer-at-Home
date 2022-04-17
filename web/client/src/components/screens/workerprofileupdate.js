@@ -7,7 +7,7 @@ import Navbar from './navbar';
 
 function Workerprofileupdate(props) {
     // error handling still to be done
-    const initialValues = { firstname: "", lastname: "", email: "", phonenumber: "", address: "", dob: "", country: "", experience: "", rating: "", category: "" };
+    const initialValues = { firstname: "", lastname: "", email: "", phonenumber: "", address: "", dob: "", country: "", experience: "", rating: "", category: "", price:"" };
     const [formValues, setFormValues] = useState(initialValues);
     var new_date = "";
     const history = useHistory();
@@ -40,7 +40,8 @@ function Workerprofileupdate(props) {
                 country: data.user.country,
                 experience: data.user.experience,
                 rating: data.user.rating,
-                category: data.user.category
+                category: data.user.category,
+                price: data.user.price
             }); 
         }
         else {
@@ -89,6 +90,7 @@ function Workerprofileupdate(props) {
                 experience: formValues.experience,
                 rating: formValues.rating,
                 category: formValues.category,
+                price: formValues.price,
             }),
         })
         const data = await response.json();
@@ -159,6 +161,11 @@ function Workerprofileupdate(props) {
                                 <div className="col-md-12"><label className="labels">Experience</label><input type="text" className="form-control" placeholder="experience"
                                     name="experience"
                                     value={formValues.experience  || ''}
+                                    onChange={handleChange}
+                                /></div>
+                                <div className="col-md-12"><label className="labels">Price</label><input type="text" className="form-control" placeholder="price"
+                                    name="price"
+                                    value={formValues.price  || ''}
                                     onChange={handleChange}
                                 /></div>
                                 <div class="button mt-0 d-flex flex-row align-items-center">

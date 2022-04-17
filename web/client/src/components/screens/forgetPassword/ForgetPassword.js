@@ -1,66 +1,45 @@
 import {useState, useEffect, React} from 'react';
 import "./forgetPassword.css"
 
-function ForgetPassword  ({submitForm}){
-    function validateInfo(values) { 
-        let errors = {}
-        const emailRegex = /\S+@\S+\.\S+/;
-        //Email
-        if(!values.email){ 
-            errors.email = "Email required."
-        } else if (!emailRegex.test(values.email)) {
-            errors.email = "Email address is invalid."
-        }
-        return errors;
-    }
+import axios from "axios";
 
 
-    const useForm = (callback, validate) => {
-        const [values, setValues] = useState({ //sets initial values of all our fields being used. Its better to name them same as the name = 'xyz' from form
-            email : ''
-        })
+const ForgetPassword = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-        const [errors, setErrors] = useState({}) // ({}) creates an empty object, will be used to track errors
+  const forgotPasswordHandler = async (e) => {
+    e.preventDefault();
 
-        const [isSubmitting, setIsSubmitting] = useState(false);
+    const config = {
+      header: {
+        "Content-Type": "application/json",
+      },
+    };
 
+    try {
+      const { data } = await axios.post(
+        "/api/auth/forgotpassword",
+        { email },
+        config
+      );
 
-        const handleChange = e => { //updates values of all our inputs
-            const {name, value} = e.target
-            setValues({
-                ...values,
-                [name] : value
-            })
-        }
+      setSuccess(data.data);
+    } catch (error) {
+      setError(error.response.data.error);
+      setEmail("");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }};
 
-        const handleSubmit = e => {
-            e.preventDefault();
-
-            setErrors(validate(values));
-            setIsSubmitting(true);
-        }
-
-        useEffect(() => {
-            if(Object.keys(errors).length === 0 && 
-            isSubmitting) {
-                callback()
-            };
-        }, [errors]);
-        return {handleChange, handleSubmit, values, errors};
-    }
-    
-    const {handleChange, handleSubmit, values, errors} = 
-    useForm(
-        submitForm,
-        validateInfo);
- 
-    console.log(values)
     return (     
         
         <div class = "container Pcontain mt-5 mb-5 pt-3 pb-4"> 
             <form  
             class = "d-flex flex-column align-items-center pb-1"
-            onSubmit={handleSubmit}
+            onSubmit={forgotPasswordHandler}
             
             > 
                <h1
@@ -77,13 +56,13 @@ function ForgetPassword  ({submitForm}){
                         name = "email"
                         class = "text-center"
                         placeholder= 'Enter your email'
-                        value = {values.email}
-                        onChange = {handleChange}
+                        value = {email}
+                        onChange = {(e) => setEmail(e.target.value)}
                         style={{width: "30%"}}
 
                     />
 
-                    {errors.email && <p class ="text-danger text-center">{errors.email}</p>} 
+                  
                 <div 
                 class = "d-flex flex-column align-items-center pt-2">
                     <button 

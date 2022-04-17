@@ -69,7 +69,10 @@ const WorkerSchema = new mongoose.Schema({
 
   },
   
-  price:{type:String},
+  price: {
+    type: String,
+  },
+
   status: {
     type: String,
     
@@ -133,4 +136,4 @@ WorkerSchema.methods.getResetPasswordToken = function () {
 
 
 
-module.exports = Worker = conn.model('worker',WorkerSchema);
+module.exports = Worker = conn.model('worker', WorkerSchema);

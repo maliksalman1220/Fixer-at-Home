@@ -101,7 +101,7 @@ const App = () => {
           <Route exact path="/workerupdateprofile/:q" component={() => <Workerprofileupdate />} />
           <Route exact path="/placeorder/:q" component={placeorder} />
           <Route exact path="/employeeDashboard" component = {EmployeeDashboard} />
-          <Route exact path="/resetPassword" component = {ResetPassword} />
+          <Route exact path="/resetPassword/:q" component = {ResetPassword} />
           <Route exact path="/forgetPassword" component = {ForgetPassword} />
           <Route exact path="/message/:q" component = {Message} />
           <Route exact path="/workerland" component = {workerlandingpage} />

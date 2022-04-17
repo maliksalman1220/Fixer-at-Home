@@ -4,6 +4,8 @@ import image from "../screens/styles/Poppins.png"
 import {AiOutlineArrowRight} from "react-icons/ai" 
 import NavbarCustomer from './navbarCustomer'
 import Navbar from './navbar'
+import Footer from './footer'
+
 function HomepageWorker() {
   return (
       
@@ -98,6 +100,8 @@ function HomepageWorker() {
          </div>
    </div>
   </section>   
+
+  <Footer/>
 </div>
     )
 }

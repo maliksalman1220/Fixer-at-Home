@@ -1,5 +1,6 @@
 import React from 'react'
 import image from "../screens/styles/ims.png"
+import Footer from './footer'
 import Navbar from './navbar'
 
 function AboutusW() {
@@ -33,6 +34,7 @@ function AboutusW() {
      </div>
 
     </section>
+    <Footer/>
     </div>
   )
 }

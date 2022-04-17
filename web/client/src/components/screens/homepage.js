@@ -3,6 +3,7 @@ import "../screens/styles/homepage.css"
 import image from "../screens/styles/Poppins.png"
 import {AiOutlineArrowRight} from "react-icons/ai" 
 import NavbarLogin from './navbarLogin'
+import Footer from './footer'
 function Homepage() {
   return (
       
@@ -118,7 +119,9 @@ function Homepage() {
 </div>                    
  </div> 
 </section> 
+<Footer/>
 </div>
+
     )
 }
 

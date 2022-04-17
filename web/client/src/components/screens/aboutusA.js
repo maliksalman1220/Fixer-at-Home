@@ -1,5 +1,6 @@
 import React from 'react'
 import image from "../screens/styles/ims.png"
+import Footer from './footer'
 import NavbarAdmin from './navbarAdmin'
 
 function AboutusA() {
@@ -33,6 +34,7 @@ function AboutusA() {
      </div>
 
     </section>
+    <Footer/>
     </div>
   )
 }

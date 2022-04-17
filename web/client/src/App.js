@@ -64,15 +64,12 @@ import RegisterCustomer from "./components/screens/RegisterCustomer";
 import Rating from "./components/screens/rating";
 import HomepageCust from "./components/screens/homecustomer";
 import HomepageWorker from "./components/screens/homeworker";
+// import "/App.css"
+
 const App = () => {
   return (
     <Router>
       <div className="app">
-      
-        {/* <NavbarCustomer/> */}
-    <div className="container align-left">
-    </div>
-
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/home" component={Homepage} />
@@ -120,16 +117,12 @@ const App = () => {
           <Route exact path="/rating" component={Rating} />
           <Route exact path="/homecust" component={HomepageCust} />
           <Route exact path="/homework" component={HomepageWorker} />
-
-          {/* RegisterCustomer */}
-          {/* <Route exact path="/aboutC" component={AboutusC} />
-          <Route exact path="/aboutW" component={AboutusW} />
-          <Route exact path="/aboutA" component={AboutusA} /> */}
-
         
         </Switch>
-        <Footer/>   
-      </div>
+        </div>
+
+        {/* <Footer/> */}
+      
    
     </Router>
   );

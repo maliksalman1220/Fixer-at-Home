@@ -5,14 +5,14 @@ import {MdEmail} from "react-icons/md"
 function Footer()
 {
     return(
-      <section className='mt-5'>
+      // <section className='mt-5'>
   <footer
           class="mt-5 text-center text-lg-start text-white"
           style={{backgroundColor: "#004c8c", fontFamily:"Poppins,sans-serif"}}
 
           >
     <div class="container p-3 pb-0">
-      <section class="">
+      {/* <section class=""> */}
         <div class="row">
           <div class="col-lg-3 col-md-6  ml-4 mb-4 mb-md-0">
             <h5 class="text-uppercase" style={{fontFamily:"Poppins,sans-serif"}}>Get to know us:</h5>
@@ -47,16 +47,17 @@ function Footer()
             </ul>
           </div>
         </div>
-      </section>
-    </div>
-    <div
+        <div
          class="text-center p-1"
          style={{backgroundColor:"#004c8c"}}
          >
       © Copyright 2022 FixerAtHome.com
     </div>
+      {/* </section> */}
+    </div>
+    
   </footer>
-  </section>
+  // </section>
     )
 }
  

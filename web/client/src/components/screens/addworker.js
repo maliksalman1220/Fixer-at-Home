@@ -35,7 +35,7 @@ class Addworkerlist extends Component {
     };
 try{
   
-       axios.get("/api/private/Admin", config)
+       axios.get("http://localhost:5000/api/private/Admin", config)
        .catch(err=>{console.log(err)})
       .then(res=>{if(res.data.error!=""){console.log(res.data.error);this.setState({error:res.data.error})}})
 }

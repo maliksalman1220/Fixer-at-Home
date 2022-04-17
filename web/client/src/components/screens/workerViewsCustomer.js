@@ -48,7 +48,7 @@ export const WorkerViewsCustomer = (props) => {
     }
 
     function sendMessage() {
-        history.push('/message/'+params.q);
+        history.push('/message/"'+params.q+'"');
     }
 
     useEffect(() => {

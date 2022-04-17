@@ -3,6 +3,8 @@ import "../screens/styles/homepage.css"
 import image from "../screens/styles/Poppins.png"
 import {AiOutlineArrowRight} from "react-icons/ai" 
 import NavbarCustomer from './navbarCustomer'
+import Footer from './footer'
+
 function HomepageCust() {
   return (
       
@@ -97,6 +99,7 @@ function HomepageCust() {
          </div>
    </div>
   </section>   
+  <Footer/>
 </div>
     )
 }

@@ -4,7 +4,10 @@ import { useEffect } from "react";
 import '../screens/styles/message.css';
 import { useParams } from 'react-router-dom';
 import Chat from './messagecard';
+import Navbar from './navbar';
+import NavbarCustomer from './navbarCustomer';
 var id = createContext();
+
 
 export const Message = () => {
     const params = useParams();
@@ -97,7 +100,9 @@ export const Message = () => {
     }, [])
 
     return (
-        <>
+        <div>
+            <NavbarCustomer/>
+        <div>
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
             <div class="container">
@@ -134,7 +139,8 @@ export const Message = () => {
                     </div>
                 </div>
             </div>
-        </>
+            </div>
+        </div>
     )
 }
 

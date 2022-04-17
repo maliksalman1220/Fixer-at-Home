@@ -523,7 +523,7 @@ exports.Workerprofileupdate = async (req, res) => {
           experience: req.body.experience,
           rating: req.body.rating,
           category: req.body.category,
-
+          price: req.body.price,
         }
       }
     )

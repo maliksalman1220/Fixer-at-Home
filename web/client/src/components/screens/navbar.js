@@ -85,7 +85,7 @@ function Navbar() {
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item dropdown" href="#"></a>
         {/* workerprofileview */}
-          <a class="dropdown-item" href={"/workerprofileview/"+user_id}>View Profile</a>
+          <a class="dropdown-item" href={link}>View Profile</a>
           <a class="dropdown-item" href={link}>Update Profile</a>
           {/* <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
           >Order History Customer</a> */}

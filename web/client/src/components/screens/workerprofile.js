@@ -16,6 +16,7 @@ export const Workerprofile = (props) => {
     const [rating, setrating] = useState("");
     const [category, setcategory] = useState("");
     const [experience, setexperience] = useState("");
+    const [price, setprice] = useState("");
 
     var new_date = "";
     var history = useHistory();
@@ -51,7 +52,7 @@ export const Workerprofile = (props) => {
             setrating(data.user.rating);
             setcategory(data.user.category);
             setexperience(data.user.experience);
-
+            setprice(data.user.price);
         }
         else {
             alert(data.error);
@@ -134,6 +135,11 @@ export const Workerprofile = (props) => {
                                 <div className="col-md-12"><label className="labels">Experience</label><input type="text" className="form-control" placeholder="experience"
                                     name="experience"
                                     value={experience}
+                                    readOnly
+                                /></div>
+                                <div className="col-md-12"><label className="labels">Price</label><input type="text" className="form-control" placeholder="price"
+                                    name="price"
+                                    value={price}
                                     readOnly
                                 /></div>
 

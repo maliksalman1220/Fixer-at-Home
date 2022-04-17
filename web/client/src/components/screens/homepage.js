@@ -113,7 +113,7 @@ function Homepage() {
     </a>
     </div> 
     <div class="col">
-    <a href="/services" class="btn h_btnsl btn-primary default" role="button" >Sign Up as a Worker    <AiOutlineArrowRight/></a>
+    <a href="/registercust" class="btn h_btnsl btn-primary default" role="button" >Sign Up as a Worker    <AiOutlineArrowRight/></a>
     </div>
   </div>
 </div>                    

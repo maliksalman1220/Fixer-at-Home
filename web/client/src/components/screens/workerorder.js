@@ -4,11 +4,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import List from './workerordercard';
 import axios from 'axios';
-import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
+import { Form,Option,Button,Container,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./ordercard.css"
 import SidebarWorker from './sidebarworker';
-
+import Navbar from './navbar';
 
 class Order extends Component {
   constructor() {
@@ -85,7 +85,8 @@ class Order extends Component {
       
     return (
       
-      // <div>
+      <div>
+         <Navbar/>
 <div className='rowC' >
      <SidebarWorker/>
     <div className='mx-auto' style={{width: "100%", marginTop: "1%"}}> 
@@ -109,7 +110,7 @@ class Order extends Component {
       
       
       
-      // </div>
+      </div>
 
   )}}
     

@@ -3,6 +3,7 @@ import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import '../screens/styles/update_profile.css'
 import { useParams } from 'react-router-dom';
+import NavbarCustomer from './navbarCustomer';
 
 function Update_profile(props) {
     // error handling still to be done
@@ -105,6 +106,7 @@ function Update_profile(props) {
 
     return (
         <div>
+            <NavbarCustomer/>
             <div class="container ucontain mt-5 mb-5">
                 <div class="row">
                     <div class="col-md-3 border-right">
@@ -146,10 +148,9 @@ function Update_profile(props) {
                                     name="country"
                                     value={formValues.country}
                                     onChange={handleChange} /></div>
-
-                                <div class="col-md-12 udiv text-right">
-                                    <button type="button" class="btn hello btn-primary" onClick={handleClick}>Cancel</button>
-                                    <button type="button" class="btn bello btn-warning ml-2" onClick={updateProfile}>Save</button>
+                                <div class="button mt-0 d-flex flex-row align-items-center">
+                                    <button style={{padding:"1.5%"}} type="button" class="btn workercard_button2 btn-sm btn-primary  ml-3" onClick={handleClick}>Cancel</button>
+                                    <button style={{padding:"1.5%"}} type="button" class="btn workercard_button btn-sm btn-primary  ml-3" onClick={updateProfile}>Save</button>
                                 </div>
                             </div>
                         </div>

@@ -3,6 +3,7 @@ import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import '../screens/styles/update_profile.css'
 import { useParams } from 'react-router-dom';
+import Navbar from './navbar';
 
 function Workerprofileupdate(props) {
     // error handling still to be done
@@ -103,6 +104,7 @@ function Workerprofileupdate(props) {
 
     return (
         <div>
+            <Navbar/>
             <div class="container ucontain mt-5 mb-5">
                 <div class="row">
                     <div class="col-md-3 border-right">

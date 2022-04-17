@@ -50,19 +50,26 @@ import Workerprofileupdate from "./components/screens/workerprofileupdate";
 import { Message } from "./components/screens/Message";
 import { Workerprofileview } from "./components/screens/workerprofileview";
 // import sidebarTEMP from "./components/screens/sidebarTEMP";
-import addworkerLayout_admin from "./components/screens/addworkerLayout_admin"
-
+import addworkerLayout_admin from "./components/screens/addworkerLayout_admin";
+import {UserprofileView} from "./components/screens/userprofileview";
+import NavbarCustomer from "./components/screens/navbarCustomer";
+import workerlandingpage from "./components/screens/workerlandingpage";
+import {Customerviewsworker} from "./components/screens/customerviewsworker";
+import Aboutus from "./components/screens/aboutus";
+import AboutusW from "./components/screens/aboutusW";
+import AboutusA from "./components/screens/aboutusA";
+import AboutusC from "./components/screens/aboutusC.js";
 const App = () => {
   return (
     <Router>
       <div className="app">
       
-        <Navbar/>
+        {/* <NavbarCustomer/> */}
     <div className="container align-left">
     </div>
 
         <Switch>
-          
+          <Route exact path="/" component={Homepage} />
           <Route exact path="/home" component={Homepage} />
           <Route exact path="/registerp" component={RegisterScreenp} />
           <Route exact path="/register" component={RegisterScreen} />
@@ -74,7 +81,7 @@ const App = () => {
           <Route exact path="/worker/:q" component={workerlist} />
           <Route exact path="/addworker" component={addworkerLayout_admin} />
           {/* <Route exact path="/addworker" component={Addworkerlist} /> */}
-
+        
           {/*worker - access from navbar*/}
           <Route exact path="/workerorder/:q" component={workerorder} />
           <Route exact path="/order/:q" component={order} />
@@ -83,6 +90,7 @@ const App = () => {
         {/* customer - in progress */}
           <Route exact path="/pppp" component={PPPP} />
           <Route exact path="/viewprofile/:q" component={viewprofile} />
+          <Route exact path="/userprofileview/:q" component={() => <UserprofileView/>} />
           <Route exact path="/userprofile/:q" component={() => <Userprofile/>} />
           <Route exact path="/workerprofileview/:q" component={() => <Workerprofileview/>} />
           <Route exact path="/workerprofile/:q" component={() => <Workerprofile/>} />
@@ -96,9 +104,22 @@ const App = () => {
           <Route exact path="/resetPassword" component = {ResetPassword} />
           <Route exact path="/forgetPassword" component = {ForgetPassword} />
           <Route exact path="/message/:q" component = {Message} />
+          <Route exact path="/workerland" component = {workerlandingpage} />
+          <Route exact path="/customerviewsworker/:q" component = {Customerviewsworker} />
+          <Route exact path="/about" component={Aboutus} />
+          <Route exact path="/aboutW" component={AboutusW} />
+          <Route exact path="/aboutA" component={AboutusA} />
+          <Route exact path="/aboutC" component={AboutusC}/>
+
+          {/* <Route exact path="/aboutC" component={AboutusC} />
+          <Route exact path="/aboutW" component={AboutusW} />
+          <Route exact path="/aboutA" component={AboutusA} /> */}
+
+        
         </Switch>
-        {/* <Footer/> */}
+        <Footer/>   
       </div>
+   
     </Router>
   );
 };

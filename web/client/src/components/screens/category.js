@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./categorycard"
-
+import NavbarCustomer from './navbarCustomer';
 
 class category extends Component {
   constructor() {
@@ -89,11 +89,7 @@ class category extends Component {
     return (
 
       <div>
-                
-{/* <h1><em>Categories</em></h1> */}
-
-{/* <div class="cards-list cards-listt"> */}
-
+<NavbarCustomer/>
 <div className='services'> 
    <div class="aligncenter">
            <p><img width="27" height="27" src="https://jtkh01kfq943190ei48njh7k-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/title-img.png" /></p>

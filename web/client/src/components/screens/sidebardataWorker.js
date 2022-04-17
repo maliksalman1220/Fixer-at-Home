@@ -6,10 +6,11 @@ import {AiOutlineAppstoreAdd} from "react-icons/ai";
 import {CgExtensionRemove} from "react-icons/cg";
 export const sidebardataworker = [
 {
-    title: "Order Status",
+    title: "Order Details",
     icon: <IoAddCircleSharp/>,
     link: `/workerorder/${JSON.parse(localStorage.getItem('user'))}`
 }
+
 ]
 
 

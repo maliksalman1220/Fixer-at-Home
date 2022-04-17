@@ -6,6 +6,7 @@ import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 're
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../screens/styles/update_profile.css'
 import './placeorder.css'
+import NavbarCustomer from './navbarCustomer';
 class placeorder extends Component {
   constructor() {
     super();
@@ -41,6 +42,8 @@ class placeorder extends Component {
     }
     render(){    
   return (
+    <div>
+     <NavbarCustomer/>
     <div className='contain col-md-6 col-10 mx-auto' style={{ }}>
       <form 
       // onSubmit={registerHandler}
@@ -97,6 +100,7 @@ class placeorder extends Component {
 //         </button>
 
 // </div> */}
+</div>
 </div>
   )
 

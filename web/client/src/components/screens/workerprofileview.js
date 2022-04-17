@@ -3,6 +3,7 @@ import '../screens/styles/update_profile.css';
 import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import  Navbar  from './navbar';
 
 export const Workerprofileview = (props) => {
     const [username, setusername] = useState("");
@@ -72,6 +73,7 @@ export const Workerprofileview = (props) => {
 
     return (
         <div>
+            <Navbar/>
             <div className="container ucontain mt-5 mb-5">
                 <div className="row">
                     <div className="col-md-3 border-right">

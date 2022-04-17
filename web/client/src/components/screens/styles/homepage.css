@@ -1,59 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
-
-.slider{
-background: url("http://hirecentury.ca/blog/wp-content/uploads/2017/08/44132482_m-703x467.jpg") no-repeat;
-background-size: cover;
-height: auto;
-width: 100%;
-padding: 200px 0;
+.backk{
+  background-color: #dadde6;
+  text-align: right
 }
 
-.htext{
+.maintxt {position: relative;}
+.maintxt > img, .overlay-text {position: absolute;}
+
+.aboutus{
 font-family:  Poppins,sans-serif !important; 
+/* font-size: larger; */
 }
 
-.htextu{
-  font-weight: 900;
-  font-size: 50px;
+.headingss{
+  font-family: Poppins,sans-serif !important;
+  font-weight: bold;
 }
 
-.h-font{
-font-size: 30px;
-font-weight: 500;
-
+.ctextt{
+  font-family:  Poppins,sans-serif ;
+  font-weight: 20px;
+  font-size: medium;
 }
-.my_container{
-  text-align: left;
-  font-family: Poppins,sans-serif !important; 
-  line-height: 1.5em;
-  font-size: 30px;
-  color: rgb(0, 0, 0);
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1000px;
-  position: relative;
-  padding-top: 20px;
-  display: block;
+.aboutuss{
+    width: 100%;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    font-family:  Poppins,sans-serif ;
+    color: black !important;
+    letter-spacing: 0;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0;
 }
 
-.h_btns{
-  width: 25% !important;
-  margin-right: 16px !important;
-  border: 0.5px solid black !important;
+.aboutuss{
+  font-family:  Poppins,sans-serif  !important;
+  color: yellow !important;
 }
 
 .h_btnsl{
-  width: 25% !important;
-  margin-right: 16px !important;
+  padding: 5%;
+  font-weight: 500 !important;
+  font-size: 25px;
+  line-height: 44px;
+  font-family:  Poppins,sans-serif ;
+  color: black !important;
+  letter-spacing: 0;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
   border: none;
-  /* margin-left: 0.5px !important; */
+  background-color: white !important;
 }
 
-.btn-cont{
-  font-size: 0 !important;
-  display: flex !important;
-
+.h_btnsl:hover{
+  border-bottom: 5px solid black;
+  transition: 0.2s;
 }
-

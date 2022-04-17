@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Listp.css"
+import NavbarCustomer from './navbarCustomer';
 
 
 class PPPP extends Component {
@@ -70,6 +71,7 @@ class PPPP extends Component {
 return (
 
   <div>
+        <NavbarCustomer/>
                 
    <div className='services'> 
    <div class="aligncenter">

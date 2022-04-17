@@ -3,7 +3,7 @@ import '../screens/styles/update_profile.css';
 import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import NavbarCustomer from './navbarCustomer';
 
 export const Userprofile = () => {
     const [values, setValues] = useState({username:"",firstname:"",lastname:"",email:"",phonenumber:"",address:"",country:"",dob:""});
@@ -63,11 +63,12 @@ export const Userprofile = () => {
 
     return (
         <div>
+        <NavbarCustomer/>
             <div className="container ucontain mt-5 mb-5">
                 <div className="row">
                     <div className="col-md-3 border-right">
                         <div className="d-flex flex-column align-items-center "><img className="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&usqp=CAU" /><span>{values.username}</span> <span className="text-black-50">{values.email}</span></div>
-                        <div className="d-flex flex-column align-items-center "><button type="button" class="btn bello btn-warning ml-2" onClick={sendMessage}>Send Message</button></div>
+                        {/* <div className="d-flex flex-column align-items-center "><button type="button" class="btn bello btn-warning ml-2" onClick={sendMessage}>Send Message</button></div> */}
 
                     </div>
                     <div className="col-md-7">
@@ -115,7 +116,7 @@ export const Userprofile = () => {
                                     /></div>
 
                                 <div class="col-md-12 udiv text-right">
-                                    <button type="button" class="btn bello btn-warning ml-2" onClick={handleClick}>Edit Profile</button>
+                                    <button type="button" class="btn bello mt-4 btn-warning ml-0" onClick={handleClick}>Edit Profile</button>
                                 </div>
                             </div>
                         </div>

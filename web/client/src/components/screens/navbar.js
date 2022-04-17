@@ -53,11 +53,11 @@ function Navbar() {
         <a class="nav-link " href="/home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about">About Us</a>
+        <a class="nav-link" href="/aboutW">About Us</a>
       </li>
-      <li class="nav-item">
+      {/* <li class="nav-item">
         <a class="nav-link" href="/pppp">Services</a>
-      </li>
+      </li> */}
       {/* <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="/services" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Services
@@ -70,7 +70,7 @@ function Navbar() {
       </li> */}
       {/* customers */}
       <li class="nav-item">
-        <a class="nav-link" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}> My Orders</a>
+        <a class="nav-link" href={`/workerorder/${JSON.parse(localStorage.getItem('user'))}`}> My Orders</a>
       </li>
 
      <ul class="navbar-nav ml-auto">

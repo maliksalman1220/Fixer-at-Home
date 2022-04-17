@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./styles/login.css";
 import { useHistory } from "react-router-dom";
+import NavbarLogin from "./navbarLogin";
 
 export const Login = ({history}) => {
   
@@ -32,8 +33,11 @@ export const Login = ({history}) => {
           localStorage.setItem('user_type', data.type);
           localStorage.setItem('username', data.username);
           
-          if(data.type=="admin"){console.log("p");history.push("/Addcategories")} else if (data.type=="worker"){
-            console.log("p");history.push("/update_profile")
+          if(data.type=="admin"){console.log("p");history.push("/Addcategories")}
+          
+          else if (data.type=="worker"){
+            console.log("p");history.push("/workerland")
+          
           }else if ( data.type=="client"){
             console.log("p");history.push("/pppp")
           }
@@ -50,6 +54,8 @@ export const Login = ({history}) => {
       }
 
     return (
+      <div>
+        <NavbarLogin/>
       <div className='roww'>
       <div className='col-md-6 col-10 mx-auto'>
 
@@ -77,21 +83,14 @@ export const Login = ({history}) => {
                     placeholder="Enter password" />
                 </div>
              
-                {/* <button type="submit" className="btn btn-primary btn-block">Login</button> */}
-        <button type="submit"  class="btn l_btn btn-warning ml-2">Login</button>
+        <button type="submit"  class="btn workercard_button btn-sm btn-primary">Login</button>
                 
-                {
-                /* <div class="col-md-12 text-right">
-                <button type="submit" className="btn btn-primary btn-block">
-                Login
-              </button>
-            </div> */}
                 <p className="forgot-password text-right">
                     Want to create an account? <a href="./registerp">Sign up</a>
                 </p>
             </form>
         </div>
         </div>
-        // </div>
+        </div>
     );
 }

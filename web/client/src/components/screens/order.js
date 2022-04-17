@@ -7,6 +7,7 @@ import { Form,Option,Button,Container,Navbar,Nav,NavDropdown,Row,Col  } from 're
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./ordercard.css"
 import SidebarCustomer from './sidebarCustomer';
+import NavbarCustomer from './navbarCustomer';
 
 class order extends Component {
   constructor() {
@@ -97,7 +98,8 @@ class order extends Component {
     
       
     return (
-
+      <div>
+        <NavbarCustomer/>
       <div className='rowC' >
       <SidebarCustomer/>
      <div className='mx-auto' style={{width: "100%", marginTop: "1%"}}> 
@@ -108,7 +110,7 @@ class order extends Component {
              <div class="col col-1 tcol-1">Worker name</div>
              <div class="col col-2 tcol-2">Amount</div>
              <div class="col col-3 tcol-3">Status</div>
-             <div class="col col-3 tcol-3">Order Details</div>
+             {/* <div class="col col-3 tcol-3">Order Details</div> */}
              </li>
            {bookList}
            </ul>
@@ -116,7 +118,7 @@ class order extends Component {
            </div>
       </div>
   </div>
- 
+  </div>
   )}}
     
 export default order;

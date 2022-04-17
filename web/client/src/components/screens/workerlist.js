@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./catagorycard.css"
 import {BiCurrentLocation} from "react-icons/bi";
 import {GoLocation} from "react-icons/go";
-
+import NavbarCustomer from './navbarCustomer';
 
 class workerlist extends Component {
   constructor() {
@@ -90,6 +90,7 @@ class workerlist extends Component {
     return (
 
       <div>
+        <NavbarCustomer/>
     <div class="container ">
       <div class="row">
         <div class="col-sm locatindiv mr-0">

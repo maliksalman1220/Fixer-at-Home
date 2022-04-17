@@ -69,10 +69,10 @@ ppp = e => {
 
         <div class="d-flex col-md-11 justify-content-end p-0 mt-0">
             <button onClick={this.qqqq} className="btn mb-4  btn-contt btn-warning">
-               Add
+               Accept Request
            </button>
            <button onClick={this.ppp} className="btn mb-4 ml-3 ab mr-5 btn-contt btn-primary default">
-               Add
+               Mark Completed
           </button>
         </div>
 

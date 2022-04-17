@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../screens/styles/update_profile.css';
 import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
+import Navbar  from './navbar';
 
 export const WorkerViewsCustomer = (props) => {
     const [values, setValues] = useState({username:"",firstname:"",lastname:"",email:"",phonenumber:"",address:"",country:"",dob:""});
@@ -53,6 +54,7 @@ export const WorkerViewsCustomer = (props) => {
 
     return (
         <div>
+            <Navbar/>
             <div className="container ucontain mt-5 mb-5">
                 <div className="row">
                     <div className="col-md-3 border-right">

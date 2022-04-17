@@ -94,9 +94,9 @@ class placeorder extends Component {
           </div> */}
 
             </form>
-      <div>
-          <button onClick={this.qqqq} className="btn btn-success">
-          Add
+      <div className='d-flex justify-content-center'>
+          <button onClick={this.qqqq} style={{backgroundColor:"#004c8c", width:"50%"}} className="btn btn-success">
+          Place Order
         </button>
 
 </div>

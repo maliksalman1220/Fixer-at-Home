@@ -4,6 +4,7 @@ import { useState } from 'react';
 import "./styles/RegisterScreen.css";
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import Footer from './footer';
 
 function Rating() {
   const params = useParams();
@@ -25,7 +26,7 @@ function Rating() {
     const data = await response.json();
     if (data.status === 'ok') {
       console.log("Updated Successfully")
-      history.push('/home');
+      history.push('/homecust');
     }
     else {
       console.log(data.error);
@@ -41,11 +42,11 @@ function Rating() {
         <form className='containss logform mt-5' style={{ width: "30%", marginLeft: "35%", marginTop: "10%" }}>
 
           <fieldset class="" >
-            <h4 class="text-center mt-0 mb-5" for="gridRadios1">
+            <h4 style={{borderBottom:"1px solid black", width: "100%", fontFamily:"Poppins"}} class="text-center mt-0 mb-5" for="gridRadios1">
               Rating
             </h4>
 
-            <div class="row">
+            <div class="row  d-flex justify-content-left">
               <div class="col-sm-10">
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" onChange={(e) => setrating(e.target.value)} />
@@ -80,11 +81,13 @@ function Rating() {
               </div>
             </div>
           </fieldset>
+          <div className='d-flex justify-content-center'>
           <button class=" btn h_btnso btn-warning col col-5" onClick={sendRating}> Rate</button>
-
+          </div>
         </form>
 
       </div>
+      <Footer/>
     </div>
 
   )

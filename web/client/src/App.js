@@ -117,12 +117,10 @@ const App = () => {
           <Route exact path="/rating" component={Rating} />
           <Route exact path="/homecust" component={HomepageCust} />
           <Route exact path="/homework" component={HomepageWorker} />
-        
-        </Switch>
-        </div>
+          <Route exact path="/rating/:q" component={Rating} />
 
-        {/* <Footer/> */}
-      
+        </Switch>
+        </div>      
    
     </Router>
   );

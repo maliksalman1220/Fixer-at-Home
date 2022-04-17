@@ -107,6 +107,42 @@ exports.registerworker = async (req, res, next) => {
   }
 };
 
+exports.registercustomer = async (req, res, next) => {
+  const { firstname, lastname, username, email, password, contactnumber, dateofbirth, address} = req.body;
+
+  console.log(firstname, lastname, username, email, password, contactnumber, dateofbirth, address)
+  if (!firstname || !lastname || !username || !email || !password || !contactnumber || !dateofbirth || !address) {
+    return next(new ErrorResponse("Please fill in form", 400));
+  }
+
+  if (password.length <= 5) {
+    console.log("p")
+    return next(new ErrorResponse("short password", 401));
+  } 
+  const emailp = email
+  console.log(emailp)
+
+  emailcheck = await Client.findOne({ email: emailp })
+  console.log(emailcheck)
+  if (emailcheck) { return next(new ErrorResponse("email exist", 401)) }
+
+  try {
+    const user = await Client.create({
+      firstname,
+      lastname,
+      username,
+      email,
+      password,
+      contactnumber,
+      dateofbirth,
+      address,
+    });
+    return (res.json({ 'msg': x }));
+  } catch (err) {
+    next(err);
+  }
+};
+
 exports.LoginUser = async (req, res, next) => {
 
   var type = "";
@@ -524,13 +560,37 @@ exports.Workerprofileupdate = async (req, res) => {
           address: req.body.address,
           country: req.body.country,
           experience: req.body.experience,
-          rating: req.body.rating,
           category: req.body.category,
           price: req.body.price,
         }
       }
     )
 
+    return res.json({ status: 'ok' });
+  }
+  catch (error) {
+    console.log(error);
+    res.json({ status: 'error', error: 'invalid token' })
+  }
+}
+
+exports.Rating = async (req, res) => {
+  const _id = ObjectId(JSON.parse(req.body.id));
+  try {
+
+    await Worker.updateOne(
+      { _id: _id },
+      {
+        $set:
+        {
+          rating: req.body.rating,
+        }
+      }
+    )
+    
+    const worker = await Worker.findOne({ _id: _id });
+    console.log(worker);
+    
     return res.json({ status: 'ok' });
   }
   catch (error) {

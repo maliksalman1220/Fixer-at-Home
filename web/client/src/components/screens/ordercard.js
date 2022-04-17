@@ -34,6 +34,7 @@ const BookCard = (props) => {
       <div class="col col-1 tcol-1" data-label="Job Id">{book.workername}</div>
       <div class="col col-2 tcol-2" data-label="Customer Name">{book.price}</div>
       <div class="col col-3 tcol-3 colrp" data-label="Amount"> {book.status}</div>
+     <a class=" btn h_btnso btn-warning col col-4 tcol-4" data-label="Amount" href={"/rating"}> Rate</a>
       
     </li>
     
@@ -44,6 +45,7 @@ const BookCard = (props) => {
       <div class="col col-1 tcol-1" data-label="Job Id">{book.workername}</div>
       <div class="col col-2 tcol-2" data-label="Customer Name">{book.price}</div>
       <div class="col col-3 tcol-3 colrp"style={{color:111111}} data-label="Amount">{book.status}</div>
+     <a class=" btn h_btnso btn-warning col col-4 tcol-4" data-label="Amount" href={"/rating"}> Rate</a>
       
     </li>}
    

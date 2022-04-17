@@ -200,7 +200,7 @@ try{
             
           />
           
-        <button onClick={this.onclick} class="btn add_btn btn-warning ml-0">
+        <button onClick={this.onclick} className="btn add_btn btn-warning ml-0">
           Delete
         </button>
         </div>  

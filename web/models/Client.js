@@ -53,7 +53,7 @@ const ClientSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    minlength: 100,
+    minlength: 20,
 
   },
 

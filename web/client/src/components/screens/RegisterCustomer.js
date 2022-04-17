@@ -19,8 +19,6 @@ const RegisterCustomer = ({ history }) => {
   const [error, setError] = useState("");
   const [ppp,setppp]=useState("");
   const [number,setnumber] = useState("");
-  const [experience,setexperience] = useState("");
-  const [category,setcategory] = useState("");
 
   const registerHandlerp = async (e) =>{
     e.preventDefault();
@@ -73,7 +71,7 @@ const RegisterCustomer = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "/api/auth/register/p",
+        "/api/auth/register/customer",
         {
           firstname,
           lastname,
@@ -83,7 +81,6 @@ const RegisterCustomer = ({ history }) => {
           contactnumber,
           dateofbirth,
           address,
-          experience,category
         },
         config
       );
@@ -92,7 +89,7 @@ const RegisterCustomer = ({ history }) => {
 
       localStorage.setItem("authToken", data.token);
 
-      history.push("/");
+      history.push("/login");
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -109,7 +106,7 @@ const RegisterCustomer = ({ history }) => {
       <div className='col-md-6 col-10 mx-auto'>
     
       <form onSubmit={registerHandler} className='form-group reggrp' style={{width:"90%", marginLeft:"10%", marginTop:"10%"}}>
-      <h3 className = "text-center"> Register</h3> 
+      <h3 className = "text-center"> Register as a Customer</h3> 
         {error && <span className="error-message">{error}</span>}
 
         <div className='row g-2'>

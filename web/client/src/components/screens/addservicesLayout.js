@@ -9,8 +9,12 @@ function sidebarTEMP() {
     <div>
       <NavbarAdmin/>
     <div className='rowC' >
+
+    <div className='sidebar-div'>
     <Sidebar/>
-    <div className='mx-auto' style={{width: "100%", marginTop: "5%"}}>
+    </div>
+
+    <div className='mx-auto content-div' style={{width: "100%", marginTop: "5%"}}>
     <Addservices/>
     </div>
 </div>

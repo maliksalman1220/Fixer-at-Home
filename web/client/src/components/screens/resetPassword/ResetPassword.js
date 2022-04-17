@@ -1,5 +1,6 @@
 import {useState, useEffect, React} from 'react';
 
+import NavbarLogin from '../navbarLogin';
 
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -50,39 +51,53 @@ const ResetPassword = ({ history, match }) => {
 }
     return (
 
-        <div class = "container Rcontain mt-5 mb-5 pt-3 pb-4">
+      <div>
+      <NavbarLogin/>
+  <div className='contact'>
+    <div className='row'>
+      <div className='col-md-6 col-10 mx-auto'>
             <form 
-            class = "d-flex flex-column align-items-center pb-1"
+           className='form-group reggrp' style={{width:"70%", marginLeft:"10%", marginTop:"10%"}}
             onSubmit={resetPasswordHandler}
             > 
-                  <h1>
+                  <h1
+                  class = "text-center"
+                  style={{fontFamily:"Poppins" }}>
                     Reset Password</h1>
-                    <label htmlFor='password' >
+
+                    
+                     <div class="col-md">
+
+                     <label class = "text-left"
+                    style={{fontFamily:"Poppins" }} >
                     Password
                     </label>
 
                     <input 
                         name = "password"
-                        class = "text-center"
+                        class="form-control"
                         placeholder= 'Enter your password'
                         value = {password}
                         onChange = {(e) => setPassword(e.target.value)}
                     />
 
+                    </div>
                     
-
-                
-                    <label>
+                    <div class="col-md">
+                    <label
+                     class = "text-left "
+                     style={{fontFamily:"Poppins" }} >
                     Confirm Password
                     </label>
 
                     <input 
                         name = "confirmPassword"
-                        class = "text-center"
+                        class="form-control"
                         placeholder= 'Re-enter your password'
                         value = {confirmPassword}
-                        onChange = {(e) => setConfirmPassword(e.target.value)}                    />
+                        onChange = {(e) => setConfirmPassword(e.target.value)}  />
                     
+                    </div>
                     <div
                     class = "d-flex flex-column align-items-center pt-2">
                         <button 
@@ -95,6 +110,9 @@ const ResetPassword = ({ history, match }) => {
                     </div>
             </form>        
            
+            </div>
+            </div>
+            </div>    
         </div>
   )
 }

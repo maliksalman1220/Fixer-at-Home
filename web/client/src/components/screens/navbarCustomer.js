@@ -16,6 +16,14 @@ function NavbarCustomer() {
     link = "/userprofile/"+user_id;
   }
 
+  var link2 = "";
+  if (user_type === 'worker') {
+    link2 = "/workerprofileview/"+user_id;
+  }
+  else if (user_type === 'client') {
+    link2 = "/userprofileview/"+user_id;
+  }
+
   console.log(user_type);
 
   const [openLinks, setOpenLinks] = useState(false);
@@ -37,7 +45,7 @@ function NavbarCustomer() {
     
     <ul class="d-flex align-items-end navbar-nav ml-lg-auto">  
       <li class="nav-item active">
-        <a class="nav-link " href="/home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link " href="/homecust">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/aboutC">About Us</a>
@@ -72,7 +80,7 @@ function NavbarCustomer() {
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <a class="dropdown-item dropdown" href="#"></a>
         {/* workerprofileview */}
-          <a class="dropdown-item" href={"/userprofileview/"+user_id}>View Profile</a>
+          <a class="dropdown-item" href={link2}>View Profile</a>
           <a class="dropdown-item" href={link}>Update Profile</a>
           {/* <a class="dropdown-item" href={`/order/${JSON.parse(localStorage.getItem('user'))}`}
           >Order History Customer</a> */}

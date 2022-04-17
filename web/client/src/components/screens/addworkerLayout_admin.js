@@ -9,10 +9,18 @@ function addworkerLayout_admin() {
     <div>
       <NavbarAdmin/>
     <div className='rowC' >
+
+
+      <div className='sidebar-div'>
     <Sidebar/>
-    <div className='mx-auto' style={{width: "100%"}}>
+    </div>
+
+
+    <div className='mx-auto content-div' >
     <Addworkerlist/>
     </div>
+
+
 </div>
 </div>
   )

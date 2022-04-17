@@ -1,5 +1,6 @@
 import React from 'react'
 import image from "../screens/styles/ims.png"
+import Footer from './footer'
 import NavbarCustomer from './navbarCustomer'
 
 function AboutusC() {
@@ -33,6 +34,7 @@ function AboutusC() {
      </div>
 
     </section>
+    <Footer/>
     </div>
   )
 }

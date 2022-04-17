@@ -1,8 +1,8 @@
 /* body{
     background-color: #f4f7f6;
     margin-top:20px;
-}
-.card {
+} */
+/* .card {
     background: #fff;
     transition: .5s;
     border: 0;
@@ -11,7 +11,7 @@
     position: relative;
     width: 100%;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
-}
+} */
 .chat-app .people-list {
     width: 280px;
     position: absolute;
@@ -253,4 +253,4 @@
         height: calc(100vh - 350px);
         overflow-x: auto
     }
-} */
+}

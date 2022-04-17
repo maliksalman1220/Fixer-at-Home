@@ -2,13 +2,14 @@ import React from 'react'
 import "../screens/styles/homepage.css"
 import image from "../screens/styles/Poppins.png"
 import {AiOutlineArrowRight} from "react-icons/ai" 
-import NavbarLogin from './navbarLogin'
+import NavbarCustomer from './navbarCustomer'
 import Footer from './footer'
-function Homepage() {
+
+function HomepageCust() {
   return (
       
     <div>
-        <NavbarLogin/>
+        <NavbarCustomer/>
     <section class="">
            <div class="carousel-inner backk">
                 <img class="d-block img-fluid" src={image} alt="Responsive image" />
@@ -97,32 +98,10 @@ function Homepage() {
             </div>
          </div>
    </div>
-  </section>  
-
-
-  <section class="">
-   <div class="container col-md-12 p-1 text-left">
-     <div class="col-sm-12 col-md-12 mb-4">
-        <h4 class="headingss text-center mt-5">Create an Account</h4>
-    </div>
-
-<div class="container mx-auto mb-5">
-  <div class="row align-items-center justify-content-center">
-    <div class="col">
-    <a href="/registerp" class="btn h_btnsl btn-warning" role="button" >Sign Up to Book a Service    <AiOutlineArrowRight/>
-    </a>
-    </div> 
-    <div class="col">
-    <a href="/services" class="btn h_btnsl btn-primary default" role="button" >Sign Up as a Worker    <AiOutlineArrowRight/></a>
-    </div>
-  </div>
-</div>                    
- </div> 
-</section> 
-<Footer/>
+  </section>   
+  <Footer/>
 </div>
-
     )
 }
 
-export default Homepage
+export default HomepageCust

@@ -4,7 +4,6 @@ import { sidebardata } from './sidebardata'
 //import {BsArrowLeftSquare} from "react-icons/bs";
 function Sidebar() {
   return (
-    <div className='side'>
       <div className='sidebar'>
         <ul className='SidebarList'>
         {sidebardata.map((value,key) =>{
@@ -22,7 +21,6 @@ function Sidebar() {
             )
         })}
         </ul>
-    </div>
     </div>
   )
 }

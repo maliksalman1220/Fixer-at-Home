@@ -27,7 +27,7 @@ const OrderSchema = new mongoose.Schema({
   },price:{type:String},status:{type:String},
   workername:{
     type:String
-  },
+  },clientname:{type:String},
 
   
 

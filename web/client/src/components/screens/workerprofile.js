@@ -4,6 +4,7 @@ import { format, parseISO } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import Navbar from './navbar';
+import axios from "axios";
 
 export const Workerprofile = (props) => {
     const [username, setusername] = useState("");
@@ -18,6 +19,7 @@ export const Workerprofile = (props) => {
     const [category, setcategory] = useState("");
     const [experience, setexperience] = useState("");
     const [price, setprice] = useState("");
+    const [error,seterror]=useState("");
 
     var new_date = "";
     var history = useHistory();
@@ -27,7 +29,34 @@ export const Workerprofile = (props) => {
     
 
     async function ViewProfile() {
-
+       
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        };
+        try{
+  
+            axios.get("/api/private/Admin", config)
+            .catch(err=>{console.log(err)})
+           .then(res=>{if(res.data.error!=""){console.log(res.data.error);seterror(res.data.error)}})
+     }
+           
+         catch (error) {
+           console.log(error,"p")
+           
+           
+       
+     
+         
+     
+       
+           
+       }
+      
+  
+     
         const req = await fetch('http://localhost:5000/api/auth/profile/'+params.q, {
             headers: {
                 'Content-Type': 'application/json',
@@ -72,7 +101,9 @@ export const Workerprofile = (props) => {
         history.push("/workerupdateprofile/"+params.q);
     }
 
-    return (
+    return error ? (
+        <span className="error-message">{error}</span>
+      ) : (
         <div>
             <Navbar/>
             <div className="container ucontain mt-5 mb-5">

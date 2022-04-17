@@ -21,8 +21,9 @@ exports.protectworker = async (req, res, next) => {
   console.log(req.headers.authorization)
 
   if (!token) {
-    return   res.status(404).json({ error: 'please login' })
+    return   res.status(200).json({ error: 'please login' })
   }
+  console.log(token)
 
   
     const decoded = jwt.verify(token,'3848dda248be81a9d95ac2234af4892517521e9046c93dffb6dd55fa6d4abfdde8422c');
@@ -30,10 +31,11 @@ exports.protectworker = async (req, res, next) => {
     const user = await Worker.findById(decoded.id);
 
     if (!user) {
-      res.status(404).json({ error: 'only admin' })
+      res.status(200).json({ error: 'only worker' })
     }
+    console.log(user)
 
-    req.user = userp;
+    req.user = user;
     
     
     

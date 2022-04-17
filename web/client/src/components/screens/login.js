@@ -36,10 +36,10 @@ export const Login = ({history}) => {
           if(data.type=="admin"){console.log("p");history.push("/Addcategories")}
           
           else if (data.type=="worker"){
-            console.log("p");history.push("/workerland")
+            console.log("p");history.push("/homework")
           
           }else if ( data.type=="client"){
-            console.log("p");history.push("/pppp")
+            console.log("p");history.push("/homecust")
           }
         
         } 
@@ -87,6 +87,9 @@ export const Login = ({history}) => {
                 
                 <p className="forgot-password text-right">
                     Want to create an account? <a href="./registerp">Sign up</a>
+                </p>
+                <p className="forgot-password text-right">
+                   <a href="./forgetPassword"> Forgot Password? </a>
                 </p>
             </form>
         </div>

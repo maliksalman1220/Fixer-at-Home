@@ -109,7 +109,7 @@ const RegisterCustomer = ({ history }) => {
       <div className='col-md-6 col-10 mx-auto'>
     
       <form onSubmit={registerHandler} className='form-group reggrp' style={{width:"90%", marginLeft:"10%", marginTop:"10%"}}>
-      <h3 className = "text-center"> Register</h3> 
+      <h3 className = "text-center"> Register as a Customer</h3> 
         {error && <span className="error-message">{error}</span>}
 
         <div className='row g-2'>

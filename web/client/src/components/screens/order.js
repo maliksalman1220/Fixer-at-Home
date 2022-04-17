@@ -107,8 +107,8 @@ class order extends Component {
      <div class="cards-list">
        <ul class="responsive-table mx-auto" style={{width:'70%', marginTop: "2%"}}>
            <li class="table-header hlist">
-             <div class="col col-1 tcol-1">Worker name</div>
-             <div class="col col-2 tcol-2">Amount</div>
+             {/* <div class="col col-1 tcol-1"></div> */}
+             <div class="col col-2 tcol-2">Worker name</div>
              <div class="col col-3 tcol-3">Status</div>
              <div class="col col-3 tcol-3">Rating</div>
 

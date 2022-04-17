@@ -21,6 +21,7 @@ const RegisterScreenp = ({ history }) => {
   const [number,setnumber] = useState("");
   const [experience,setexperience] = useState("");
   const [category,setcategory] = useState("");
+  const [price,setprice] = useState("");
 
   const registerHandlerp = async (e) =>{
     e.preventDefault();
@@ -83,7 +84,7 @@ const RegisterScreenp = ({ history }) => {
           contactnumber,
           dateofbirth,
           address,
-          experience,category
+          experience,category,price
         },
         config
       );
@@ -245,6 +246,18 @@ const RegisterScreenp = ({ history }) => {
             placeholder="Enter verification codep"
             value={number}
             onChange={(e) => setnumber(e.target.value)}
+          />
+        </div>
+
+        <div className="col-md">
+          <label class="form-label">Price</label>
+          <input
+            type="integer"
+            
+            
+            placeholder="Enter estimated price"
+            value={price}
+            onChange={(e) => setprice(e.target.value)}
           />
         </div>
         
